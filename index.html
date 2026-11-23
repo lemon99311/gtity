@@ -69,16 +69,12 @@
     <div class="crumb"><i>›</i> <b id="tplCrumb"></b></div>
     <div class="top-actions"><div class="user-chip"><div class="avatar">档案</div><div><small>档案中心 · 维护岗</small><strong>管理员</strong></div></div></div>
   </header>
-  <aside class="side">
-    <div class="side-title" id="tplSideGroup"></div>
-    <nav class="nav" id="nav"><a href="#" class="on" onclick="return false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4zM8 9h8M8 13h8"/></svg><span id="tplSideItem"></span></a></nav>
-    <div class="side-hr"></div>
-    <div class="side-title">快捷视图</div>
-    <nav class="nav sa-quick" id="tplQuick"></nav>
-    <div class="side-hr"></div>
-    <div class="side-title" id="tplSideNoteTitle"></div>
-    <div class="chan sa-chan" id="tplSideNote"></div>
-  </aside>
+  <aside class="side" id="mainMenu">
+  <nav class="nav" id="mainNav">
+    <a href="?set=product" data-set="product"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4zM8 9h8M8 13h8"/></svg><span>产品档案</span></a>
+    <a href="?set=saleBill" data-set="saleBill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></svg><span>销售单</span></a>
+  </nav>
+</aside>
   <div class="tabs"><span class="tpl-tab" id="tplTab"></span></div>
   <main class="main" id="main"></main>
 </div>

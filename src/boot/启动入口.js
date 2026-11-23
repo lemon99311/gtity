@@ -147,4 +147,16 @@ if (typeof document !== 'undefined' && document.documentElement.classList.contai
   setTimeout(解除遮罩, 3000);  // 保险：JS 异常 / 极端慢速下也不永久白屏
 }
 
+// 主功能菜单栏：只放业务配置集里的【产品档案】【销售单】，按当前集高亮。
+// 菜单项用纯 href="?set=xxx" 切换：S004/S005 都优先读 URL 的 set 参数，零 JS 依赖；
+// 这里只补 .on 态，不注册新出口、不碰 #main，左栏与列表视图内容区域彻底解耦。
+if (typeof window !== 'undefined' && window.document) {
+  const nav = window.document.getElementById('mainNav');
+  if (nav) {
+    let k = 'product';
+    try { k = new URLSearchParams(window.location.search).get('set') || window.__TPL_ACTIVE_SET__ || 'product'; } catch (e) {}
+    nav.querySelectorAll('a[data-set]').forEach(a => a.classList.toggle('on', a.getAttribute('data-set') === k));
+  }
+}
+
 export default API;

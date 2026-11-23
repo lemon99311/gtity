@@ -211,3 +211,14 @@ if (typeof document !== "undefined" && document.documentElement.classList.contai
   requestAnimationFrame(() => requestAnimationFrame(解除遮罩));
   setTimeout(解除遮罩, 3e3);
 }
+if (typeof window !== "undefined" && window.document) {
+  const nav = window.document.getElementById("mainNav");
+  if (nav) {
+    let k = "product";
+    try {
+      k = new URLSearchParams(window.location.search).get("set") || window.__TPL_ACTIVE_SET__ || "product";
+    } catch (e) {
+    }
+    nav.querySelectorAll("a[data-set]").forEach((a) => a.classList.toggle("on", a.getAttribute("data-set") === k));
+  }
+}

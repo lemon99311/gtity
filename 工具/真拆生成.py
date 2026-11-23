@@ -364,6 +364,18 @@ lines += [
     "  setTimeout(解除遮罩, 3000);  // 保险：JS 异常 / 极端慢速下也不永久白屏",
     "}",
     "",
+    "// 主功能菜单栏：只放业务配置集里的【产品档案】【销售单】，按当前集高亮。",
+    "// 菜单项用纯 href=\"?set=xxx\" 切换：S004/S005 都优先读 URL 的 set 参数，零 JS 依赖；",
+    "// 这里只补 .on 态，不注册新出口、不碰 #main，左栏与列表视图内容区域彻底解耦。",
+    "if (typeof window !== 'undefined' && window.document) {",
+    "  const nav = window.document.getElementById('mainNav');",
+    "  if (nav) {",
+    "    let k = 'product';",
+    "    try { k = new URLSearchParams(window.location.search).get('set') || window.__TPL_ACTIVE_SET__ || 'product'; } catch (e) {}",
+    "    nav.querySelectorAll('a[data-set]').forEach(a => a.classList.toggle('on', a.getAttribute('data-set') === k));",
+    "  }",
+    "}",
+    "",
     "export default API;",
 ]
 open(启动入口, 'w', encoding='utf-8', newline='').write('\n'.join(lines) + '\n')
@@ -391,6 +403,27 @@ for 旧, 新 in 替换表:
     n = 骨架.count(旧)
     assert n == 1, 'SVG 防闪烁替换应命中 1 次，实际 %d 次：%s' % (n, 旧)
     骨架 = 骨架.replace(旧, 新)
+
+# 主功能菜单栏（用户 #7 截图要求）：
+#   原 .side 是「当前视图 + 快捷视图 + 档案说明 + 目录条目/流转节点计数」，
+#   全部由 fillShell()/renderList()/S045 按主区列表视图动态填充 → 与列表视图内容区域耦合。
+#   这里整体换成静态两项（业务配置集 __TPL_SETS__ 的 product / saleBill），
+#   删除 #tplSideGroup / #tplSideItem / #tplQuick / #tplSideNoteTitle / #tplSideNote 五个容器。
+#   这些容器在既有层里的所有写入点都有 if(e)/if(q) 空值保护，删除后自然 no-op，
+#   不改任何层文件、不注册新出口、不碰 #main，即「解除关联」。
+主菜单 = (
+    '<aside class="side" id="mainMenu">\n'
+    '  <nav class="nav" id="mainNav">\n'
+    '    <a href="?set=product" data-set="product"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4zM8 9h8M8 13h8"/></svg><span>产品档案</span></a>\n'
+    '    <a href="?set=saleBill" data-set="saleBill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></svg><span>销售单</span></a>\n'
+    '  </nav>\n'
+    '</aside>'
+)
+骨架, n侧 = re.subn(r'<aside class="side">[\s\S]*?</aside>', 主菜单, 骨架, count=1)
+assert n侧 == 1, '左侧栏替换应命中 1 次，实际 %d 次' % n侧
+# 五个耦合容器必须全部消失（否则运行时仍会被填充，关联没解干净）
+for 残留 in ('tplSideGroup', 'tplSideItem', 'tplQuick', 'tplSideNoteTitle', 'tplSideNote'):
+    assert 残留 not in 骨架, '左栏仍残留耦合容器 %s' % 残留
 
 入口标签 = '<script type="module" src="/src/boot/启动入口.js"></script>\n'
 if '</body>' in 骨架:
@@ -433,6 +466,16 @@ out = dict(
         "S038 配置表单 tocTitle 字段 label：'目录标题' → '左卡目录标题'（用户要求，纯界面文案，非逻辑改写）",
     ],
     文案改写=文案改写记录,
+    主菜单栏=[
+        dict(来源='window.__TPL_SETS__（业务配置集，S004 定义 product / S005 追加 saleBill）',
+             项=[dict(key='product', 显示='产品档案'), dict(key='saleBill', 显示='销售单')],
+             切换='纯 href="?set=xxx"；S004/S005 优先读 URL set 参数，整页按该业务重载',
+             解耦='删除 #tplSideGroup / #tplSideItem / #tplQuick / #tplSideNoteTitle / #tplSideNote 五个容器；'
+                  '既有层对应写入点均有 if(e)/if(q) 空值保护，删除后自然 no-op',
+             不计入改写点数=True,
+             说明='改动落在生成器新增产物（HTML 骨架 + 启动入口），不是 64 个基线层模块，'
+                  '故「改写点数」仍为 4；基线原件.html 一字未动'),
+    ],
     新index字节=len(骨架.encode()),
     新index行数=骨架.count('\n') + 1,
     层文件数=len([f for f in os.listdir(层目录)]),
