@@ -1,6 +1,7 @@
 node_modules/
 .vite/
 *.log
+对账/单文件预览/bundle.js
 对账/dev-server.pid
 对账/dev-server.log
 .DS_Store
