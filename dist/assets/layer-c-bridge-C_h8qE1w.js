@@ -3322,8 +3322,8 @@ const Formula = /* @__PURE__ */ (function() {
       return `<span class="lnk wl-code" title="${escA(g.title)}" onclick="event.stopPropagation();TPL._cellClick(${r.__idx},${escJS(c.k)})">${body}</span>`;
     },
     primary(r, c) {
-      const i = r.__idx || 0;
-      return `<span class="wl-pname">${i % 7 === 6 ? '<i class="wl-exp">▶</i>' : ""}<i class="wl-ico"></i><b class="pname">${esc(fmtValue(r, c))}</b></span>`;
+      r.__idx || 0;
+      return `<span class="wl-pname"><i class="wl-ico"></i><b class="pname">${esc(fmtValue(r, c))}</b></span>`;
     },
     status(r, c) {
       const o = c.render || {}, raw = rv(r, c);
