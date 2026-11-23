@@ -1,0 +1,25 @@
+
+
+.wlset-wrap{position:fixed;right:18px;bottom:18px;z-index:9998;font:13px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.wlset-pill{display:flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid #d7dce3;border-radius:20px;
+  background:#fff;box-shadow:0 3px 12px rgba(0,0,0,.12);cursor:pointer;color:#1f2937;user-select:none}
+.wlset-pill:hover{border-color:#0052d9;box-shadow:0 4px 16px rgba(0,82,217,.18)}
+.wlset-dot{width:7px;height:7px;border-radius:50%;background:#0052d9;flex:none}
+.wlset-name{font-weight:600;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wlset-caret{font-size:10px;color:#8a94a6;transition:transform .18s}
+.wlset-wrap.on .wlset-caret{transform:rotate(180deg)}
+.wlset-panel{display:none;position:absolute;right:0;bottom:44px;width:308px;padding:14px;border:1px solid #e3e8ef;
+  border-radius:10px;background:#fff;box-shadow:0 8px 28px rgba(16,24,40,.18)}
+.wlset-wrap.on .wlset-panel{display:block}
+.wlset-ttl{font-weight:600;color:#111827;margin:0 0 3px}
+.wlset-sub{font-size:11px;color:#8a94a6;margin:0 0 10px}
+.wlset-item{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border:1px solid transparent;border-radius:8px;cursor:pointer}
+.wlset-item:hover{background:#f5f8ff;border-color:#dbe6ff}
+.wlset-item.cur{background:#eef4ff;border-color:#a9c4ff}
+.wlset-radio{width:14px;height:14px;border:2px solid #c2cbd8;border-radius:50%;flex:none;margin-top:3px}
+.wlset-item.cur .wlset-radio{border-color:#0052d9;background:radial-gradient(circle,#0052d9 0 3px,transparent 4px)}
+.wlset-lb{font-weight:600;color:#1f2937}
+.wlset-tag{display:inline-block;margin-left:6px;padding:0 5px;border-radius:3px;background:#eef4ff;color:#0052d9;font-size:10px;font-weight:500}
+.wlset-ds{font-size:11px;color:#6b7688;margin-top:2px;line-height:1.5}
+.wlset-meta{font-size:10px;color:#9aa4b2;margin-top:3px}
+.wlset-foot{border-top:1px solid #eef1f5;margin-top:8px;padding-top:8px;font-size:10.5px;color:#8a94a6;line-height:1.6}

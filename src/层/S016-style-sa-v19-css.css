@@ -1,0 +1,15 @@
+
+
+.da-main .da-fld select.sa-opt{
+  height:27px;font-size:var(--fs-list);color:var(--ink);background:#fff;
+  padding:0 6px;cursor:pointer;appearance:auto;-webkit-appearance:menulist;
+  width:100%;min-width:0;
+}
+.da-main .da-fld select.sa-opt:focus{
+  border-color:var(--pri);box-shadow:0 0 0 2px var(--pri-soft);outline:0;
+}
+.da-main .da-fld select.sa-opt option{font-size:var(--fs-list);color:var(--ink)}
+.da-main .da-fld select.sa-opt optgroup{
+  font-size:var(--fs-list-sub);color:var(--ink3);font-style:normal;font-weight:normal;
+}
+.da-main .da-fld.wide select.sa-opt{width:100%}

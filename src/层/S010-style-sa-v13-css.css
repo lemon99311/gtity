@@ -1,0 +1,10 @@
+
+
+.da-main .da-sec.g{padding-top:13px;border-top:1px solid var(--line)}
+.da-main .da-sec.g:first-child{padding-top:0;border-top:0}
+.da-main .da-sec.g>h4{margin-bottom:9px}
+.da-fld.wide{grid-column:1/-1}
+.da-fld.wide .dd-ipt{width:100%}
+.da-fld dd{overflow-wrap:anywhere}
+
+@media (max-width:760px){.da-fld.wide{grid-column:1/-1}}

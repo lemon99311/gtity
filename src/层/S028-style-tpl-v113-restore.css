@@ -1,0 +1,244 @@
+
+
+:root{
+  
+  --wl-blue:#0052d9;          
+  --wl-ink:#2e405e;           
+  --wl-ink2:#6e7b8c;          
+  --wl-ink3:#909aaa;          
+  --wl-line:#dadee3;          
+  --wl-line2:#dadee3;
+  --wl-soft:#f5f6f8;          
+  --wl-hover:#f7f9fb;
+  --wl-purple:#904de2;        
+  --wl-sel:#d9e1ff;
+  --wl-rowline:#eeeff1;       
+  --wl-green:#58b55c;         
+  --wl-red:#e66544;           
+}
+
+
+#main .wl-page{position:relative;background:#fff}
+#main .wl-page > *{position:relative;z-index:1}
+
+#main .wl-head{height:64px;padding:20px 24px 0;gap:0;background:#fff;box-shadow:none;z-index:20}
+#main .wl-title{font-size:20px;font-weight:600;color:#2e405e;letter-spacing:0;
+  line-height:1;margin:0 44px 0 0}
+#main .wl-tabs{gap:40px;height:100%}
+#main .wl-tab{font-size:14px;font-weight:400;color:#6e7b8c;gap:0;padding:0}
+#main .wl-tab i{display:none}                       
+#main .wl-tab.on{color:#0052d9;font-weight:600}
+#main .wl-tab.on::after{bottom:8px;height:2px;background:#0052d9;border-radius:0}
+#main .wl-actions{gap:8px}
+#main .wl-btn{height:32px;padding:0 13px;border-radius:4px;font-size:13px;font-weight:400;
+  line-height:30px;box-shadow:none;background:#fff;border:1px solid #dadee3;color:#6e7b8c}
+#main .wl-btn-pri{background:#0052d9;border-color:#0052d9;color:#fff}
+#main .wl-btn-pri:hover{background:#0052d9;border-color:#0052d9;color:#fff}
+#main .wl-new-group .wl-btn-pri:first-child{padding:0 15px}
+#main .wl-btn-caret{padding:0 9px;border-left:1px solid rgba(255,255,255,.40)!important}
+#main .wl-btn-ghost:hover,#main .wl-btn-more:hover{color:#0052d9;border-color:#b5c7ff;background:#f2f3ff}
+#main .wl-btn-more{width:32px;letter-spacing:0}
+#main .wl-menu{border-radius:4px;box-shadow:0 4px 14px rgba(46,64,94,.10);
+  border:1px solid #e5e8ec;z-index:60}
+
+
+#main .wl-filterbar{height:52px;padding:0 24px;gap:10px;border-bottom:1px solid #f0f1f3;background:#fff}
+#main .wl-select{height:32px;min-width:92px;max-width:150px;padding:0 24px 0 11px;
+  border:1px solid transparent;border-radius:4px;background-color:#f5f6f8;
+  color:#6e7b8c;font-size:13px;font-weight:400;line-height:30px;box-shadow:none}
+#main .wl-select:hover{border-color:transparent;background-color:#eef0f3}
+#main .wl-select:focus{border-color:#b5c7ff;background-color:#fff}
+#main .wl-ctx-sel{min-width:92px;background-color:#f5f6f8}
+#main .wl-dd::after{color:#909aaa;font-size:11px;right:9px}
+#main .wl-dds{gap:8px}
+#main .wl-count{font-size:13px;color:#909aaa;margin:0 2px}
+#main .wl-count b{color:#6e7b8c;font-weight:400}
+#main .wl-search{width:140px}
+#main .wl-search input{height:32px;border:1px solid #dadee3;border-radius:4px;
+  background:#fff;padding:0 30px 0 10px;font-size:13px;color:#2e405e;line-height:30px;
+  box-shadow:none}
+#main .wl-search input:focus{border-color:#b5c7ff;box-shadow:0 0 0 2px rgba(0,82,217,.10)}
+#main .wl-search svg{left:auto;right:9px;top:8px;width:14px;height:14px;color:#909aaa}
+#main .wl-viewtools{gap:18px}
+#main .wl-vt{font-size:13px;font-weight:400;color:#6e7b8c;height:30px}
+#main .wl-vt svg{width:13px;height:13px;color:#909aaa}
+#main .wl-vt b{font-weight:400;color:#909aaa}
+#main .wl-vt-sep{height:14px;background:#e5e8ec}
+
+
+#main .drug-table thead th{height:36px;line-height:36px;padding:0 10px;
+  background:#fff;color:#6e7b8c;font-size:12px;font-weight:400;text-align:left;
+  border-right:0;border-bottom:1px solid #e5e8ec;box-shadow:none}
+#main .drug-table thead th.stk,#main .drug-table thead th.stkr{background:#fff}
+#main .drug-table thead th:hover{background:#fafbfc;color:#2e405e}
+#main .drug-table thead th .srt{display:none}       
+#main .drug-table table{font-size:13px;color:#2e405e}
+#main .drug-table tbody td{height:40px;line-height:39px;padding:0 10px;
+  border-right:0;border-bottom:1px solid #eeeff1;color:#2e405e;font-size:13px;
+  font-weight:400;background:transparent;box-shadow:none}
+#main .drug-table tbody td.stk,#main .drug-table tbody td.stkr,
+#main .drug-table thead th.stk,#main .drug-table thead th.stkr{background:#fff}
+#main .drug-table tbody tr:hover td{background:#fafbfc}
+#main .drug-table tbody tr.act-row td{background:#f2f3ff}
+#main .drug-table tbody tr.act-row td:first-child{box-shadow:inset 2px 0 0 #0052d9}
+#main .drug-table tbody tr.chk td,#main .drug-table tbody tr.chk td.stk{background:#d9e1ff}
+#main .drug-table .stkr{border-left:0;box-shadow:none}
+#main .drug-table .stk2{left:24px}                 
+#main .drug-table .drug-empty{color:#909aaa;background:#fff}
+#main.wl-expand-on .drug-table tbody td{line-height:1.5;padding-top:7px;padding-bottom:7px}
+#main.wl-tree-on .drug-table tbody td.stk2::before{content:"▸  ";color:#b0b5bc;font-size:11px}
+
+
+#main .wl-ck{width:13px;height:13px;opacity:0;transition:opacity .12s;accent-color:#0052d9}
+#main .drug-table tbody tr:hover .wl-ck,
+#main .drug-table tbody tr.chk .wl-ck,
+#main .drug-table tbody tr.act-row .wl-ck{opacity:1}
+#main .row-ops{opacity:0;transition:opacity .12s;gap:2px;justify-content:flex-start}
+#main .drug-table tbody tr:hover .row-ops{opacity:1}
+#main .wl-ops-btn{height:22px;padding:0 7px;border:1px solid #dadee3;background:#fff;
+  color:#0052d9;font-size:12px;border-radius:3px;line-height:20px}
+#main .wl-ops-btn:hover{background:#f2f3ff;border-color:#b5c7ff;color:#0052d9}
+
+
+#main .wl-code{color:#909aaa;font-size:12px;font-weight:400;letter-spacing:0}
+#main .wl-code:hover{color:#0052d9;text-decoration:underline}
+#main .wl-pname{display:inline-flex;align-items:center;gap:8px;max-width:100%;vertical-align:middle}
+#main .wl-ico{width:9px;height:9px;border-radius:1px;background:#904de2;flex:0 0 auto}
+#main .wl-exp{font-style:normal;color:#b0b5bc;font-size:10px;margin-right:2px;flex:0 0 auto}
+#main .wl-pname .pname{font-size:13px;font-weight:400;color:#2e405e;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+
+
+#main .wl-st{display:inline-flex;align-items:center;gap:7px;color:#6e7b8c;font-size:13px}
+
+#main .wl-st i{position:relative;width:14px;height:14px;border-radius:50%;
+  border:1.5px solid #b0b5bc;background:#fff;flex:0 0 auto;box-sizing:border-box}
+#main .wl-st i::after{position:absolute;inset:0;text-align:center;line-height:11px;
+  font-size:9px;font-weight:600}
+#main .wl-st-idle i{border-color:#c4c9d1}
+#main .wl-st-idle i::after{content:"";position:absolute;inset:auto;top:4px;left:4px;
+  width:4px;height:4px;border-radius:50%;background:#c4c9d1;line-height:0}
+#main .wl-st-doing i{border-color:#509ee5}
+#main .wl-st-doing i::after{content:"";position:absolute;left:1px;top:1px;bottom:1px;
+  width:5px;border-radius:6px 0 0 6px;background:#509ee5;line-height:0}
+#main .wl-st-done i{border-color:#58b55c}
+#main .wl-st-done i::after{content:"✓";color:#58b55c;font-size:10px;line-height:11px}
+
+
+#main .wl-tags{display:inline-flex;align-items:center;gap:3px;max-width:100%;vertical-align:middle}
+#main .wl-tag-solid{display:inline-flex;align-items:center;height:18px;padding:0 6px;
+  border-radius:3px;color:#fff;font-size:11px;font-weight:600;line-height:18px;
+  white-space:nowrap;box-shadow:none;border:0}
+#main .wl-tag-more{display:inline-flex;align-items:center;height:18px;padding:0 7px;
+  border-radius:10px;background:#f0f1f3;color:#6e7b8c;font-size:11px;font-weight:400;
+  line-height:18px;white-space:nowrap;border:0}
+
+
+#main .wl-pri{display:inline-flex;align-items:center;height:18px;padding:0 6px;
+  border:1px solid #b0b5bc;border-radius:2px;background:#fff;color:#6e7b8c;
+  font-size:11px;font-weight:400;line-height:16px;white-space:nowrap;box-shadow:none}
+#main .wl-pri-minor{border-color:#0052d9;color:#0052d9}
+#main .wl-pri-major{border-color:#ffab00;color:#e69400}
+#main .wl-pri-severe{border-color:#ff5630;color:#f0471f}
+#main .wl-pri-none{border-color:#c4c9d1;color:#909aaa}
+
+
+#main .wl-date{color:#2e405e;font-size:13px;font-variant-numeric:tabular-nums}
+#main .wl-kind{color:#2e405e;font-size:13px}
+#main .wl-num{font-variant-numeric:tabular-nums;color:#2e405e}
+#main .wl-plan-txt{color:#6e7b8c;font-size:12px;font-variant-numeric:tabular-nums}
+#main .wl-overdue{margin-left:5px;color:#e66544;font-size:12px;font-weight:400}
+#main .wl-empty{color:#b0b5bc;font-size:13px}
+#main .wl-link-txt{color:#2e405e;font-size:13px;overflow:hidden;text-overflow:ellipsis}
+
+
+#main .wl-avatars{display:inline-flex;align-items:center;gap:2px;vertical-align:middle}
+#main .wl-avatar{width:20px;height:20px;border-radius:50%;display:inline-flex;
+  align-items:center;justify-content:center;overflow:hidden;flex:0 0 auto;border:0;box-shadow:none}
+#main .wl-avatar svg{width:20px;height:20px;display:block}
+#main .wl-person{display:inline-flex;align-items:center;gap:7px;max-width:100%;vertical-align:middle}
+#main .wl-person-t{color:#6e7b8c;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+
+#main .wl-pip,#main .wl-yn,#main .wl-tag,#main .wl-pri-old{display:none}
+
+
+#main .wl-colgear{right:8px;top:9px;width:16px;height:16px;border:0;background:transparent;
+  border-radius:0;color:#6e7b8c;font-size:14px;box-shadow:none;opacity:1}
+#main .wl-colgear:hover{color:#0052d9}
+#main .wl-rail-toggle{width:16px;height:34px;border:1px solid #e5e8ec;border-right:0;
+  background:#fff;border-radius:3px 0 0 3px;color:#909aaa;font-size:12px;
+  box-shadow:-1px 0 4px rgba(46,64,94,.05)}
+#main .wl-rail{border-left:1px solid #e5e8ec;box-shadow:-4px 0 12px rgba(46,64,94,.05);z-index:11}
+
+
+#main .wl-groupbar{background:#fff;border-bottom:1px solid #f0f1f3;color:#6e7b8c;font-size:13px}
+#main .wl-gchip{border-radius:10px;border-color:#dadee3;color:#6e7b8c;font-size:12px;background:#fff}
+#main .wl-gchip.on{background:#0052d9;border-color:#0052d9;color:#fff}
+#main .drug-adv{background:#fafbfc;border-bottom:1px solid #e5e8ec}
+#main .drug-adv-grid .fi input,#main .drug-adv-grid .fi select{border-radius:4px;
+  border-color:#dadee3;font-size:13px}
+#main .drug-chips:empty{display:none}
+
+
+#main .wl-page .pager{flex:0 0 40px;height:40px;border-top:1px solid #f0f1f3;background:#fff;
+  color:#909aaa;font-size:13px;padding:0 24px;box-shadow:none;
+  position:relative;z-index:31}   
+#main .wl-page .pager b{color:#0052d9}
+#main .wl-page .pager select{border-radius:4px;border-color:#dadee3}
+#main .wl-page .pages span{border-radius:4px;border-color:#dadee3;color:#6e7b8c}
+#main .wl-page .pages span.on{background:#0052d9;border-color:#0052d9;color:#fff}
+#main .wl-page .workcounts i{color:#0052d9}
+
+
+#main .wl-grid .tbl-scroll::-webkit-scrollbar{width:8px;height:10px}
+#main .wl-grid .tbl-scroll::-webkit-scrollbar-thumb{background:#8b8b8b;border-radius:6px;
+  border:2px solid #fff}
+#main .wl-grid .tbl-scroll::-webkit-scrollbar-thumb:hover{background:#767676}
+#main .wl-grid .tbl-scroll::-webkit-scrollbar-track{background:#fcfcfc}
+#main .wl-grid .tbl-scroll::-webkit-scrollbar-corner{background:#fcfcfc}
+
+
+#main .wl-grid::before{display:none}          
+#main .wl-page::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:30;
+  background-repeat:repeat}
+#main.wl-no-wm .wl-page::after{display:none}
+#main .wl-menu,#main .wl-head{z-index:60}      
+#main .wl-filterbar{z-index:40}
+
+
+@media (max-width:1500px){#main .wl-tabs{gap:30px}#main .wl-title{margin-right:30px}
+  #main .wl-viewtools{gap:12px}}
+@media (max-width:1240px){#main .wl-vt{font-size:12px}#main .wl-search{width:130px}
+  #main .wl-viewtools{gap:9px}}
+
+
+#main .wl-page *{box-sizing:border-box}
+#main .wl-page .wl-title{font-weight:600!important}
+#main .wl-page .wl-tab{font-weight:400!important}
+#main .wl-page .wl-tab.on{font-weight:600!important}
+#main .wl-page .wl-tag-solid{font-weight:600!important}
+#main .wl-page thead th{font-weight:400!important;height:36px!important;line-height:34px!important}
+#main .wl-page tbody td{font-weight:400!important;height:40px!important;line-height:1!important}
+
+#main .wl-page thead th,#main .wl-page tbody td{padding-left:0!important;padding-right:10px!important}
+#main .wl-page thead th:first-child,#main .wl-page tbody td:first-child{padding:0!important}
+#main .wl-page .wl-pname .pname{font-weight:400!important}
+#main .wl-page .wl-pri,#main .wl-page .wl-tag-more,#main .wl-page .wl-st,
+#main .wl-page .wl-date,#main .wl-page .wl-kind,#main .wl-page .wl-code,
+#main .wl-page .wl-btn,#main .wl-page .wl-select,#main .wl-page .wl-vt,
+#main .wl-page .wl-count b,#main .wl-page .pager,#main .wl-page .wl-ops-btn,
+#main .wl-page .wl-person-t,#main .wl-page .wl-plan-txt,#main .wl-page .wl-overdue,
+#main .wl-page .wl-link-txt,#main .wl-page .wl-gchip{font-weight:400!important}
+
+
+body.wl-v113-full{--topbar-h:0px}
+body.wl-v113-full #app{grid-template-columns:minmax(0,1fr);
+  grid-template-rows:minmax(0,1fr);grid-template-areas:"main";height:100vh;overflow:hidden}
+body.wl-v113-full .topbar,body.wl-v113-full .side,body.wl-v113-full .tabs,
+body.wl-v113-full .side-toggle{display:none}
+body.wl-v113-full .main{grid-area:main}
+body:not(.wl-v113-full) > .side-toggle{display:block}
+
+#main .wl-grid .tbl-scroll::-webkit-scrollbar-thumb{background:#8b8b8b;
+  border:0;border-radius:5px}

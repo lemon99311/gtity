@@ -1,0 +1,27 @@
+
+
+.da-toc a i{flex:0 0 26px;white-space:nowrap;letter-spacing:0}
+
+.da-toc ol{scrollbar-width:auto}
+.da-toc ol::-webkit-scrollbar{width:4px}
+.da-toc ol::-webkit-scrollbar-track{background:transparent}
+.da-toc ol::-webkit-scrollbar-thumb{background:#eef0f2;border:0;border-radius:4px}
+.da-toc:hover ol::-webkit-scrollbar-thumb{background:#dfe3e7}
+.da-toc:hover ol::-webkit-scrollbar-thumb:hover{background:#d3d9de}
+@supports (-moz-appearance:none){
+  .da-toc ol{scrollbar-width:thin;scrollbar-color:#eef0f2 transparent}
+  .da-toc:hover ol{scrollbar-color:#dfe3e7 transparent}
+}
+
+@media (min-width:761px) and (max-height:900px){
+  .da-card{scrollbar-width:auto}
+  .da-card::-webkit-scrollbar{width:4px}
+  .da-card::-webkit-scrollbar-track{background:transparent}
+  .da-card::-webkit-scrollbar-thumb{background:#eef0f2;border:0;border-radius:4px}
+  .da-card:hover::-webkit-scrollbar-thumb{background:#dfe3e7}
+  @supports (-moz-appearance:none){
+    .da-card{scrollbar-width:thin;scrollbar-color:#eef0f2 transparent}
+  }
+}
+
+.da-arch-card{border-left:2px solid #dfebe4}

@@ -1,0 +1,73 @@
+
+
+
+:root{
+  
+  --fs-read:14px;          
+  --fs-h3:16px;            
+  --fs-h2:18px;            
+  --fs-h1:24px;            
+  --fw-read:400;           
+  --lh-read:initial;       
+
+  
+  --fs-9:var(--fs-read);   --fs-95:var(--fs-read);
+  --fs-10:var(--fs-read);  --fs-105:var(--fs-read);
+  --fs-11:var(--fs-read);  --fs-115:var(--fs-read);
+  --fs-12:var(--fs-read);  --fs-125:var(--fs-read);
+  --fs-135:var(--fs-read); --fs-14:var(--fs-read);
+  --fs-15:var(--fs-read);  --fs-17:var(--fs-h2);
+  --fs-18:var(--fs-h2);    --fs-20:var(--fs-h2);
+  --fs-22:var(--fs-h2);
+  --fs-resp-1:var(--fs-read); --fs-resp-2:var(--fs-read);
+  --fs-resp-3:var(--fs-read); --fs-resp-4:var(--fs-read);
+  --fs-list:var(--fs-read); --fs-list-sub:var(--fs-read);
+  --fs-list-head:var(--fs-h3); --fs-page-title:var(--fs-h2);
+
+  
+  --fw-regular:400; --fw-medium:600; --fw-semibold:600; --fw-bold:600;
+
+  
+  --lh-1:var(--lh-read);   --lh-11:var(--lh-read); --lh-12:var(--lh-read);
+  --lh-125:var(--lh-read); --lh-13:var(--lh-read); --lh-14:var(--lh-read);
+  --lh-145:var(--lh-read); --lh-15:var(--lh-read); --lh-155:var(--lh-read);
+  --lh-16:var(--lh-read);  --lh-17:var(--lh-read);
+
+  
+  --font-num:var(--font-sans);
+  --font-mono:var(--font-sans);
+  --font-mono-alt:var(--font-sans);
+}
+
+
+.page-head h1,.drug-title{font-size:var(--fs-h2)}
+.logo b,.dw-head h3,.da-main .da-sec>h4,.da-toc>h4,.da-tl>h4,
+.vc-hd h3{font-size:var(--fs-h3)}
+.da-card-top h2,.stat-num{font-size:var(--fs-h2)}
+.sr-sheet .ss-h1{font-size:var(--fs-h1)}
+.sr-sheet[data-expanded="1"] .ss-h1{font-size:var(--fs-h2)}
+
+
+button,select,input,textarea,.dd-ipt,.vc-inp,.vc-sel{
+  font-family:var(--font-sans);font-size:var(--fs-read);
+  font-weight:var(--fw-read);line-height:var(--lh-read)
+}
+
+
+.sr-sheet{font-size:var(--fs-read);font-weight:var(--fw-read);line-height:var(--lh-read)}
+.sr-sheet .ss-hd,.sr-sheet .ss-bd,.sr-sheet .ss-ft,.sr-sheet .ss-body,
+.sr-sheet .ss-msg,.sr-sheet .ss-lead,.sr-sheet .ss-meta,.sr-sheet .ss-code,
+.sr-sheet .ss-line,.sr-sheet .ss-cap,.sr-sheet .ss-reason,.sr-sheet .ss-note,
+.sr-sheet .ss-more>summary,.sr-sheet .ss-kv,.sr-sheet .ss-extra,
+.sr-sheet .ss-hd .hd-time,.sr-sheet .ss-hd .hd-sub,
+.sr-sheet .ss-ftchip{font-size:var(--fs-read)}
+
+
+body :where(*){font-family:var(--font-sans)}
+
+
+body b,body strong,body h1,body h2,body h3,body h4,body h5,body h6{
+  font-weight:var(--fw-semibold)
+}
+body small,body sub,body sup{font-size:var(--fs-read)}
+

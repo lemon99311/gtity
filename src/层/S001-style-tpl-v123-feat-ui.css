@@ -1,0 +1,133 @@
+
+
+#vcWin .vc-pane.pane-feat{padding:14px 18px;background:#fafbfc;overflow-y:auto;
+  display:flex;flex-direction:column}
+#vcWin .fs-page{display:flex;flex-direction:column;gap:12px;min-height:100%;flex:1 1 auto}
+
+
+#vcWin .vc-list.fs-left{padding:0;overflow-y:auto;flex:1;min-height:0}
+#vcWin .fs-summary{margin:10px 10px 8px;padding:11px 12px 10px;border-radius:6px;
+  background:linear-gradient(135deg,#f7f9ff 0%,#f2f3ff 100%);border:1px solid #d9e1ff}
+#vcWin .fs-summary-t{display:flex;align-items:baseline;justify-content:space-between}
+#vcWin .fs-summary-t b{font-size:13px;font-weight:600;color:#0052d9}
+#vcWin .fs-summary-t span{font-size:9.5px;color:#618dff;white-space:nowrap}
+#vcWin .fs-summary-n{display:flex;align-items:baseline;gap:4px;flex-wrap:wrap;margin-top:9px}
+#vcWin .fs-summary-n b{font-size:16px;font-weight:700;color:#2e405e;line-height:1}
+#vcWin .fs-summary-n b i{font-style:normal;font-size:12px;color:#8eabff;font-weight:400;margin:0 1px}
+#vcWin .fs-summary-n span{font-size:9.5px;color:#909aaa;margin-right:7px}
+#vcWin .fs-summary p{margin:9px 0 0;font-size:9.5px;line-height:1.55;color:#8eabff}
+#vcWin .fs-summary p code{font-family:ui-monospace,Menlo,Consolas,monospace;color:#0052d9}
+#vcWin .fs-nav-ttl{padding:4px 16px 6px;font-size:10px;color:#a6b0bd;letter-spacing:.5px}
+#vcWin .fs-nav-list{padding:0 6px 8px}
+#vcWin .fs-nav{display:flex;align-items:center;gap:8px;padding:8px 9px;margin-bottom:3px;
+  border-radius:5px;cursor:pointer;border:1px solid transparent;user-select:none}
+#vcWin .fs-nav:hover{background:#f5f7ff}
+#vcWin .fs-nav.on{background:#fff;border-color:#d9e1ff;box-shadow:inset 2px 0 0 #0052d9}
+#vcWin .fs-nav-i{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;color:#b5c7ff;flex:0 0 16px}
+#vcWin .fs-nav.on .fs-nav-i{color:#0052d9}
+#vcWin .fs-nav-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+#vcWin .fs-nav-t b{font-size:11.5px;font-weight:500;color:#4e5969;white-space:nowrap}
+#vcWin .fs-nav.on .fs-nav-t b{color:#0052d9;font-weight:600}
+#vcWin .fs-nav-bar{display:block;height:3px;border-radius:2px;background:#eef0f2;overflow:hidden}
+#vcWin .fs-nav-bar i{display:block;height:100%;background:#0052d9;border-radius:2px}
+#vcWin .fs-nav-n{font-size:9.5px;color:#a6b0bd;white-space:nowrap}
+#vcWin .fs-nav.on .fs-nav-n{color:#0052d9}
+#vcWin .vc-left-ft.fs-left-ft{display:flex;gap:6px;padding:8px 10px}
+#vcWin .vc-left-ft.fs-left-ft .vc-add{flex:1;margin:0}
+
+
+#vcWin .fs-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:2px 2px 0}
+#vcWin .fs-head-l{display:flex;gap:12px;min-width:0}
+#vcWin .fs-idx{font-size:26px;font-weight:700;line-height:1;color:#d9e1ff;
+  font-family:ui-monospace,Menlo,Consolas,monospace;margin-top:2px}
+#vcWin .fs-head h4{margin:0;font-size:16px;font-weight:600;color:#2e405e;display:flex;align-items:baseline;gap:9px}
+#vcWin .fs-head-en{font-size:10px;font-weight:400;color:#a6b0bd;font-family:ui-monospace,Menlo,Consolas,monospace}
+#vcWin .fs-head p{margin:4px 0 0;font-size:11px;line-height:1.45;color:#6e7b8c}
+#vcWin .fs-meta{display:flex;align-items:center;gap:9px;margin-top:6px;font-size:10px;color:#909aaa;flex-wrap:wrap}
+#vcWin .fs-meta b{font-size:12px;color:#0052d9;font-weight:600}
+#vcWin .fs-meta b i{font-style:normal;color:#b5c7ff;font-weight:400}
+#vcWin .fs-meta>i{width:1px;height:10px;background:#e5e8ec}
+#vcWin .fs-head-r{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end;flex:0 0 auto}
+#vcWin .fs-btn{height:28px;padding:0 10px;font-size:10.5px;color:#4e5969;background:#fff;
+  border:1px solid #dadee3;border-radius:4px;cursor:pointer;white-space:nowrap;font-family:inherit}
+#vcWin .fs-btn:hover{color:#0052d9;border-color:#b5c7ff;background:#f8faff}
+#vcWin .fs-btn.pri{background:#0052d9;border-color:#0052d9;color:#fff}
+#vcWin .fs-btn.pri:hover{background:#366ef4;border-color:#366ef4;color:#fff}
+
+
+#vcWin .fs-sheet{background:#fff;border:1px solid #e5e8ec;border-radius:6px;overflow:hidden;
+  box-shadow:0 1px 3px rgba(46,64,94,.03);flex:1 1 auto;display:flex;flex-direction:column;min-height:0}
+#vcWin .fs-rows{flex:1 1 auto}
+#vcWin .fs-sheet-hd{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:9px 14px;background:#f8fafc;border-bottom:1px solid #eef0f2}
+#vcWin .fs-sheet-hd>div:first-child{display:flex;align-items:baseline;gap:9px}
+#vcWin .fs-sheet-hd b{font-size:12px;font-weight:600;color:#2e405e}
+#vcWin .fs-sheet-hd span{font-size:10px;color:#a6b0bd}
+#vcWin .fs-search{display:flex;align-items:center;gap:6px;height:26px;padding:0 8px;
+  border:1px solid #dadee3;border-radius:4px;background:#fff;width:200px}
+#vcWin .fs-search:focus-within{border-color:#b5c7ff;box-shadow:0 0 0 2px rgba(0,82,217,.07)}
+#vcWin .fs-search svg{width:12px;height:12px;flex:0 0 12px;color:#a6b0bd}
+#vcWin .fs-search input{flex:1;min-width:0;border:0;outline:0;background:transparent;
+  font-size:10.5px;color:#2e405e;font-family:inherit}
+#vcWin .fs-search input::placeholder{color:#b5bbc5}
+
+
+#vcWin .fs-row{display:grid;grid-template-columns:minmax(0,1fr) 268px;gap:16px;align-items:center;
+  padding:7px 14px;border-bottom:1px solid #f0f2f5;transition:background .14s}
+#vcWin .fs-row:last-child{border-bottom:0}
+#vcWin .fs-row:hover{background:#fafbff}
+#vcWin .fs-row.wide{grid-template-columns:1fr;gap:8px;align-items:stretch;padding:10px 14px 0}
+#vcWin .fs-row-l{min-width:0}
+#vcWin .fs-row-t{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+#vcWin .fs-no{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:9.5px;color:#b5c7ff;flex:0 0 auto}
+#vcWin .fs-row-t b{font-size:12.5px;font-weight:600;color:#2e405e}
+#vcWin .fs-row-t code{font-size:9.5px;color:#b5bbc5;font-family:ui-monospace,Menlo,Consolas,monospace}
+#vcWin .fs-type{font-size:9px;color:#8eabff;background:#f2f3ff;border:1px solid #e3eaff;
+  border-radius:9px;padding:0 6px;line-height:15px}
+#vcWin .fs-row-d{margin:3px 0 0 22px;font-size:10px;line-height:1.45;color:#a6b0bd}
+#vcWin .fs-row-r{display:flex;align-items:center;justify-content:flex-end;gap:10px;min-width:0}
+#vcWin .fs-row-r-wide{display:block;justify-content:stretch;padding-bottom:10px}
+#vcWin .fs-state{font-size:10px;color:#a6b0bd;min-width:34px;text-align:right;white-space:nowrap}
+#vcWin .fs-state.on{color:#0052d9;font-weight:600}
+#vcWin .fs-state.off{color:#b0b5bc}
+
+#vcWin .fs-row .vf-sw>span{display:none}
+#vcWin .fs-row .vf-sw{height:22px;flex:0 0 auto}
+
+#vcWin .fs-row-r>.vf-in,#vcWin .fs-row-r>.vf-combo{width:100%;max-width:228px}
+#vcWin .fs-row-r .vf-combo{display:flex;gap:6px;align-items:center;max-width:268px;flex-wrap:nowrap}
+#vcWin .fs-row-r .vf-combo .vf-sel:first-child{flex:1 1 0;width:auto;min-width:0;max-width:none}
+#vcWin .fs-row-r .vf-combo .vf-sel-sm{flex:0 0 92px;width:92px;min-width:0;max-width:none}
+#vcWin .fs-row-r .vf-sel{min-width:0;width:100%;max-width:228px}
+#vcWin .vf-in{height:28px;font-size:11px}
+#vcWin .vf-sel{cursor:pointer}
+#vcWin .fs-empty{padding:36px 14px;text-align:center;font-size:11.5px;color:#909aaa}
+#vcWin .fs-empty button{border:0;background:transparent;color:#0052d9;cursor:pointer;font-size:11.5px;font-family:inherit}
+
+
+#vcWin .fs-routes{overflow-x:auto;border:1px solid #eef0f2;border-radius:4px}
+#vcWin .vf-routes{min-width:620px;width:100%;border-collapse:collapse;font-size:10.5px}
+#vcWin .vf-routes th{padding:7px 9px;background:#f8fafc;color:#909aaa;font-weight:400;
+  text-align:left;border-bottom:1px solid #eef0f2;white-space:nowrap}
+#vcWin .vf-routes td{padding:5px 7px;border-bottom:1px solid #f4f6f8}
+#vcWin .vf-routes tr:last-child td{border-bottom:0}
+#vcWin .vf-routes .vf-in{width:100%;min-width:80px;height:26px}
+#vcWin .vf-routes .vf-sel{min-width:104px;width:100%;max-width:none;height:26px}
+#vcWin .fs-routes-ft{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:9px 2px 2px}
+#vcWin .fs-routes-ft span{font-size:9.5px;color:#a6b0bd;line-height:1.5}
+
+
+#vcWin .fs-sheet-ft{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+  padding:9px 14px;background:#fafbfc;border-top:1px solid #eef0f2;font-size:9.5px;color:#a6b0bd}
+#vcWin .fs-sheet-ft code{font-family:ui-monospace,Menlo,Consolas,monospace;color:#8eabff}
+#vcWin .fs-sheet-ft>span:last-child{color:#8eabff;white-space:nowrap}
+
+
+#vcWin .vc-pane.pane-feat .vf-tip,#vcWin .vc-pane.pane-feat .vf-bar,
+#vcWin .vc-pane.pane-feat .vf-list{display:none}
+
+@media (max-width:1180px){
+  #vcWin .fs-row{grid-template-columns:minmax(0,1fr) 220px}
+  #vcWin .fs-search{width:150px}
+  #vcWin .fs-head-r{max-width:250px}
+}

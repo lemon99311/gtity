@@ -1,0 +1,189 @@
+
+
+
+.page.drug-page.on{display:flex;flex-direction:column}
+.drug-page{grid-template-rows:none;gap:0;padding:0;
+  background:var(--bg2);border:0;border-radius:0}
+.drug-page>*{min-width:0;flex:0 0 auto}
+.drug-page .drug-table{flex:1 1 auto;min-height:0}
+.drug-page .pager{flex:0 0 38px;height:38px}
+
+
+.drug-head{background:#fff;padding:14px 18px 0;border-bottom:1px solid var(--line)}
+.drug-head-top{display:flex;align-items:center;gap:10px;min-width:0}
+
+.drug-title-sub{font-size:var(--fs-115);color:var(--ink4);white-space:nowrap}
+.drug-head-acts{margin-left:auto;display:flex;align-items:center;gap:6px;flex:0 0 auto}
+.drug-primary{height:30px;padding:0 12px;border:1px solid var(--pri);background:var(--pri);color:#fff;
+  border-radius:5px;font-size:var(--fs-12);font-weight:var(--fw-semibold);cursor:pointer;display:inline-flex;align-items:center;gap:4px}
+.drug-primary:hover{background:var(--pri2)}
+.drug-ghost{height:30px;padding:0 11px;border:1px solid var(--line);background:#fff;color:var(--ink2);
+  border-radius:5px;font-size:var(--fs-12);cursor:pointer;white-space:nowrap}
+.drug-ghost:hover{border-color:var(--pri);color:var(--pri)}
+.drug-more{width:30px;height:30px;border:1px solid var(--line);background:#fff;border-radius:5px;
+  color:var(--ink3);cursor:pointer;font-size:var(--fs-15);line-height:var(--lh-1)}
+.drug-more:hover{border-color:var(--pri);color:var(--pri)}
+.drug-views{display:flex;align-items:stretch;gap:22px;margin-top:12px;overflow-x:auto;min-width:0}
+.drug-views::-webkit-scrollbar{height:0}
+.drug-view{position:relative;display:inline-flex;align-items:center;gap:5px;flex:0 0 auto;
+  padding:0 1px 10px;font-size:var(--fs-read);color:var(--ink3);cursor:pointer;white-space:nowrap}
+.drug-view:hover{color:var(--pri)}
+.drug-view.on{color:var(--pri);font-weight:var(--fw-bold);box-shadow:inset 0 -2px 0 var(--pri)}
+.drug-view i{font-style:normal;font-size:var(--fs-10);font-weight:var(--fw-bold);color:var(--ink4);
+  background:#f1f2f3;border-radius:9px;padding:0 5px;line-height:var(--lh-16px)}
+.drug-view.on i{color:var(--pri);background:var(--pri-soft)}
+
+
+.drug-toolbar{display:flex;align-items:center;gap:7px;background:#fff;
+  padding:7px 18px;border-bottom:1px solid var(--line);min-width:0;overflow-x:auto}
+.drug-toolbar::-webkit-scrollbar{height:0}
+.drug-count{font-size:var(--fs-12);color:var(--ink3);white-space:nowrap;flex:0 0 auto}
+.drug-count b{color:var(--ink);font-variant-numeric:tabular-nums}
+.drug-search{position:relative;flex:0 0 208px}
+.drug-search svg{position:absolute;left:8px;top:7px;width:14px;height:14px;color:var(--ink4)}
+.drug-search input{width:100%;height:28px;padding:0 8px 0 28px;border:1px solid var(--line);
+  border-radius:5px;font-size:var(--fs-12);outline:none;background:#fff;color:var(--ink)}
+.drug-search input:focus{border-color:var(--pri);box-shadow:0 0 0 2px var(--pri-soft)}
+.drug-sel{height:28px;max-width:132px;border:1px solid var(--line);border-radius:5px;
+  padding:0 6px;font-size:var(--fs-115);color:var(--ink2);background:#fff;outline:none;cursor:pointer;flex:0 0 auto}
+.drug-sel:focus{border-color:var(--pri)}
+.drug-tool-btns{margin-left:auto;display:flex;align-items:center;gap:2px;flex:0 0 auto}
+.dtb{height:27px;padding:0 9px;border:0;background:none;color:var(--ink3);font-size:var(--fs-115);
+  cursor:pointer;border-radius:4px;white-space:nowrap;display:inline-flex;align-items:center;gap:4px}
+.dtb:hover{background:var(--pri-soft);color:var(--pri)}
+.dtb b{font-size:var(--fs-10);color:#fff;background:var(--pri);border-radius:8px;padding:0 5px;line-height:var(--lh-15px);min-width:16px}
+.dtb.on{color:var(--pri);font-weight:var(--fw-bold);background:var(--pri-soft)}
+
+
+.drug-adv{display:none;background:#fafbfb;border-bottom:1px solid var(--line);padding:10px 18px 12px;
+  max-height:min(210px,30vh);overflow:auto;min-height:0}
+.drug-adv.on{display:block}
+.drug-adv-hd{display:flex;align-items:center;gap:8px;margin-bottom:9px;font-size:var(--fs-115);color:var(--ink3)}
+.drug-adv-hd b{color:var(--ink2);font-size:var(--fs-12)}
+.drug-adv-hd .sp{flex:1}
+.drug-adv-hd button{height:23px;padding:0 9px;border:1px solid var(--line);background:#fff;
+  border-radius:4px;font-size:var(--fs-11);color:var(--ink3);cursor:pointer}
+.drug-adv-hd button:hover{border-color:var(--pri);color:var(--pri)}
+.drug-adv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:7px 12px}
+.drug-adv-grid .fi{display:flex;align-items:center;gap:6px;min-width:0}
+.drug-adv-grid .fi label{flex:0 0 62px;text-align:right;font-size:var(--fs-11);color:var(--ink4);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.drug-adv-grid .fi input,.drug-adv-grid .fi select{flex:1;min-width:0;height:26px;
+  border:1px solid #dcdfe3;border-radius:5px;padding:0 6px;font-size:var(--fs-115);color:var(--ink);
+  background:#fff;outline:none;font-family:inherit}
+.drug-adv-grid .fi input:focus,.drug-adv-grid .fi select:focus{border-color:var(--pri)}
+.drug-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+.drug-chips:empty{display:none}
+.drug-chips .chip{font-size:var(--fs-105);padding:2px 8px;border-radius:10px;
+  border:1px solid var(--pri-soft2);background:var(--pri-soft);color:var(--pri)}
+.drug-chips .chip.clear{background:#fff;border-color:var(--line);color:var(--ink3);cursor:pointer}
+
+
+.drug-table{background:#fff;min-height:0;overflow:hidden}
+.drug-table .tbl-scroll{height:100%}
+.drug-table tbody td{height:38px;line-height:var(--lh-38px)}
+.drug-table thead th{height:34px;line-height:var(--lh-34px)}
+.drug-table .stk2{left:36px}
+
+.drug-table tbody td,
+.drug-table tbody td.dim,
+.drug-table tbody .dim{color:var(--ink);background:#fff;border-color:#d0d5db}
+.drug-table tbody .lnk{color:var(--link)}
+.drug-table tbody .lnk:hover{color:var(--link-hover)}
+.drug-table tbody .ro-btn{color:var(--link);background:transparent;border-color:transparent}
+.drug-table tbody .ro-btn:hover{color:var(--link-hover);background:var(--link-soft);border-color:transparent}
+.drug-empty{color:var(--ink);text-align:center;padding:34px 0;font-size:var(--fs-12)}
+
+@media (max-width:1200px){
+  .drug-toolbar .dtb.opt{display:none}
+  .drug-title-sub{display:none}
+}
+@media (max-width:900px){
+  .drug-views{gap:14px}
+  .drug-search{flex-basis:160px}
+  .drug-ghost{display:none}
+}
+@media (max-width:620px){
+  
+  .drug-adv-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+}
+
+
+@media (max-width:1100px){
+}
+@media (max-width:860px){
+}
+@media (max-width:620px){
+}
+@media (max-width:600px){
+}
+
+
+
+:root{--side-w:216px}
+#app{grid-template-columns:var(--side-w) minmax(0,1fr)}
+#app.side-collapsed{--side-w:14px}
+
+.side-toggle{
+  position:fixed;left:0;bottom:0;width:var(--side-w);height:12px;z-index:40;
+  display:flex;align-items:center;justify-content:center;cursor:default;
+}
+.side-toggle .st-line{display:block;width:calc(100% - 24px);height:1px;background:#e0e0e0}
+.side-toggle .st-arrow{
+  position:absolute;font-size:var(--fs-read);line-height:1;letter-spacing:2px;
+  color:transparent;background:#fff;padding:0 8px;
+}
+.side-toggle:hover .st-line{background:var(--pri)}
+.side-toggle:hover .st-arrow{color:var(--pri)}
+
+#app.side-collapsed .side{padding:0;overflow:hidden;position:relative;cursor:default}
+#app.side-collapsed .side > *{display:none}
+#app.side-collapsed .side::after{
+  content:"\25B6";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-size:var(--fs-read);color:transparent;
+}
+#app.side-collapsed .side:hover{background:var(--pri-soft)}
+#app.side-collapsed .side:hover::after{color:var(--pri)}
+#app.side-collapsed ~ .side-toggle{display:none}
+
+#app.side-collapsed ~ .toast-wrap{left:calc(50% + 7px)}
+
+
+
+:root{--row-hover:#fafafa}
+table tbody tr:hover td,
+table tbody tr:hover td.dim,
+.drug-table tbody tr:hover .dim{background:var(--row-hover)}
+
+
+
+.side-toggle{height:18px}
+.side-toggle .st-arrow{font-size:var(--fs-read);color:rgba(31,35,41,.30);padding:0 10px}
+.side-toggle:hover .st-arrow{color:var(--pri);background:var(--pri-soft)}
+#app.side-collapsed .side::after{font-size:var(--fs-read);color:rgba(31,35,41,.30)}
+#app.side-collapsed .side:hover::after{color:var(--pri)}
+
+
+
+.side-toggle{background:#f7f8f9;border-top:1px solid #eef0f2}
+.side-toggle .st-arrow{color:rgba(31,35,41,.42);background:#f7f8f9}
+.side-toggle:hover{background:#f0f1f3}
+.side-toggle:hover .st-line{background:#c9ced4}
+.side-toggle:hover .st-arrow{color:var(--ink2);background:#f0f1f3}
+#app.side-collapsed .side::after{color:rgba(31,35,41,.42)}
+#app.side-collapsed .side:hover{background:#f0f1f3}
+#app.side-collapsed .side:hover::after{color:var(--ink2)}
+
+
+
+.page,.drug-page{padding-bottom:18px}
+.main{position:relative}
+.main::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:18px;
+  border-top:1px solid #eef0f2;background:#f7f8f9;
+  pointer-events:none;z-index:1;
+}
+#app.side-collapsed .side::before{
+  content:"";position:absolute;left:0;right:0;bottom:17px;height:1px;
+  background:#eef0f2;pointer-events:none;
+}

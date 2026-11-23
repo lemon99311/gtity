@@ -1,0 +1,40 @@
+
+
+.da-main .da-fld input.sa-date,
+.da-arch.editing .da-arch-kv input.sa-date{
+  height:27px;font-size:var(--fs-list);color:var(--ink);background:#fff;
+  padding:0 6px;min-width:0;width:100%;
+}
+.da-main .da-fld input.sa-date:focus,
+.da-arch.editing .da-arch-kv input.sa-date:focus{
+  border-color:var(--pri);box-shadow:0 0 0 2px var(--pri-soft);outline:0;
+}
+.da-main .da-fld input.sa-date::-webkit-calendar-picker-indicator,
+.da-arch.editing .da-arch-kv input.sa-date::-webkit-calendar-picker-indicator{
+  opacity:.45;cursor:pointer;margin-left:2px;
+}
+.da-main .da-fld input.sa-date:hover::-webkit-calendar-picker-indicator,
+.da-arch.editing .da-arch-kv input.sa-date:hover::-webkit-calendar-picker-indicator{opacity:.75}
+
+.sa-cmb{position:relative;min-width:0}
+.da-main .da-fld .sa-cmb-ipt{padding-right:46px}
+.sa-cmb-cnt{position:absolute;right:8px;top:50%;transform:translateY(-50%);
+  font-size:var(--fs-list-sub);color:var(--ink4);pointer-events:none;line-height:1}
+.sa-cmb-panel{position:absolute;left:0;right:0;top:calc(100% + 3px);z-index:60;
+  background:#fff;border:1px solid var(--line2);border-radius:6px;
+  box-shadow:0 6px 18px rgba(31,35,41,.13);overflow:hidden}
+.sa-cmb-panel[hidden]{display:none}
+.sa-cmb-hint{padding:5px 9px;font-size:var(--fs-list-sub);color:var(--ink4);
+  background:#fafbfc;border-bottom:1px solid var(--line)}
+.sa-cmb-list{max-height:216px;overflow-y:auto;scrollbar-width:auto}
+.sa-cmb-list::-webkit-scrollbar{width:4px}
+.sa-cmb-list::-webkit-scrollbar-track{background:transparent}
+.sa-cmb-list::-webkit-scrollbar-thumb{background:#eef0f2;border:0;border-radius:4px}
+.sa-cmb-list:hover::-webkit-scrollbar-thumb{background:#dfe3e7}
+.sa-cmb-opt{padding:5px 9px;font-size:var(--fs-list);color:var(--ink);cursor:pointer;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sa-cmb-opt[hidden]{display:none}
+.sa-cmb-opt:hover,.sa-cmb-opt.cur{background:#f2f7f4}
+.sa-cmb-opt.on{background:var(--pri-soft);color:var(--pri);font-weight:var(--fw-semibold)}
+.sa-cmb-empty{padding:9px;font-size:var(--fs-list-sub);color:var(--ink4);text-align:center}
+.da-main .da-fld.wide .sa-cmb{width:100%}

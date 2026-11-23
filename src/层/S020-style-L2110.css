@@ -1,0 +1,18 @@
+
+
+:root{--act-bg:#cde8d8}
+
+
+table tbody tr.act-row td,
+table tbody tr.act-row:hover td,
+table tbody tr.act-row td.stk,
+table tbody tr.act-row td.stkr{background:var(--act-bg)!important}
+table tbody tr.act-row td:first-child,
+table tbody tr.act-row:hover td:first-child{box-shadow:inset 3px 0 0 var(--pri)}
+
+table tbody tr.act-row.chk td,
+table tbody tr.act-row.chk:hover td,
+table tbody tr.act-row.chk td.stk,
+table tbody tr.act-row.chk td.stkr{background:var(--sel)!important}
+
+table tbody td[data-c="chk"]{cursor:pointer}

@@ -1,0 +1,11 @@
+
+
+.da-arch.editing .sa-file{display:flex;align-items:center;gap:8px;min-width:0}
+.sa-file-btn{position:relative;flex:0 0 auto;display:inline-flex;align-items:center;
+  height:27px;padding:0 10px;border:1px solid var(--line2);border-radius:5px;
+  background:#fff;color:var(--ink2);font-size:var(--fs-list-sub);cursor:pointer;white-space:nowrap}
+.sa-file-btn:hover{border-color:var(--pri);color:var(--pri)}
+.sa-file-btn input.sa-file-ipt{position:absolute;inset:0;width:100%;height:100%;
+  opacity:0;cursor:pointer;font-size:0}
+.sa-file-name{flex:1;min-width:0;font-size:var(--fs-list-sub);color:var(--link);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}

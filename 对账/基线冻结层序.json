@@ -1,0 +1,568 @@
+{
+  "层": [
+    {
+      "i": 0,
+      "tag": "style",
+      "id": "tpl-v116-element-tencent",
+      "era": "v1.16",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 1,
+      "tag": "style",
+      "id": "tpl-v123-feat-ui",
+      "era": "v1.23",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 2,
+      "tag": "script",
+      "id": "tplSchema",
+      "era": "业务定义",
+      "role": "唯一业务定义",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 3,
+      "tag": "script",
+      "id": "tplExamples",
+      "era": "业务定义",
+      "role": "第二套示例业务",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 4,
+      "tag": "style",
+      "id": "drug-v14-style",
+      "era": "v1.4",
+      "role": "原始样式 / 结构层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 5,
+      "tag": "style",
+      "id": "drug-sa-style",
+      "era": "外壳 / 原始层",
+      "role": "原始样式 / 结构层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 6,
+      "tag": "style",
+      "id": "sa-v13-css",
+      "era": "v1.3",
+      "role": "原始样式 / 结构层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 7,
+      "tag": "style",
+      "id": "sa-v14-css",
+      "era": "v1.4",
+      "role": "原始样式 / 结构层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 8,
+      "tag": "style",
+      "id": "sa-v15-css",
+      "era": "v1.5",
+      "role": "原始样式 / 结构层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 9,
+      "tag": "style",
+      "id": "sa-v16-css",
+      "era": "v1.6",
+      "role": "原始样式 / 结构层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 10,
+      "tag": "style",
+      "id": "sa-v17-css",
+      "era": "v1.7",
+      "role": "原始样式 / 结构层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 11,
+      "tag": "style",
+      "id": "sa-v18-css",
+      "era": "v1.8",
+      "role": "原始样式 / 结构层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 12,
+      "tag": "style",
+      "id": "sa-v19-css",
+      "era": "v1.9",
+      "role": "原始样式 / 结构层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 13,
+      "tag": "style",
+      "id": "sa-v110-css",
+      "era": "v1.10",
+      "role": "原始样式 / 结构层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 14,
+      "tag": "style",
+      "id": "sa-v111-css",
+      "era": "v1.11",
+      "role": "原始样式 / 结构层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 15,
+      "tag": "style",
+      "id": "tplVCStyle",
+      "era": "外壳 / 原始层",
+      "role": "原始样式 / 结构层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 16,
+      "tag": "style",
+      "id": "tpl-v16-font",
+      "era": "v1.6",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 17,
+      "tag": "style",
+      "id": "tpl-v18-vc-layout",
+      "era": "v1.8",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 18,
+      "tag": "style",
+      "id": "tpl-v19-type",
+      "era": "v1.9",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 19,
+      "tag": "style",
+      "id": "tpl-v110-type",
+      "era": "v1.10",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 20,
+      "tag": "style",
+      "id": "tpl-v111-vc-tabs",
+      "era": "v1.11",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 21,
+      "tag": "style",
+      "id": "tpl-v112-worklist",
+      "era": "v1.12",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 22,
+      "tag": "style",
+      "id": "tpl-v113-restore",
+      "era": "v1.13",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 23,
+      "tag": "style",
+      "id": "tpl-v114-eltable",
+      "era": "v1.14",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 24,
+      "tag": "style",
+      "id": "tpl-v115-elcontrols",
+      "era": "v1.15",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 25,
+      "tag": "style",
+      "id": "tpl-v117-colmeta",
+      "era": "v1.17",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 26,
+      "tag": "style",
+      "id": "tpl-v121-features",
+      "era": "v1.21",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 27,
+      "tag": "style",
+      "id": "tpl-v122-newbtn",
+      "era": "v1.22",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 28,
+      "tag": "style",
+      "id": "tpl-v126-actions",
+      "era": "v1.26",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 29,
+      "tag": "script",
+      "id": "tpl-b1-guard-early",
+      "era": "批次 1",
+      "role": "批次追加层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 30,
+      "tag": "script",
+      "id": "tpl-b2-redraw-early",
+      "era": "批次 2",
+      "role": "批次追加层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 31,
+      "tag": "style",
+      "id": "tplFormVars",
+      "era": "外壳 / 原始层",
+      "role": "原始样式 / 结构层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 32,
+      "tag": "style",
+      "id": "tplDetailTableStyle",
+      "era": "外壳 / 原始层",
+      "role": "原始样式 / 结构层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 33,
+      "tag": "style",
+      "id": "tpl-v121-density",
+      "era": "v1.21",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 34,
+      "tag": "script",
+      "id": "tpl-v114-elbridge",
+      "era": "v1.14",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 35,
+      "tag": "script",
+      "id": "tpl-v112-bridge",
+      "era": "v1.12",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 36,
+      "tag": "script",
+      "id": "tpl-v115-elcontrols",
+      "era": "v1.15",
+      "role": "版本收口层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 37,
+      "tag": "script",
+      "id": "tpl-b1-guard",
+      "era": "批次 1",
+      "role": "批次追加层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 38,
+      "tag": "script",
+      "id": "tpl-b2-redraw",
+      "era": "批次 2",
+      "role": "批次追加层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 39,
+      "tag": "script",
+      "id": "tpl-b3-boundary",
+      "era": "批次 3",
+      "role": "批次追加层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 40,
+      "tag": "script",
+      "id": "tpl-b4-generic",
+      "era": "批次 4",
+      "role": "批次追加层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    },
+    {
+      "i": 41,
+      "tag": "script",
+      "id": "tpl-b5-handoff",
+      "era": "批次 5",
+      "role": "批次追加层",
+      "immutable": true,
+      "note": "总纲红线：既有收口层不得删除或改写；新增内容以追加新层接入"
+    }
+  ],
+  "冻结时刻DOM": [
+    {
+      "tag": "style",
+      "id": "tpl-v116-element-tencent"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v123-feat-ui"
+    },
+    {
+      "tag": "script",
+      "id": "tplSchema"
+    },
+    {
+      "tag": "script",
+      "id": "tplExamples"
+    },
+    {
+      "tag": "style",
+      "id": "drug-v14-style"
+    },
+    {
+      "tag": "style",
+      "id": "drug-sa-style"
+    },
+    {
+      "tag": "style",
+      "id": "sa-v13-css"
+    },
+    {
+      "tag": "style",
+      "id": "sa-v14-css"
+    },
+    {
+      "tag": "style",
+      "id": "sa-v15-css"
+    },
+    {
+      "tag": "style",
+      "id": "sa-v16-css"
+    },
+    {
+      "tag": "style",
+      "id": "sa-v17-css"
+    },
+    {
+      "tag": "style",
+      "id": "sa-v18-css"
+    },
+    {
+      "tag": "style",
+      "id": "sa-v19-css"
+    },
+    {
+      "tag": "style",
+      "id": "sa-v110-css"
+    },
+    {
+      "tag": "style",
+      "id": "sa-v111-css"
+    },
+    {
+      "tag": "style",
+      "id": "tplVCStyle"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v16-font"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v18-vc-layout"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v19-type"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v110-type"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v111-vc-tabs"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v112-worklist"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v113-restore"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v114-eltable"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v115-elcontrols"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v117-colmeta"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v121-features"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v122-newbtn"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v126-actions"
+    },
+    {
+      "tag": "script",
+      "id": "tpl-b1-guard-early"
+    },
+    {
+      "tag": "script",
+      "id": "tpl-b2-redraw-early"
+    },
+    {
+      "tag": "style",
+      "id": "tplFormVars"
+    },
+    {
+      "tag": "style",
+      "id": "tplDetailTableStyle"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-v121-density"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-b6-lookup-grid"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-b7-detail-ui"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-b8-batch"
+    },
+    {
+      "tag": "style",
+      "id": "tpl-b9-legacy-ui"
+    },
+    {
+      "tag": "script",
+      "id": "tpl-v114-elbridge"
+    },
+    {
+      "tag": "script",
+      "id": "tpl-v112-bridge"
+    },
+    {
+      "tag": "script",
+      "id": "tpl-v115-elcontrols"
+    },
+    {
+      "tag": "script",
+      "id": "tpl-b1-guard"
+    },
+    {
+      "tag": "script",
+      "id": "tpl-b2-redraw"
+    },
+    {
+      "tag": "script",
+      "id": "tpl-b3-boundary"
+    },
+    {
+      "tag": "script",
+      "id": "tpl-b4-generic"
+    },
+    {
+      "tag": "script",
+      "id": "tpl-b5-handoff"
+    }
+  ]
+}

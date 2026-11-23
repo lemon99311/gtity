@@ -1,0 +1,1353 @@
+{
+  "生成时间": "2026-11-22T21:45:09.629Z",
+  "对账": {
+    "回归逐项一致": true,
+    "回归基线": {
+      "pass": true,
+      "total": 8,
+      "failed": [],
+      "items": [
+        {
+          "id": "B0-7",
+          "ok": true,
+          "check": "exports"
+        },
+        {
+          "id": "B1-2",
+          "ok": true,
+          "check": "guard"
+        },
+        {
+          "id": "B2-1",
+          "ok": true,
+          "check": "ready"
+        },
+        {
+          "id": "B3-1",
+          "ok": true,
+          "check": "boundary"
+        },
+        {
+          "id": "B4-1",
+          "ok": true,
+          "check": "generic"
+        },
+        {
+          "id": "B5-1",
+          "ok": true,
+          "check": "registry"
+        },
+        {
+          "id": "B5-2",
+          "ok": true,
+          "check": "layers"
+        },
+        {
+          "id": "B5-3",
+          "ok": true,
+          "check": "summary"
+        }
+      ]
+    },
+    "回归构建": {
+      "pass": true,
+      "total": 8,
+      "failed": [],
+      "items": [
+        {
+          "id": "B0-7",
+          "ok": true,
+          "check": "exports"
+        },
+        {
+          "id": "B1-2",
+          "ok": true,
+          "check": "guard"
+        },
+        {
+          "id": "B2-1",
+          "ok": true,
+          "check": "ready"
+        },
+        {
+          "id": "B3-1",
+          "ok": true,
+          "check": "boundary"
+        },
+        {
+          "id": "B4-1",
+          "ok": true,
+          "check": "generic"
+        },
+        {
+          "id": "B5-1",
+          "ok": true,
+          "check": "registry"
+        },
+        {
+          "id": "B5-2",
+          "ok": true,
+          "check": "layers"
+        },
+        {
+          "id": "B5-3",
+          "ok": true,
+          "check": "summary"
+        }
+      ]
+    },
+    "层检查一致": true,
+    "层检查基线": {
+      "ok": true,
+      "detail": {
+        "style": 34,
+        "styleBaseline": 30,
+        "script": 11,
+        "dynamicLayers": [
+          "tpl-b6-lookup-grid",
+          "tpl-b7-detail-ui",
+          "tpl-b8-batch",
+          "tpl-b9-legacy-ui"
+        ],
+        "allImmutable": true,
+        "orderKept": true,
+        "scriptOrderKept": true
+      }
+    },
+    "层检查构建": {
+      "ok": true,
+      "detail": {
+        "style": 34,
+        "styleBaseline": 30,
+        "script": 11,
+        "dynamicLayers": [
+          "tpl-b6-lookup-grid",
+          "tpl-b7-detail-ui",
+          "tpl-b8-batch",
+          "tpl-b9-legacy-ui"
+        ],
+        "allImmutable": true,
+        "orderKept": true,
+        "scriptOrderKept": true
+      }
+    },
+    "共有项": [
+      {
+        "项": "schemaId",
+        "基线": "drugArchive",
+        "构建": "drugArchive",
+        "一致": true
+      },
+      {
+        "项": "顶层段",
+        "基线": 14,
+        "构建": 14,
+        "一致": true
+      },
+      {
+        "项": "结果键",
+        "基线": 12,
+        "构建": 12,
+        "一致": true
+      },
+      {
+        "项": "映射键",
+        "基线": 64,
+        "构建": 64,
+        "一致": true
+      },
+      {
+        "项": "视图数",
+        "基线": 8,
+        "构建": 8,
+        "一致": true
+      },
+      {
+        "项": "列数",
+        "基线": 17,
+        "构建": 17,
+        "一致": true
+      },
+      {
+        "项": "公开_出口数",
+        "基线": 253,
+        "构建": 253,
+        "一致": true
+      },
+      {
+        "项": "hasEl",
+        "基线": false,
+        "构建": false,
+        "一致": true
+      },
+      {
+        "项": "scriptIds",
+        "基线": [
+          "tplSchema",
+          "tplExamples",
+          "tpl-b1-guard-early",
+          "tpl-b2-redraw-early",
+          "tpl-v114-elbridge",
+          "tpl-v112-bridge",
+          "tpl-v115-elcontrols",
+          "tpl-b1-guard",
+          "tpl-b2-redraw",
+          "tpl-b3-boundary",
+          "tpl-b4-generic",
+          "tpl-b5-handoff"
+        ],
+        "构建": [
+          "tplSchema",
+          "tplExamples"
+        ],
+        "一致": false
+      },
+      {
+        "项": "styleIds",
+        "基线": [
+          "tpl-v116-element-tencent",
+          "tpl-v123-feat-ui",
+          "drug-v14-style",
+          "drug-sa-style",
+          "sa-v13-css",
+          "sa-v14-css",
+          "sa-v15-css",
+          "sa-v16-css",
+          "sa-v17-css",
+          "sa-v18-css",
+          "sa-v19-css",
+          "sa-v110-css",
+          "sa-v111-css",
+          "tplVCStyle",
+          "tpl-v16-font",
+          "tpl-v18-vc-layout",
+          "tpl-v19-type",
+          "tpl-v110-type",
+          "tpl-v111-vc-tabs",
+          "tpl-v112-worklist",
+          "tpl-v113-restore",
+          "tpl-v114-eltable",
+          "tpl-v115-elcontrols",
+          "tpl-v117-colmeta",
+          "tpl-v121-features",
+          "tpl-v122-newbtn",
+          "tpl-v126-actions",
+          "tplFormVars",
+          "tplDetailTableStyle",
+          "tpl-v121-density",
+          "tpl-b6-lookup-grid",
+          "tpl-b7-detail-ui",
+          "tpl-b8-batch",
+          "tpl-b9-legacy-ui"
+        ],
+        "构建": [
+          "tplFormVars",
+          "tplDetailTableStyle",
+          "tpl-v121-density",
+          "tpl-b6-lookup-grid",
+          "tpl-b7-detail-ui",
+          "tpl-b8-batch",
+          "tpl-b9-legacy-ui"
+        ],
+        "一致": false
+      }
+    ],
+    "基线错误": [],
+    "构建错误": []
+  },
+  "按需": {
+    "首屏js请求": [
+      "boot-D5GrHf92.js",
+      "layer-a-early-BsQJpRkb.js",
+      "layer-b-core-D9bmgxGI.js",
+      "layer-c-bridge-CvPs-jcH.js",
+      "layer-d-ui-BgeDuIP_.js",
+      "layer-e-tail-BxBhaeDE.js"
+    ],
+    "首屏含懒块": [],
+    "单桥后新增": [
+      "bridge-BQfDtbYJ.js"
+    ],
+    "全量后新增": [
+      "bridge-BQfDtbYJ.js",
+      "list-runtime-C-skwY_5.js",
+      "list-config-D0BGusJZ.js",
+      "form-runtime-JmaxwuJG.js",
+      "form-config-CzAxlLes.js",
+      "console-DSaTCF8q.js",
+      "ext-renderer-DUqN10Fr.js",
+      "ext-effect-COVPXgTH.js"
+    ],
+    "产物命中": [
+      {
+        "边界": "list-runtime",
+        "首屏出现": false,
+        "全量后出现": true,
+        "文件": [
+          "list-runtime-C-skwY_5.js"
+        ]
+      },
+      {
+        "边界": "list-config",
+        "首屏出现": false,
+        "全量后出现": true,
+        "文件": [
+          "list-config-D0BGusJZ.js"
+        ]
+      },
+      {
+        "边界": "form-runtime",
+        "首屏出现": false,
+        "全量后出现": true,
+        "文件": [
+          "form-runtime-JmaxwuJG.js"
+        ]
+      },
+      {
+        "边界": "form-config",
+        "首屏出现": false,
+        "全量后出现": true,
+        "文件": [
+          "form-config-CzAxlLes.js"
+        ]
+      },
+      {
+        "边界": "bridge",
+        "首屏出现": false,
+        "全量后出现": true,
+        "文件": [
+          "bridge-BQfDtbYJ.js"
+        ]
+      },
+      {
+        "边界": "console",
+        "首屏出现": false,
+        "全量后出现": true,
+        "文件": [
+          "console-DSaTCF8q.js"
+        ]
+      },
+      {
+        "边界": "ext-renderer",
+        "首屏出现": false,
+        "全量后出现": true,
+        "文件": [
+          "ext-renderer-DUqN10Fr.js"
+        ]
+      },
+      {
+        "边界": "ext-effect",
+        "首屏出现": false,
+        "全量后出现": true,
+        "文件": [
+          "ext-effect-COVPXgTH.js"
+        ]
+      }
+    ],
+    "按需生效": true
+  },
+  "基线页": {
+    "页面": "/对账/基线原件.html",
+    "基础": {
+      "有TPL": true,
+      "schemaId": "drugArchive",
+      "顶层段": 14,
+      "结果键": 12,
+      "映射键": 64,
+      "视图数": 8,
+      "列数": 17,
+      "公开_出口数": 253,
+      "hasEl": false,
+      "就绪": {
+        "b2": true,
+        "b3": true,
+        "b4": true,
+        "b5": true
+      },
+      "scriptIds": [
+        "tplSchema",
+        "tplExamples",
+        "tpl-b1-guard-early",
+        "tpl-b2-redraw-early",
+        "tpl-v114-elbridge",
+        "tpl-v112-bridge",
+        "tpl-v115-elcontrols",
+        "tpl-b1-guard",
+        "tpl-b2-redraw",
+        "tpl-b3-boundary",
+        "tpl-b4-generic",
+        "tpl-b5-handoff"
+      ],
+      "styleIds": [
+        "tpl-v116-element-tencent",
+        "tpl-v123-feat-ui",
+        "drug-v14-style",
+        "drug-sa-style",
+        "sa-v13-css",
+        "sa-v14-css",
+        "sa-v15-css",
+        "sa-v16-css",
+        "sa-v17-css",
+        "sa-v18-css",
+        "sa-v19-css",
+        "sa-v110-css",
+        "sa-v111-css",
+        "tplVCStyle",
+        "tpl-v16-font",
+        "tpl-v18-vc-layout",
+        "tpl-v19-type",
+        "tpl-v110-type",
+        "tpl-v111-vc-tabs",
+        "tpl-v112-worklist",
+        "tpl-v113-restore",
+        "tpl-v114-eltable",
+        "tpl-v115-elcontrols",
+        "tpl-v117-colmeta",
+        "tpl-v121-features",
+        "tpl-v122-newbtn",
+        "tpl-v126-actions",
+        "tplFormVars",
+        "tplDetailTableStyle",
+        "tpl-v121-density",
+        "tpl-b6-lookup-grid",
+        "tpl-b7-detail-ui",
+        "tpl-b8-batch",
+        "tpl-b9-legacy-ui"
+      ],
+      "有MOD": false,
+      "regression": {
+        "pass": true,
+        "total": 8,
+        "failed": [],
+        "items": [
+          {
+            "id": "B0-7",
+            "batch": "总纲",
+            "title": "出口与层清单齐全",
+            "check": "exports",
+            "ok": true,
+            "detail": {
+              "missing": [],
+              "tpl": 253,
+              "wl": 61,
+              "style": 34,
+              "script": 12,
+              "tplExamples": true,
+              "formConfig": true
+            }
+          },
+          {
+            "id": "B1-2",
+            "batch": "批次1",
+            "title": "新注册项默认受约束",
+            "check": "guard",
+            "ok": true,
+            "detail": {
+              "coverage": [
+                "innerHTML",
+                "outerHTML",
+                "insertAdjacentHTML"
+              ],
+              "badAttrs": 0,
+              "scripts": 0,
+              "early": true,
+              "late": true
+            }
+          },
+          {
+            "id": "B2-1",
+            "batch": "批次2",
+            "title": "静置 0 mutation / 连续交互",
+            "check": "ready",
+            "ok": true,
+            "detail": {
+              "ready": true,
+              "epoch": 0,
+              "b2": true,
+              "b3": true,
+              "b4": true,
+              "b5": true
+            }
+          },
+          {
+            "id": "B3-1",
+            "batch": "批次3",
+            "title": "演示与正式边界",
+            "check": "boundary",
+            "ok": true,
+            "detail": {
+              "pendingSubmit": true,
+              "demo": 0,
+              "formal": 0,
+              "debugInFormal": [],
+              "boundaryObject": true,
+              "dbPayloadContract": "保持不变",
+              "mode": "demo"
+            }
+          },
+          {
+            "id": "B4-1",
+            "batch": "批次4",
+            "title": "默认零偏差 / 新业务配置生效",
+            "check": "generic",
+            "ok": true,
+            "detail": {
+              "changed": false,
+              "specVersion": "b4",
+              "keys": 13,
+              "statusViewIds": [
+                "warn",
+                "audit",
+                "off"
+              ],
+              "quickViewCount": 4
+            }
+          },
+          {
+            "id": "B5-1",
+            "batch": "批次5",
+            "title": "三类新增自动登记",
+            "check": "registry",
+            "ok": true,
+            "detail": {
+              "records": 190,
+              "kinds": 15,
+              "log": 25,
+              "overlayRenderers": 0,
+              "discovered": 0
+            }
+          },
+          {
+            "id": "B5-2",
+            "batch": "批次5",
+            "title": "历史叠层可追溯",
+            "check": "layers",
+            "ok": true,
+            "detail": {
+              "style": 34,
+              "styleBaseline": 30,
+              "script": 11,
+              "dynamicLayers": [
+                "tpl-b6-lookup-grid",
+                "tpl-b7-detail-ui",
+                "tpl-b8-batch",
+                "tpl-b9-legacy-ui"
+              ],
+              "allImmutable": true,
+              "orderKept": true,
+              "scriptOrderKept": true
+            }
+          },
+          {
+            "id": "B5-3",
+            "batch": "批次5",
+            "title": "总览与复现入口",
+            "check": "summary",
+            "ok": true,
+            "detail": {
+              "batches": 5,
+              "limits": 14,
+              "todo": 11,
+              "neverChanged": 12,
+              "regressionSteps": 45
+            }
+          }
+        ],
+        "at": 1795383907254,
+        "manual": [
+          "B0-1",
+          "B0-2",
+          "B0-3",
+          "B0-4",
+          "B0-5",
+          "B0-6",
+          "B1-1"
+        ]
+      },
+      "layersCheck": {
+        "ok": true,
+        "detail": {
+          "style": 34,
+          "styleBaseline": 30,
+          "script": 11,
+          "dynamicLayers": [
+            "tpl-b6-lookup-grid",
+            "tpl-b7-detail-ui",
+            "tpl-b8-batch",
+            "tpl-b9-legacy-ui"
+          ],
+          "allImmutable": true,
+          "orderKept": true,
+          "scriptOrderKept": true
+        }
+      }
+    },
+    "错误": [],
+    "首屏js请求": []
+  },
+  "构建页": {
+    "页面": "/dist/index.html",
+    "基础": {
+      "有TPL": true,
+      "schemaId": "drugArchive",
+      "顶层段": 14,
+      "结果键": 12,
+      "映射键": 64,
+      "视图数": 8,
+      "列数": 17,
+      "公开_出口数": 253,
+      "hasEl": false,
+      "就绪": {
+        "b2": true,
+        "b3": true,
+        "b4": true,
+        "b5": true
+      },
+      "scriptIds": [
+        "tplSchema",
+        "tplExamples"
+      ],
+      "styleIds": [
+        "tplFormVars",
+        "tplDetailTableStyle",
+        "tpl-v121-density",
+        "tpl-b6-lookup-grid",
+        "tpl-b7-detail-ui",
+        "tpl-b8-batch",
+        "tpl-b9-legacy-ui"
+      ],
+      "有MOD": true,
+      "regression": {
+        "pass": true,
+        "total": 8,
+        "failed": [],
+        "items": [
+          {
+            "id": "B0-7",
+            "batch": "总纲",
+            "title": "出口与层清单齐全",
+            "check": "exports",
+            "ok": true,
+            "detail": {
+              "missing": [],
+              "tpl": 253,
+              "wl": 62,
+              "style": 34,
+              "script": 12,
+              "tplExamples": true,
+              "formConfig": false
+            }
+          },
+          {
+            "id": "B1-2",
+            "batch": "批次1",
+            "title": "新注册项默认受约束",
+            "check": "guard",
+            "ok": true,
+            "detail": {
+              "coverage": [
+                "innerHTML",
+                "outerHTML",
+                "insertAdjacentHTML"
+              ],
+              "badAttrs": 0,
+              "scripts": 0,
+              "early": true,
+              "late": true
+            }
+          },
+          {
+            "id": "B2-1",
+            "batch": "批次2",
+            "title": "静置 0 mutation / 连续交互",
+            "check": "ready",
+            "ok": true,
+            "detail": {
+              "ready": true,
+              "epoch": 0,
+              "b2": true,
+              "b3": true,
+              "b4": true,
+              "b5": true
+            }
+          },
+          {
+            "id": "B3-1",
+            "batch": "批次3",
+            "title": "演示与正式边界",
+            "check": "boundary",
+            "ok": true,
+            "detail": {
+              "pendingSubmit": true,
+              "demo": 0,
+              "formal": 0,
+              "debugInFormal": [],
+              "boundaryObject": true,
+              "dbPayloadContract": "保持不变",
+              "mode": "demo"
+            }
+          },
+          {
+            "id": "B4-1",
+            "batch": "批次4",
+            "title": "默认零偏差 / 新业务配置生效",
+            "check": "generic",
+            "ok": true,
+            "detail": {
+              "changed": false,
+              "specVersion": "b4",
+              "keys": 13,
+              "statusViewIds": [
+                "warn",
+                "audit",
+                "off"
+              ],
+              "quickViewCount": 4
+            }
+          },
+          {
+            "id": "B5-1",
+            "batch": "批次5",
+            "title": "三类新增自动登记",
+            "check": "registry",
+            "ok": true,
+            "detail": {
+              "records": 190,
+              "kinds": 15,
+              "log": 25,
+              "overlayRenderers": 0,
+              "discovered": 0
+            }
+          },
+          {
+            "id": "B5-2",
+            "batch": "批次5",
+            "title": "历史叠层可追溯",
+            "check": "layers",
+            "ok": true,
+            "detail": {
+              "style": 34,
+              "styleBaseline": 30,
+              "script": 11,
+              "dynamicLayers": [
+                "tpl-b6-lookup-grid",
+                "tpl-b7-detail-ui",
+                "tpl-b8-batch",
+                "tpl-b9-legacy-ui"
+              ],
+              "allImmutable": true,
+              "orderKept": true,
+              "scriptOrderKept": true
+            }
+          },
+          {
+            "id": "B5-3",
+            "batch": "批次5",
+            "title": "总览与复现入口",
+            "check": "summary",
+            "ok": true,
+            "detail": {
+              "batches": 5,
+              "limits": 14,
+              "todo": 11,
+              "neverChanged": 12,
+              "regressionSteps": 45
+            }
+          }
+        ],
+        "at": 1795383909422,
+        "manual": [
+          "B0-1",
+          "B0-2",
+          "B0-3",
+          "B0-4",
+          "B0-5",
+          "B0-6",
+          "B1-1"
+        ]
+      },
+      "layersCheck": {
+        "ok": true,
+        "detail": {
+          "style": 34,
+          "styleBaseline": 30,
+          "script": 11,
+          "dynamicLayers": [
+            "tpl-b6-lookup-grid",
+            "tpl-b7-detail-ui",
+            "tpl-b8-batch",
+            "tpl-b9-legacy-ui"
+          ],
+          "allImmutable": true,
+          "orderKept": true,
+          "scriptOrderKept": true
+        }
+      }
+    },
+    "错误": [],
+    "首屏js请求": [
+      "boot-D5GrHf92.js",
+      "layer-a-early-BsQJpRkb.js",
+      "layer-b-core-D9bmgxGI.js",
+      "layer-c-bridge-CvPs-jcH.js",
+      "layer-d-ui-BgeDuIP_.js",
+      "layer-e-tail-BxBhaeDE.js"
+    ],
+    "MOD": {
+      "自检通过": true,
+      "自检项": [
+        {
+          "名": "未参与首屏登记",
+          "通过": true
+        },
+        {
+          "名": "首屏未自动触发 import",
+          "通过": true
+        },
+        {
+          "名": "8 个装载点已注册",
+          "通过": true
+        },
+        {
+          "名": "配置链完整",
+          "通过": true
+        },
+        {
+          "名": "层表 42 槽位且顺序逐项对齐基线冻结层序",
+          "通过": true
+        },
+        {
+          "名": "其中 39 项为静态模块 / DOM 容器",
+          "通过": true
+        },
+        {
+          "名": "两个 JSON 空壳仍在 DOM",
+          "通过": true
+        },
+        {
+          "名": "每个静态槽位都有真实模块文件或保留在 DOM",
+          "通过": true
+        }
+      ],
+      "配置集摘要": {
+        "可用": true,
+        "schemaId": "drugArchive",
+        "顶层段": 14,
+        "空壳": [
+          {
+            "id": "tplSchema",
+            "存在": true,
+            "为JSON壳": true,
+            "已注入": true
+          },
+          {
+            "id": "tplExamples",
+            "存在": true,
+            "为JSON壳": true,
+            "已注入": true
+          }
+        ],
+        "业务集": [
+          "product",
+          "saleBill"
+        ],
+        "存储键": [
+          "TPL_SCHEMA_V113",
+          "TPL_VIEW_CFG_V113",
+          "TPL_FORM_CFG_V113:"
+        ],
+        "配置源": "window.__TPL_CONFIG__ → 两个空壳 textContent → TPL.schema（唯一业务定义）"
+      },
+      "配置链校验": {
+        "通过": true,
+        "项": [
+          {
+            "名": "__TPL_CONFIG__ 内联配置源",
+            "通过": true
+          },
+          {
+            "名": "tplSchema 空壳已注入",
+            "通过": true
+          },
+          {
+            "名": "tplExamples 空壳已注入",
+            "通过": true
+          },
+          {
+            "名": "TPL.schema 可读",
+            "通过": true
+          },
+          {
+            "名": "TPL.apply / reset / export",
+            "通过": true
+          },
+          {
+            "名": "dbPayload 数据出口",
+            "通过": true
+          },
+          {
+            "名": "_collect 取值入口",
+            "通过": true
+          },
+          {
+            "名": "_formalPayload 正式包出口",
+            "通过": true
+          }
+        ]
+      },
+      "状态": {
+        "参与首屏登记": false,
+        "自动触发": false,
+        "装载点名": [
+          "列表运行时",
+          "列表配置",
+          "表单运行时",
+          "表单配置",
+          "跳转桥",
+          "配置器界面",
+          "渲染器扩展位",
+          "特殊效果扩展位"
+        ],
+        "时序数": 1,
+        "已装载": [],
+        "失败": []
+      }
+    },
+    "首屏后MOD装载数": 0,
+    "单桥": {
+      "ok": true,
+      "自检": {
+        "块": "跳转桥",
+        "不私有": true,
+        "经桥结果页": false,
+        "通过": true,
+        "四态": [
+          "ok",
+          "missing",
+          "disabled",
+          "methodMissing"
+        ],
+        "占位": [
+          "{value}",
+          "{code}",
+          "{param}",
+          "{field}",
+          "{col}",
+          "{scene}",
+          "{idx}",
+          "{title}"
+        ],
+        "方法表数": 12,
+        "场景表数": 4,
+        "回退规则": {
+          "missing": "drawer",
+          "disabled": "drawer",
+          "methodMissing": "none",
+          "note": "场景缺失 / 停用 / 交互方法未注册时的回退行为，显式写在配置里，不写死在引擎中。"
+        },
+        "动作出口": true,
+        "插值出口": true
+      }
+    },
+    "单桥后js请求": [
+      "boot-D5GrHf92.js",
+      "layer-a-early-BsQJpRkb.js",
+      "layer-b-core-D9bmgxGI.js",
+      "layer-c-bridge-CvPs-jcH.js",
+      "layer-d-ui-BgeDuIP_.js",
+      "layer-e-tail-BxBhaeDE.js",
+      "bridge-BQfDtbYJ.js"
+    ],
+    "各模块": {
+      "列表运行时": {
+        "ok": true,
+        "自检": {
+          "块": "列表·运行时",
+          "通过": true,
+          "出口数": 10,
+          "出口": [
+            "_cell",
+            "_columnDefs",
+            "_snapshot",
+            "_redrawReady",
+            "_view",
+            "_kw",
+            "_page",
+            "_sort",
+            "_size",
+            "_toolbar"
+          ],
+          "双路径": {
+            "增强可用": false,
+            "回落路径": true
+          },
+          "说明": "按标记调用既有全局出口，不改写既有层"
+        }
+      },
+      "列表配置": {
+        "ok": true,
+        "自检": {
+          "块": "列表·配置",
+          "通过": true,
+          "项": [
+            {
+              "名": "列表段齐全",
+              "通过": true
+            },
+            {
+              "名": "顶层段数",
+              "通过": true
+            },
+            {
+              "名": "草稿键按 schemaId 派生",
+              "通过": true
+            },
+            {
+              "名": "草稿摘要可读",
+              "通过": true
+            }
+          ],
+          "命中段": 8,
+          "段": [
+            {
+              "k": "columns",
+              "存在": true,
+              "量": 17
+            },
+            {
+              "k": "views",
+              "存在": true,
+              "量": 8
+            },
+            {
+              "k": "filters",
+              "存在": true,
+              "量": 20
+            },
+            {
+              "k": "toolbarSelects",
+              "存在": true,
+              "量": 3
+            },
+            {
+              "k": "columnSpec",
+              "存在": true,
+              "量": 7
+            },
+            {
+              "k": "linkField",
+              "存在": true,
+              "量": 1
+            },
+            {
+              "k": "emptyText",
+              "存在": true,
+              "量": 1
+            },
+            {
+              "k": "flowField",
+              "存在": true,
+              "量": 1
+            }
+          ],
+          "顶层段": 14,
+          "schemaId": "drugArchive",
+          "草稿键": "TPL_VIEW_CFG_V113:drugArchive",
+          "草稿摘要": {
+            "可用": true,
+            "键": "TPL_VIEW_CFG_V113:drugArchive",
+            "有存档": true,
+            "字节": 10752,
+            "口径": "所有改动在草稿里，点「保存并应用」才生效",
+            "键来源": "VSTORE + \":\" + TPL.schema.id（L3970 / L4031）"
+          }
+        }
+      },
+      "表单运行时": {
+        "ok": true,
+        "自检": {
+          "块": "表单·运行时",
+          "覆盖范围": [
+            "查看",
+            "编辑",
+            "新建",
+            "结果"
+          ],
+          "结果页单独成块": false,
+          "经桥": false,
+          "通过": true,
+          "出口数": 10,
+          "出口": [
+            "_collect",
+            "_formOpen",
+            "_formSave",
+            "_formConfig",
+            "_formDraft",
+            "_close",
+            "_closeResult",
+            "_retry",
+            "_save",
+            "_formalPayload"
+          ],
+          "数据链": {
+            "出口": "collect() → buildPayload() → window.__DB_PAYLOAD__（键来自 S.db.dbMap）",
+            "演示包键数": 0,
+            "本次取值数": 0,
+            "原因": null
+          },
+          "结果页": {
+            "闭合链": "submit() → finishSubmit() → showResult() / resultHTML()",
+            "三态": [
+              "loading",
+              "success",
+              "fail"
+            ],
+            "配置键数": 12,
+            "强制结果": "auto",
+            "经桥": false,
+            "单独请求": false,
+            "依据": "04 桥契约第 6 节；源码 L8479–L8520 未调用任何桥入口"
+          }
+        }
+      },
+      "表单配置": {
+        "ok": true,
+        "自检": {
+          "块": "表单·配置",
+          "通过": true,
+          "表单段数": 14,
+          "结果键数": 12,
+          "字段组数": 10,
+          "映射键数": 64,
+          "独立存储键": "TPL_FORM_CFG_V113:drugArchive"
+        }
+      },
+      "跳转桥": {
+        "ok": true,
+        "自检": {
+          "块": "跳转桥",
+          "不私有": true,
+          "经桥结果页": false,
+          "通过": true,
+          "四态": [
+            "ok",
+            "missing",
+            "disabled",
+            "methodMissing"
+          ],
+          "占位": [
+            "{value}",
+            "{code}",
+            "{param}",
+            "{field}",
+            "{col}",
+            "{scene}",
+            "{idx}",
+            "{title}"
+          ],
+          "方法表数": 12,
+          "场景表数": 4,
+          "回退规则": {
+            "missing": "drawer",
+            "disabled": "drawer",
+            "methodMissing": "none",
+            "note": "场景缺失 / 停用 / 交互方法未注册时的回退行为，显式写在配置里，不写死在引擎中。"
+          },
+          "动作出口": true,
+          "插值出口": true
+        }
+      },
+      "配置器界面": {
+        "ok": true,
+        "自检": {
+          "块": "配置器界面",
+          "通过": true,
+          "项": [
+            {
+              "名": "配置器出口齐全",
+              "通过": true
+            },
+            {
+              "名": "视图存档键按 schemaId 派生",
+              "通过": true
+            },
+            {
+              "名": "旧写法（常量键）确实读不到",
+              "通过": true
+            },
+            {
+              "名": "三套键摘要可读",
+              "通过": true
+            },
+            {
+              "名": "表单配置键同样带 schemaId",
+              "通过": true
+            }
+          ],
+          "出口": [
+            "_vcOpen",
+            "_vcSave",
+            "_formOpen",
+            "_formSave",
+            "_formDraft"
+          ],
+          "节点": [
+            {
+              "id": "vcWin",
+              "已建": true
+            },
+            {
+              "id": "formWin",
+              "已建": false
+            }
+          ],
+          "独立存储": {
+            "可用": true,
+            "schemaId": "drugArchive",
+            "业务定义源": {
+              "键": "TPL_SCHEMA_V113",
+              "有存档": false,
+              "字节": 0
+            },
+            "视图配置": {
+              "键": "TPL_VIEW_CFG_V113:drugArchive",
+              "有存档": true,
+              "字节": 10752
+            },
+            "视图配置旧写法": {
+              "键": "TPL_VIEW_CFG_V113",
+              "有存档": false,
+              "字节": 0
+            },
+            "表单配置": {
+              "键": "TPL_FORM_CFG_V113:drugArchive",
+              "有存档": false,
+              "字节": 0
+            },
+            "键来源": "VSTORE + \":\" + TPL.schema.id（L3970 / L4031）",
+            "口径": "草稿态各自独立；「保存并应用」才生效；不回写业务定义源"
+          },
+          "说明": "formWin 为按需创建，未打开时「已建=false」属正常"
+        }
+      },
+      "渲染器扩展位": {
+        "ok": true,
+        "自检": {
+          "块": "重渲染器扩展位",
+          "通过": true,
+          "基线数": 15,
+          "扩展位数": 0,
+          "自动登记数": 190,
+          "说明": "轻量随配置走、重的进扩展位按需加载"
+        }
+      },
+      "特殊效果扩展位": {
+        "ok": true,
+        "自检": {
+          "块": "特殊效果扩展位",
+          "通过": true,
+          "带标识层数": 9,
+          "scriptIds前两位": [
+            "tplSchema",
+            "tplExamples"
+          ],
+          "styleIds首项": "tplFormVars",
+          "分段": [
+            {
+              "属性": "data-wl-layer",
+              "节点数": 0
+            },
+            {
+              "属性": "data-wl-seg",
+              "节点数": 0
+            },
+            {
+              "属性": "data-b10-ux",
+              "节点数": 1
+            }
+          ],
+          "已注册": []
+        }
+      }
+    },
+    "全量后js请求": [
+      "boot-D5GrHf92.js",
+      "layer-a-early-BsQJpRkb.js",
+      "layer-b-core-D9bmgxGI.js",
+      "layer-c-bridge-CvPs-jcH.js",
+      "layer-d-ui-BgeDuIP_.js",
+      "layer-e-tail-BxBhaeDE.js",
+      "bridge-BQfDtbYJ.js",
+      "list-runtime-C-skwY_5.js",
+      "list-config-D0BGusJZ.js",
+      "form-runtime-JmaxwuJG.js",
+      "form-config-CzAxlLes.js",
+      "console-DSaTCF8q.js",
+      "ext-renderer-DUqN10Fr.js",
+      "ext-effect-COVPXgTH.js"
+    ],
+    "加载后回归": {
+      "pass": true,
+      "total": 8,
+      "failed": [],
+      "items": [
+        {
+          "id": "B0-7",
+          "ok": true,
+          "check": "exports"
+        },
+        {
+          "id": "B1-2",
+          "ok": true,
+          "check": "guard"
+        },
+        {
+          "id": "B2-1",
+          "ok": true,
+          "check": "ready"
+        },
+        {
+          "id": "B3-1",
+          "ok": true,
+          "check": "boundary"
+        },
+        {
+          "id": "B4-1",
+          "ok": true,
+          "check": "generic"
+        },
+        {
+          "id": "B5-1",
+          "ok": true,
+          "check": "registry"
+        },
+        {
+          "id": "B5-2",
+          "ok": true,
+          "check": "layers"
+        },
+        {
+          "id": "B5-3",
+          "ok": true,
+          "check": "summary"
+        }
+      ]
+    },
+    "加载后MOD": {
+      "参与首屏登记": false,
+      "自动触发": false,
+      "已装载": [
+        "跳转桥",
+        "列表运行时",
+        "列表配置",
+        "表单运行时",
+        "表单配置",
+        "配置器界面",
+        "渲染器扩展位",
+        "特殊效果扩展位"
+      ],
+      "时序数": 11,
+      "失败": []
+    }
+  }
+}

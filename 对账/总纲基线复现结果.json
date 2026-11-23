@@ -1,0 +1,712 @@
+{
+  "生成时间": "2026-11-22T21:50:13.646Z",
+  "口径": "工程内脚本化复现；每项独立 BrowserContext；不使用 Vue、不注入 CDN、不点亮增强分支",
+  "对照": {
+    "B0-1": "由 截图对账.cjs 等价复现（双页 0 像素差）",
+    "B0-2..B0-6 + B1-1": "本脚本",
+    "auto 8 项": "由 浏览器自检.cjs / TPL._regressionRun() 覆盖"
+  },
+  "统计": {
+    "通过": 6
+  },
+  "结果": [
+    {
+      "id": "B0-2",
+      "标题": "supplier 切换与回切",
+      "状态": "通过",
+      "原步骤": "TPL.apply(TPL.examples.supplier) → 查配置隔离 → TPL.reset() 回切",
+      "证据": {
+        "before": {
+          "schemaId": "drugArchive",
+          "存储键": [
+            "TPL_VIEW_CFG_V113:drugArchive"
+          ],
+          "视图数": 8,
+          "列数": 17,
+          "标题": "药品与饮片档案 · 列表 UI v1.33 · 键盘流录入",
+          "表格行": 10,
+          "hasEl": false,
+          "回归": {
+            "pass": true,
+            "total": 8,
+            "failed": []
+          }
+        },
+        "mid": {
+          "schemaId": "supplier",
+          "存储键": [
+            "TPL_SCHEMA_V113",
+            "TPL_VIEW_CFG_V113:drugArchive",
+            "TPL_VIEW_CFG_V113:supplier"
+          ],
+          "视图数": 4,
+          "列数": 10,
+          "标题": "供应商档案 · 通用配置驱动",
+          "表格行": 10,
+          "hasEl": false,
+          "回归": {
+            "pass": false,
+            "total": 8,
+            "failed": [
+              "B4-1"
+            ]
+          }
+        },
+        "after": {
+          "schemaId": "drugArchive",
+          "存储键": [
+            "TPL_VIEW_CFG_V113:drugArchive",
+            "TPL_VIEW_CFG_V113:supplier"
+          ],
+          "视图数": 8,
+          "列数": 17,
+          "标题": "药品与饮片档案 · 列表 UI v1.33 · 键盘流录入",
+          "表格行": 10,
+          "hasEl": false,
+          "回归": {
+            "pass": true,
+            "total": 8,
+            "failed": []
+          }
+        },
+        "隔离": {
+          "form键": [],
+          "view键": [
+            "TPL_VIEW_CFG_V113:drugArchive",
+            "TPL_VIEW_CFG_V113:supplier"
+          ],
+          "schema键": [
+            "TPL_SCHEMA_V113"
+          ]
+        },
+        "有supplier": true,
+        "隔离成立": true,
+        "发现": "supplier 业务集下 _regressionRun() 的 B4-1 为 false（failed=[\"B4-1\"]）；回切 drugArchive 后恢复 8/8",
+        "B4_1判据": "L10564 ch===false && !!g2.specVersion && Object.keys(g2).length>=12",
+        "B4_1现象说明": "L10646 默认态包装直通、配置生效只在 S.generic 与反推默认不同时可见"
+      },
+      "限定": "脚本化复现；按 schemaId 隔离以两套 TPL_VIEW_CFG_V113:<id> 键并存为证；切换期间的回归失败是源码判据现象，已单列不混入本项通过条件；未做逐像素截图对照（归 B0-1）",
+      "页面错误": [],
+      "外部请求数": 0
+    },
+    {
+      "id": "B0-3",
+      "标题": "旧版存档升级",
+      "状态": "通过",
+      "原步骤": "预置旧版 localStorage 存档 → reload → 查改名/调序/已删动作与视图不丢",
+      "证据": {
+        "改造": {
+          "键": "TPL_VIEW_CFG_V113:drugArchive",
+          "原动作数": 14,
+          "原列序": [
+            "chk",
+            "sa_goodsCode",
+            "sa_goodsName",
+            "status",
+            "sa_drugClass",
+            "level",
+            "created",
+            "checker",
+            "kind",
+            "sa_regExpiry",
+            "owner",
+            "batchNo",
+            "sa_supplier",
+            "sa_factory",
+            "ops"
+          ],
+          "改后动作数": 13,
+          "改后列序": [
+            "ops",
+            "sa_factory",
+            "sa_supplier",
+            "batchNo",
+            "owner",
+            "sa_regExpiry",
+            "kind",
+            "checker",
+            "created",
+            "level",
+            "sa_drugClass",
+            "status",
+            "sa_goodsName",
+            "sa_goodsCode",
+            "chk"
+          ],
+          "改名": "旧版改名 O'B <img src=x onerror=window.__PWNED__=1> <script>window.__PWNED__=2</script>"
+        },
+        "结果": {
+          "改名保留": true,
+          "恶意串未执行": true,
+          "面板可打开": true,
+          "视图数": 8,
+          "动作数": 13,
+          "列序": [
+            "ops",
+            "sa_factory",
+            "sa_supplier",
+            "batchNo",
+            "owner",
+            "sa_regExpiry"
+          ],
+          "页面路由归一": true,
+          "表头数": 15,
+          "回归": {
+            "pass": true,
+            "total": 8,
+            "failed": []
+          }
+        },
+        "断言": {
+          "改名保留": true,
+          "调序保留": true,
+          "已删动作保持": true,
+          "旧版路由归一": true,
+          "视图数保持": true,
+          "恶意串未执行": true,
+          "面板可打开": true,
+          "回归通过": true,
+          "无页面错误": true
+        }
+      },
+      "限定": "脚本化等价复现。「旧版」形态由脚本按 L4118–L4134 / L4170–L4189 的归一化输入构造，源文件未给出具体旧存档样例；「调序」只核对存档列序与表头存在，未逐项比对每列 DOM 位置；措辞有歧义——此处按「用户改动不丢失」判定（动作数 13 保持 13，未被复活）；若按「mergeNewActions 应补回被删动作」口径则结论相反，源文件 L10449 未写明取哪一种",
+      "页面错误": [],
+      "外部请求数": 0
+    },
+    {
+      "id": "B0-4",
+      "标题": "三处配置保存→刷新生效",
+      "状态": "通过",
+      "原步骤": "TPL._vcOpen()/_vcSave()、TPL._formOpen()/_formSave()、功能设置保存 → reload 复查",
+      "证据": {
+        "可用出口": [
+          "_vcOpen",
+          "_vcSave",
+          "_formOpen",
+          "_formSave",
+          "_actSave",
+          "_pageSave"
+        ],
+        "保存后": {
+          "键": [
+            "TPL_FORM_CFG_V113:drugArchive",
+            "TPL_VIEW_CFG_V113:drugArchive"
+          ]
+        },
+        "复查": {
+          "三套键": {
+            "TPL_VIEW_CFG": {
+              "存在": true,
+              "字节": 11129
+            },
+            "TPL_FORM_CFG": {
+              "存在": true,
+              "字节": 4646
+            }
+          },
+          "表单配置可读": true,
+          "面板": {
+            "vcWin": true,
+            "formWin": true
+          },
+          "回归": {
+            "pass": true,
+            "total": 8
+          }
+        }
+      },
+      "限定": "功能设置保存用 _actSave/_pageSave 出口等价触发，未通过真实点击「功能设置」面板按钮逐字复现；复查的是三套键存在、面板可开、配置可读、回归通过，未逐项比对改动的具体列/字段值",
+      "页面错误": [],
+      "外部请求数": 0
+    },
+    {
+      "id": "B0-5",
+      "标题": "键盘流全链路与滚动不跳",
+      "状态": "通过",
+      "原步骤": "载入入库单示例 → 编辑态 5 轮键盘录入 → 查 __WL_DT_FLOW__/__WL_DT_FOCUS__/__WL_DT_LOOKUP__",
+      "证据": {
+        "载入": {
+          "mask": "mask on",
+          "drawer": "drawer detail on",
+          "dtWrap": 1,
+          "dtTbl": 1,
+          "dtRow": 2,
+          "dtInput": 8,
+          "新增行按钮": 1,
+          "普通列": [
+            "pName",
+            "price",
+            "pName",
+            "price"
+          ],
+          "选录列": [
+            "code",
+            "qty",
+            "code",
+            "qty"
+          ],
+          "flowEnabled": true
+        },
+        "浮层": {
+          "触发": true,
+          "触发值": "HQ",
+          "清空": "ok",
+          "打开": {
+            "on": true,
+            "active": 0,
+            "候选数": 1,
+            "状态active": 0,
+            "状态list": 1,
+            "口径": "后追加层改写了浮层 DOM（无 #dtLkKw / [data-lk=pick]），故用 __WL_DT_LOOKUP__ 与 lookupState 观测"
+          },
+          "清空后": {
+            "on": true,
+            "active": 0,
+            "候选数": 14,
+            "状态active": 0,
+            "状态list": 14,
+            "口径": "后追加层改写了浮层 DOM（无 #dtLkKw / [data-lk=pick]），故用 __WL_DT_LOOKUP__ 与 lookupState 观测"
+          },
+          "下一": {
+            "on": true,
+            "active": 1,
+            "候选数": 14,
+            "状态active": 1,
+            "状态list": 14,
+            "口径": "后追加层改写了浮层 DOM（无 #dtLkKw / [data-lk=pick]），故用 __WL_DT_LOOKUP__ 与 lookupState 观测"
+          },
+          "下二": {
+            "on": true,
+            "active": 2,
+            "候选数": 14,
+            "状态active": 2,
+            "状态list": 14,
+            "口径": "后追加层改写了浮层 DOM（无 #dtLkKw / [data-lk=pick]），故用 __WL_DT_LOOKUP__ 与 lookupState 观测"
+          },
+          "上一": {
+            "on": true,
+            "active": 1,
+            "候选数": 14,
+            "状态active": 1,
+            "状态list": 14,
+            "口径": "后追加层改写了浮层 DOM（无 #dtLkKw / [data-lk=pick]），故用 __WL_DT_LOOKUP__ 与 lookupState 观测"
+          },
+          "确认": {
+            "on": false,
+            "L": {
+              "open": false,
+              "picked": true,
+              "rowKey": "D1",
+              "col": "code"
+            },
+            "F": {
+              "col": "qty",
+              "rowKey": "D1",
+              "selected": true
+            },
+            "行数": 2
+          },
+          "esc前": true,
+          "esc后": false
+        },
+        "轮": [
+          {
+            "目标列": "pName",
+            "n": 0,
+            "FLOW": {
+              "op": "next",
+              "from": "pName",
+              "to": "qty",
+              "rowKey": "D1"
+            },
+            "FOCUS": {
+              "col": "qty",
+              "rowKey": "D1",
+              "selected": true,
+              "scrollY": 0,
+              "scroll": {
+                "y": 0,
+                "doc": 0,
+                "dw": 0,
+                "main": 2693
+              }
+            },
+            "行数": 2
+          },
+          {
+            "目标列": "price",
+            "n": 1,
+            "FLOW": {
+              "op": "append",
+              "from": "price",
+              "to": "code",
+              "rowKey": "Rmwsde978394"
+            },
+            "FOCUS": {
+              "col": "code",
+              "rowKey": "Rmwsde978394",
+              "selected": true,
+              "scrollY": 0,
+              "scroll": {
+                "y": 0,
+                "doc": 0,
+                "dw": 0,
+                "main": 2693
+              }
+            },
+            "行数": 3
+          },
+          {
+            "目标列": "pName",
+            "n": 2,
+            "FLOW": {
+              "op": "next",
+              "from": "pName",
+              "to": "qty",
+              "rowKey": "D1"
+            },
+            "FOCUS": {
+              "col": "qty",
+              "rowKey": "D1",
+              "selected": true,
+              "scrollY": 0,
+              "scroll": {
+                "y": 0,
+                "doc": 0,
+                "dw": 0,
+                "main": 2693
+              }
+            },
+            "行数": 3
+          },
+          {
+            "目标列": "price",
+            "n": 3,
+            "FLOW": {
+              "op": "reuse-empty",
+              "from": "price",
+              "to": "code",
+              "rowKey": "Rmwsde978394"
+            },
+            "FOCUS": {
+              "col": "code",
+              "rowKey": "Rmwsde978394",
+              "selected": true,
+              "scrollY": 0,
+              "scroll": {
+                "y": 0,
+                "doc": 0,
+                "dw": 0,
+                "main": 2693
+              }
+            },
+            "行数": 3
+          },
+          {
+            "目标列": "pName",
+            "n": 4,
+            "FLOW": {
+              "op": "next",
+              "from": "pName",
+              "to": "qty",
+              "rowKey": "D1"
+            },
+            "FOCUS": {
+              "col": "qty",
+              "rowKey": "D1",
+              "selected": true,
+              "scrollY": 0,
+              "scroll": {
+                "y": 0,
+                "doc": 0,
+                "dw": 0,
+                "main": 2693
+              }
+            },
+            "行数": 3
+          }
+        ],
+        "滚动": {
+          "基准": {
+            "main": 2693,
+            "y": 0,
+            "doc": 0,
+            "dw": 0,
+            "可滚": true
+          },
+          "聚焦后": {
+            "main": 2693,
+            "y": 0,
+            "doc": 0
+          },
+          "Enter后": {
+            "main": 2693,
+            "y": 0,
+            "doc": 0,
+            "FOCUS": {
+              "col": "qty",
+              "selected": true,
+              "scroll": {
+                "y": 0,
+                "doc": 0,
+                "dw": 0,
+                "main": 2693
+              }
+            }
+          },
+          "保持": true,
+          "口径": "页面内 el.focus({preventScroll:true})；不把 Playwright locator.focus() 的滚动副作用计入"
+        },
+        "回归": {
+          "pass": true,
+          "total": 8
+        },
+        "ops": [
+          "append",
+          "next",
+          "reuse-empty"
+        ],
+        "有流转": true,
+        "有焦点": true,
+        "三种op齐": true,
+        "to与焦点一致": true,
+        "容器滚动保持": true,
+        "窗口层滚动不跳": true,
+        "清空后候选多": true,
+        "active序列": [
+          0,
+          1,
+          2,
+          1
+        ],
+        "上下键可观测": true,
+        "断言": {
+          "明细表已载入": true,
+          "选录浮层可打开": true,
+          "清空关键字后候选恢复为多条": true,
+          "↓/↓/↑ 的 active 为 1/2/1 且与 lookupState 同步": true,
+          "Enter 确认回填成功": true,
+          "重绘后 rowKey 重定位一致": true,
+          "Esc 取消浮层": true,
+          "5 轮 FLOW 覆盖 next/append/reuse-empty": true,
+          "FLOW.to 与 FOCUS.col 逐轮一致": true,
+          "聚焦全选 selectOnFocus": true,
+          "tplMain 容器层滚动保持（页面内 preventScroll 口径）": true,
+          "window / documentElement / dwBody 层滚动不跳": true,
+          "回归 8/8": true,
+          "无页面错误": true
+        },
+        "基本通过": true,
+        "DOM口径": "editable-table 是配置里的 renderer 名；实际 DOM 类名 .dt-wrap / .dt-tbl / tr[data-rk]（L7381–L7388）",
+        "委托口径": "document 级 keydown 委托（L7616）；lookup 列 Enter 优先打开选录浮层（L7357）",
+        "浮层DOM口径": "后追加层改写了浮层 DOM，无 #dtLkKw / [data-lk=pick]；候选与高亮用 __WL_DT_LOOKUP__ / lookupState 观测"
+      },
+      "限定": "上版两条「缺口」已定位为断言设计问题并撤销，不是应用缺陷：(a) ↑↓ 无变化是触发格自带值 （如 \"HQ\"）按 match 过滤 14 条源到 1 条，(0±1+1)%1 恒为 0；调 TPL._dtLookupFilter(\"\") 清空后候选恢复 14 条，↓/↓/↑ 的 active = 1/2/1，与 lookupState.active 同步。(b) 「tplMain 滚动未保持」是 Playwright locator.focus() 自行把元素滚进视口造成的工具副作用；改用页面内 el.focus({preventScroll:true}) 后，基准 / 聚焦后 / Enter 后三层滚动全部保持，且 __WL_DT_FOCUS__.scroll.main 与基准一致。__M__ 静置 2200ms 未逐字复现（该部分由 B2-1 auto 的 ready 自检覆盖）；浮层 DOM 被后追加层改写，故不按 #dtLkKw / [data-lk=pick] 断言，改用状态对象",
+      "页面错误": [],
+      "外部请求数": 0
+    },
+    {
+      "id": "B0-6",
+      "标题": "预校验/关闭/还原/结果页三态",
+      "状态": "通过",
+      "原步骤": "TPL.forceResult=\"fail\"/\"ok\"、提交途中 TPL._close()、DETAIL.commit/restore、结果页重试/返回",
+      "证据": {
+        "态": {
+          "ok-loading": {
+            "state": "loading",
+            "标题": "提交中",
+            "按钮": [
+              "重试",
+              "返回修改"
+            ]
+          },
+          "ok-success": {
+            "state": "success",
+            "标题": "保存成功",
+            "按钮": [
+              "完成",
+              "返回修改"
+            ]
+          },
+          "fail-loading": {
+            "state": "loading",
+            "标题": "提交中",
+            "按钮": [
+              "重试",
+              "返回修改"
+            ]
+          },
+          "fail": {
+            "state": "fail",
+            "标题": "提交失败",
+            "按钮": [
+              "重试",
+              "返回修改"
+            ]
+          },
+          "retry-success": {
+            "state": "success",
+            "标题": "保存成功"
+          },
+          "提交途中关闭": {
+            "sheet": "sr-sheet",
+            "mask": "mask",
+            "drawer": "drawer detail"
+          }
+        },
+        "配置文案": {
+          "okTitle": "保存成功",
+          "failTitle": "提交失败",
+          "pendingTitle": "提交中"
+        },
+        "预校验默认": {
+          "有出口": true,
+          "任务数": 0,
+          "区块数": 12,
+          "可编辑区块数": 0,
+          "说明": "干净默认态（未载入入库单预设）无 editable-table 区块 → 0 任务；预校验由配置驱动"
+        },
+        "开启": {
+          "id": "fw-sec-inbound",
+          "preValidate": {
+            "enabled": true,
+            "api": "/api/credit/check",
+            "amountField": "totalAmount",
+            "limit": -1,
+            "limitField": "",
+            "rule": "amount <= limit",
+            "message": "单据总额超出可用额度，请调整数量后再提交"
+          },
+          "口径": "只改运行时配置草稿（_dtSpec + _formSave），不改源码、不回写业务定义源"
+        },
+        "预校验失败": {
+          "WL": {
+            "ok": false,
+            "result": {
+              "secId": "fw-sec-inbound",
+              "api": "/api/credit/check",
+              "amount": 46.6,
+              "limit": -1,
+              "message": "单据总额超出可用额度，请调整数量后再提交"
+            },
+            "resultsLen": 0
+          },
+          "B3": {
+            "ok": false,
+            "session": "B3-1-1795384206936",
+            "secId": "fw-sec-inbound",
+            "api": "/api/credit/check",
+            "amount": 46.6,
+            "limit": -1,
+            "message": "单据总额超出可用额度，请调整数量后再提交",
+            "at": 1795384207117
+          },
+          "errOn": 1,
+          "errText": [
+            "⛔ 单据总额超出可用额度，请调整数量后再提交"
+          ],
+          "sheetClass": "sr-sheet",
+          "sheetState": null
+        },
+        "开启成功": {
+          "preValidate": {
+            "enabled": true,
+            "api": "/api/credit/check",
+            "amountField": "totalAmount",
+            "limit": 1000000000,
+            "limitField": "",
+            "rule": "amount <= limit",
+            "message": "单据总额超出可用额度，请调整数量后再提交"
+          }
+        },
+        "预校验成功": {
+          "WL": {
+            "ok": true,
+            "resultsLen": 1,
+            "first": {
+              "ok": true,
+              "secId": "fw-sec-inbound",
+              "api": "/api/credit/check",
+              "label": "额度校验（mock）",
+              "amount": 46.6,
+              "limit": 1000000000,
+              "message": "单据总额超出可用额度，请调整数量后再提交"
+            }
+          },
+          "sheetState": "success"
+        },
+        "状态API": {
+          "restore": {
+            "before": {
+              "__dtState": {
+                "origin": {
+                  "a": 1
+                },
+                "sumOrigin": {
+                  "s": 2
+                }
+              },
+              "a": 999,
+              "s": 888
+            },
+            "after": {
+              "a": 1,
+              "s": 2
+            }
+          },
+          "commit": {
+            "有dtState": false,
+            "k": 5
+          }
+        },
+        "回归": {
+          "pass": true,
+          "total": 8
+        },
+        "断言": {
+          "三态齐": true,
+          "预校验齐": true,
+          "回归通过": true,
+          "无页面错误": true
+        }
+      },
+      "限定": "三态 data-state、配置文案、重试/关闭/提交途中关闭已复现；本轮补齐：干净默认态 preValidateTasks 返回 0 任务、通过 _dtSpec/_formSave 开启后的异步预校验 fail 路径（__WL_PREVALIDATE__.ok=false、__WL_B3_PREVALIDATE__、.dt-err.on、结果页被阻断）与 success 路径（ok=true、results 1 项、结果页 success），以及直接调用 DETAIL.commit/restore 验证状态还原。预校验接口是配置里的 mock（/api/credit/check，延迟 120ms），通过运行时配置草稿开启，不改源码、不回写业务定义源；逐像素三态对照归 B0-1 口径，不在本项复现",
+      "页面错误": [],
+      "外部请求数": 0
+    },
+    {
+      "id": "B1-1",
+      "标题": "特殊字符与片段化标记注入",
+      "状态": "通过",
+      "原步骤": "localStorage 动作名称/视图名/区块 id/列标题/图标片段写入 O'B <img src=x onerror=...> 与 <script> → reload",
+      "证据": {
+        "注入": {
+          "视图键": "TPL_VIEW_CFG_V113:drugArchive",
+          "表单键": "TPL_FORM_CFG_V113:drugArchive",
+          "区块数": 12,
+          "注入串": "O'B <img src=x onerror=window.__PWNED__=1> <script>window.__PWNED__=2</script>"
+        },
+        "结果": {
+          "__PWNED__": "undefined",
+          "guard": {
+            "elements": 934,
+            "badAttrs": 0,
+            "scripts": 0
+          },
+          "vcWin": true,
+          "formWin": true,
+          "drawer": true,
+          "回归": {
+            "pass": true,
+            "total": 8,
+            "failed": []
+          },
+          "无注入脚本节点": true
+        }
+      },
+      "限定": "注入覆盖视图名/动作名/区块 id 与标题；列标题、图标片段未逐项注入。按 L10637 的限制，esc 二次写入的实体还原根因未根治，靠非白名单 on* 规则兜底，本项只验证「不执行 / 不报错 / 不破版」",
+      "页面错误": [],
+      "外部请求数": 0
+    }
+  ]
+}

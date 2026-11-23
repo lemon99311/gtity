@@ -1,0 +1,61 @@
+
+
+:root{
+  --fs-list:var(--fs-125);       
+  --fs-list-sub:var(--fs-115);   
+  --fs-list-head:var(--fs-135);  
+}
+
+
+.da-main .da-sec>h4{font-size:var(--fs-list-head);line-height:var(--lh-18px)}
+.da-main .da-sec>h4 em{font-size:var(--fs-list-sub)}
+.da-main .da-fld dt{font-size:var(--fs-list-sub);line-height:var(--lh-145)}
+.da-main .da-fld dd{font-size:var(--fs-list);line-height:var(--lh-15)}
+.da-main .da-fld .dd-ipt{height:27px;font-size:var(--fs-list)}
+.da-main .da-note{font-size:var(--fs-list)}
+.da-main .da-tbl{font-size:var(--fs-list)}
+.da-main .da-tbl thead th{font-size:var(--fs-list-sub)}
+.da-main .da-tbl tbody td{font-size:var(--fs-list)}
+.da-main .da-sum{font-size:var(--fs-list-sub)}
+
+.da-main .da-grid{gap:11px 16px}
+
+.da-main .flow-readonly,.da-main .fo-note,.da-main .fo-l{font-size:var(--fs-list-sub)}
+
+
+.da-kind,.da-code{font-size:var(--fs-list-sub)}
+.da-card-kv dt{font-size:var(--fs-list-sub);flex-basis:66px}
+.da-card-kv dd{font-size:var(--fs-list)}
+.da-metric span,.da-level-hd,.da-level small,.da-card-foot{font-size:var(--fs-list-sub)}
+.da-tl>h4,.da-card .dd-c b{font-size:var(--fs-list)}
+.da-card .dd-c small{font-size:var(--fs-list-sub)}
+.da-card .dd-tl-item{gap:9px;padding-bottom:9px}
+.da-card .dd-tl-item::before{top:16px}
+
+
+@media (min-width:761px) and (max-height:900px){
+  .da-kind,.da-code,.da-metric span,.da-level-hd,.da-level small,
+  .da-card-foot,.da-card-kv dt,.da-card .dd-c small{font-size:var(--fs-list-sub)}
+  .da-card-kv dd,.da-tl>h4,.da-card .dd-c b{font-size:var(--fs-list)}
+  .da-card-kv dt{flex-basis:62px}
+  .da-metric b{font-size:var(--fs-15)}
+  .da-card{padding:6px 11px 6px;gap:5px}
+  .da-card-top h2{font-size:var(--fs-18,18px);margin:2px 0 1px}
+  .da-card-kv{gap:1px}
+  .da-card-kv>div{gap:5px}
+  .da-metrics{gap:4px}
+  .da-metric{padding:2px 6px}
+  .da-level{padding-top:4px}
+  .da-bar{height:5px;margin:3px 0 2px}
+  .da-tl{padding-top:5px}
+  .da-tl>h4{margin:0 0 4px}
+  .da-card .dd-dot{width:15px;height:15px}
+  .da-card .dd-dot svg{width:9px;height:9px}
+  .da-card .dd-tl-item{gap:5px;padding-bottom:2px}
+  .da-card .dd-tl-item::before{left:6px;top:13px}
+  .da-card-foot{padding-top:4px}
+  
+  .da-card{overflow-y:auto;overflow-x:hidden;scrollbar-width:thin}
+  .da-card::-webkit-scrollbar{display:block;width:5px}
+  .da-card::-webkit-scrollbar-thumb{background:var(--line2);border-radius:5px}
+}

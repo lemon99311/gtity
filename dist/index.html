@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+现状地图
+  业务入口：改业务 = 替换配置 JSON，或控制台执行 TPL.apply(新 schema)。
+  文件依赖：本文件自包含；注入点把配置写入两个空壳 id 的 textContent；外部配置副本为维护用，不参与运行。
+  数据链路：控件 data-k → collect() → buildPayload() → window.__DB_PAYLOAD__，键来自 schema.db.dbMap。
+  公开 API：TPL.schema / apply / reset / export / rows / dbPayload / examples / forceResult，及 TPL._* 出口集合。
+  层顺序：b1→b2→b3→b4→b5→b6→b7→b8→b9→b10（末层无 id），各带 id 层不合并、不重排。
+  五视图：列表 / 详情 / 编辑 / 新建 / 结果。
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>药品与饮片档案 · 列表 UI v1.33 · 键盘流录入</title>
+<!-- S000-style-tpl-v116-element-tencent.css -->
+<!-- S001-style-tpl-v123-feat-ui.css -->
+
+<script type="application/json" id="tplSchema">{}</script>
+<script type="application/json" id="tplExamples">{}</script>
+<!-- S004-script-L156.js -->
+<!-- S005-script-R2.js -->
+<!-- S006-script-L351.js -->
+<!-- S007-style-L361.css -->
+<!-- S008-style-drug-v14-style.css -->
+<!-- S009-style-drug-sa-style.css -->
+<!-- S010-style-sa-v13-css.css -->
+<!-- S011-style-sa-v14-css.css -->
+<!-- S012-style-sa-v15-css.css -->
+<!-- S013-style-sa-v16-css.css -->
+<!-- S014-style-sa-v17-css.css -->
+<!-- S015-style-sa-v18-css.css -->
+<!-- S016-style-sa-v19-css.css -->
+<!-- S017-style-sa-v110-css.css -->
+<!-- S018-style-sa-v111-css.css -->
+
+<!-- S019-style-L2084.css -->
+
+
+<!-- S020-style-L2110.css -->
+<!-- S021-style-tplVCStyle.css -->
+<!-- S022-style-tpl-v16-font.css -->
+<!-- S023-style-tpl-v18-vc-layout.css -->
+
+<!-- S024-style-tpl-v19-type.css -->
+
+<!-- S025-style-tpl-v110-type.css -->
+
+<!-- S026-style-tpl-v111-vc-tabs.css -->
+
+
+<!-- S027-style-tpl-v112-worklist.css -->
+<!-- S028-style-tpl-v113-restore.css -->
+<!-- S029-style-tpl-v114-eltable.css -->
+<!-- S030-style-tpl-v115-elcontrols.css -->
+<!-- S031-style-tpl-v117-colmeta.css -->
+<!-- S032-style-tpl-v121-features.css -->
+<!-- S033-style-tpl-v122-newbtn.css -->
+
+<!-- S034-style-tpl-v126-actions.css -->
+<!-- S035-script-tpl-b1-guard-early.js -->
+<!-- S036-script-tpl-b2-redraw-early.js -->
+  <script type="module" crossorigin src="./assets/boot-D5GrHf92.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/layer-a-early-BsQJpRkb.js">
+  <link rel="modulepreload" crossorigin href="./assets/layer-b-core-D9bmgxGI.js">
+  <link rel="modulepreload" crossorigin href="./assets/layer-c-bridge-CvPs-jcH.js">
+  <link rel="modulepreload" crossorigin href="./assets/layer-d-ui-BgeDuIP_.js">
+  <link rel="modulepreload" crossorigin href="./assets/layer-e-tail-BxBhaeDE.js">
+  <link rel="stylesheet" crossorigin href="./assets/layer-a-early-BBd1JZYP.css">
+  <link rel="stylesheet" crossorigin href="./assets/layer-b-core-DpD5RzJp.css">
+  <link rel="stylesheet" crossorigin href="./assets/layer-d-ui-BUVIDPc7.css">
+  <link rel="stylesheet" crossorigin href="./assets/layer-e-tail-BfxL66gS.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="logo"><div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c2 3 6 4 6 9a6 6 0 01-12 0c0-2 1-3 2-4M12 3c-2 3-6 4-6 9"/></svg></div>
+      <div><b id="tplAppName"></b><span id="tplAppSub"></span></div></div>
+    <div class="crumb"><i>›</i> <b id="tplCrumb"></b></div>
+    <div class="top-actions"><div class="user-chip"><div class="avatar">档案</div><div><small>档案中心 · 维护岗</small><strong>管理员</strong></div></div></div>
+  </header>
+  <aside class="side">
+    <div class="side-title" id="tplSideGroup"></div>
+    <nav class="nav" id="nav"><a href="#" class="on" onclick="return false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4zM8 9h8M8 13h8"/></svg><span id="tplSideItem"></span></a></nav>
+    <div class="side-hr"></div>
+    <div class="side-title">快捷视图</div>
+    <nav class="nav sa-quick" id="tplQuick"></nav>
+    <div class="side-hr"></div>
+    <div class="side-title" id="tplSideNoteTitle"></div>
+    <div class="chan sa-chan" id="tplSideNote"></div>
+  </aside>
+  <div class="tabs"><span class="tpl-tab" id="tplTab"></span></div>
+  <main class="main" id="main"></main>
+</div>
+<div class="side-toggle" id="sideToggle" title="收起左侧菜单"><span class="st-line"></span><span class="st-arrow">&#9664;</span></div>
+<div class="mask" id="mask"></div>
+<aside class="drawer" id="drawer">
+  <div class="dw-head" id="dwHead"></div>
+  <div class="dw-body" id="dwBody"></div>
+  <div class="dw-foot" id="dwFoot"></div>
+  <div class="sr-sheet" id="srSheet"></div>
+</aside>
+<div class="tpl-toast" id="tplToast"></div>
+<!-- S037-script-L3950.js -->
+<!-- S038-script-L3951.js -->
+
+<!-- S039-script-tpl-v114-elbridge.js -->
+<!-- S040-script-tpl-v112-bridge.js -->
+<!-- S041-script-tpl-v115-elcontrols.js -->
+<!-- S042-script-tpl-b1-guard.js -->
+<!-- S043-script-tpl-b2-redraw.js -->
+<!-- S044-script-tpl-b3-boundary.js -->
+<!-- S045-script-tpl-b4-generic.js -->
+<!-- S046-script-tpl-b5-handoff.js -->
+<!-- S047-script-L10705.js -->
+<!-- S048-script-L11105.js -->
+<!-- S049-script-L11327.js -->
+<!-- S050-script-L11840.js -->
+<!-- S051-script-L12490.js -->
+<!-- S052-style-L13498.css -->
+<!-- S053-script-L13524.js -->
+<!-- S054-script-T0-core.js -->
+<!-- S055-script-T1.js -->
+<!-- S056-script-T2.js -->
+<!-- S057-script-T3.js -->
+<!-- S058-script-T4.js -->
+<!-- S059-script-T5.js -->
+<!-- S060-script-T6.js -->
+<!-- S061-script-T7.js -->
+<!-- S062-style-T4-style.css --><!-- S063-style-R2-visual.css -->
+<!-- S064-script-R3.js -->
+<!-- S065-script-R4.js -->
+</body>
+</html>
