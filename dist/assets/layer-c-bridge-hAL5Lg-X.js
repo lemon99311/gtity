@@ -1225,7 +1225,7 @@ const Formula = /* @__PURE__ */ (function() {
   }
   function buildVCDom() {
     if ($("vcWin")) return;
-    const specSub = "每个视图可独立设置筛选选项、快捷筛选、高级筛选、列选项与数据范围";
+    const specSub = "";
     document.body.insertAdjacentHTML(
       "beforeend",
       `<div class="vc-mask" id="vcMask" onclick="TPL._vcClose()"></div>
@@ -2340,7 +2340,7 @@ const Formula = /* @__PURE__ */ (function() {
     $("vcRhdViews").style.display = isFeat ? "none" : "flex";
     $("vcRhdFeat").style.display = isFeat ? "flex" : "none";
     $("vcTabs").style.display = isFeat ? "none" : "flex";
-    $("vcHdSub").textContent = isFeat ? "功能设置 · 快捷工具栏 / 表单配置 / 菜单栏 / 页面配置 · 动作与交互场景均可增删自定义" : "每个视图可独立设置筛选选项、快捷筛选、高级筛选、列选项与数据范围";
+    $("vcHdSub").textContent = isFeat ? "功能设置 · 快捷工具栏 / 表单配置 / 菜单栏 / 页面配置 · 动作与交互场景均可增删自定义" : "";
     const pane = $("vcPane");
     pane.classList.toggle("pane-cols", !isFeat && (vTab === "cols" || vTab === "defs"));
     pane.classList.toggle("pane-feat", isFeat);

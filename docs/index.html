@@ -3649,7 +3649,7 @@ select.vcd-in{cursor:pointer}
 
 
 
-/* ==== index-CcMilQId.css ==== */
+/* ==== index-B7t4GNbs.css ==== */
 /* 视觉收敛补丁 —— 新增层，不带 id，不参与 42 槽位层登记。
  *
  * 依据：对账/布局诊断结果-1920x774.json（用户真实视口）的实测几何与 computed style，
@@ -3699,6 +3699,11 @@ select.vcd-in{cursor:pointer}
 }
 .topbar .crumb { font-size: 12px; color: var(--ink4); }
 .topbar .crumb b { font-weight: 400; }
+
+/* 4) 视图配置弹窗：用户要求取消标题右侧那行说明文字。
+ *    生成器已把 specSub 与视图列表分支的赋值都置空，这里收掉空 span 的占位。
+ *    :empty 只在视图列表态匹配；切到「功能设置」时该元素被赋值为另一句说明，不受影响。 */
+#vcHdSub:empty { display: none; }
 
 </style>
 </head>
@@ -5325,7 +5330,7 @@ select.vcd-in{cursor:pointer}
     wrap(window.HTMLTextAreaElement && HTMLTextAreaElement.prototype, "select");
   })();
 
-  // dist/assets/layer-c-bridge-BUV_NvOD.js
+  // dist/assets/layer-c-bridge-hAL5Lg-X.js
   window.__WL_HAS_EL__ = false;
   var Formula = /* @__PURE__ */ (function() {
     function toks(src) {
@@ -6553,7 +6558,7 @@ select.vcd-in{cursor:pointer}
     }
     function buildVCDom() {
       if ($("vcWin")) return;
-      const specSub = "\u6BCF\u4E2A\u89C6\u56FE\u53EF\u72EC\u7ACB\u8BBE\u7F6E\u7B5B\u9009\u9009\u9879\u3001\u5FEB\u6377\u7B5B\u9009\u3001\u9AD8\u7EA7\u7B5B\u9009\u3001\u5217\u9009\u9879\u4E0E\u6570\u636E\u8303\u56F4";
+      const specSub = "";
       document.body.insertAdjacentHTML(
         "beforeend",
         `<div class="vc-mask" id="vcMask" onclick="TPL._vcClose()"></div>
@@ -7668,7 +7673,7 @@ select.vcd-in{cursor:pointer}
       $("vcRhdViews").style.display = isFeat ? "none" : "flex";
       $("vcRhdFeat").style.display = isFeat ? "flex" : "none";
       $("vcTabs").style.display = isFeat ? "none" : "flex";
-      $("vcHdSub").textContent = isFeat ? "\u529F\u80FD\u8BBE\u7F6E \xB7 \u5FEB\u6377\u5DE5\u5177\u680F / \u8868\u5355\u914D\u7F6E / \u83DC\u5355\u680F / \u9875\u9762\u914D\u7F6E \xB7 \u52A8\u4F5C\u4E0E\u4EA4\u4E92\u573A\u666F\u5747\u53EF\u589E\u5220\u81EA\u5B9A\u4E49" : "\u6BCF\u4E2A\u89C6\u56FE\u53EF\u72EC\u7ACB\u8BBE\u7F6E\u7B5B\u9009\u9009\u9879\u3001\u5FEB\u6377\u7B5B\u9009\u3001\u9AD8\u7EA7\u7B5B\u9009\u3001\u5217\u9009\u9879\u4E0E\u6570\u636E\u8303\u56F4";
+      $("vcHdSub").textContent = isFeat ? "\u529F\u80FD\u8BBE\u7F6E \xB7 \u5FEB\u6377\u5DE5\u5177\u680F / \u8868\u5355\u914D\u7F6E / \u83DC\u5355\u680F / \u9875\u9762\u914D\u7F6E \xB7 \u52A8\u4F5C\u4E0E\u4EA4\u4E92\u573A\u666F\u5747\u53EF\u589E\u5220\u81EA\u5B9A\u4E49" : "";
       const pane = $("vcPane");
       pane.classList.toggle("pane-cols", !isFeat && (vTab === "cols" || vTab === "defs"));
       pane.classList.toggle("pane-feat", isFeat);
@@ -20194,7 +20199,7 @@ select.vcd-in{cursor:pointer}
     }
   })();
 
-  // dist/assets/boot-C8AliScu.js
+  // dist/assets/boot-CHVQIHBL.js
   var import_meta = {};
   (function polyfill() {
     const relList = document.createElement("link").relList;

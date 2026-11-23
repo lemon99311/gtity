@@ -81,6 +81,13 @@ def slug(块, i):
     return 'L%d' % 块['起行']
 
 清单 = []
+# 纯界面文案改写单独登记，不计入「改写点数」（后者只统计结构性/逻辑改写）。
+# 每条都注明基线仍为旧值，保证审计口径不撒谎。
+文案改写记录 = [
+    dict(位置='src/层/S038-script-L3951.js（基线 L8095）', 字段='tocTitle',
+         旧='目录标题', 新='左卡目录标题', 基线仍为旧值=True,
+         说明='只改外置层模块的 fwF() 首个参数；基线原件.html 一字未动'),
+]
 for i, b in enumerate(blocks):
     name = 'S%03d-%s-%s' % (i, b['tag'], slug(b, i))
     if b['是JSON空壳']:
@@ -152,6 +159,24 @@ for i, b in enumerate(blocks):
             assert n4 == 1, 'tocTitle 文案替换应命中 1 次，实际 %d 次' % n4
             content = content.replace(old4, new4)
             改写.append("界面文案：fwF('目录标题',tocTitle) → fwF('左卡目录标题',tocTitle)（用户要求，非逻辑改写）")
+
+            # ⑤ 用户 #6 截图：视图配置弹窗标题右侧那行说明「每个视图可独立设置…」取消掉。
+            #    同一句话出现 2 次：buildVCDom() 的 specSub 常量、vcRender() 切回视图列表时的赋值。
+            #    两处都置空字符串（不删 DOM 节点，避免 $('vcHdSub') 取到 null 报错）；
+            #    配套在 视觉收敛.css 用 #vcHdSub:empty{display:none} 收掉空 span 的占位。
+            old5a = "const specSub='每个视图可独立设置筛选选项、快捷筛选、高级筛选、列选项与数据范围';"
+            new5a = "const specSub='';"
+            old5b = ": '每个视图可独立设置筛选选项、快捷筛选、高级筛选、列选项与数据范围';"
+            new5b = ": '';"
+            n5a, n5b = content.count(old5a), content.count(old5b)
+            assert n5a == 1 and n5b == 1, '视图副标题应各命中 1 次，实际 %d / %d' % (n5a, n5b)
+            content = content.replace(old5a, new5a).replace(old5b, new5b)
+            文案改写记录.append(dict(
+                位置='src/层/S038-script-L3951.js（基线 L4689 / L5735）', 字段='vcHdSub',
+                旧='每个视图可独立设置筛选选项、快捷筛选、高级筛选、列选项与数据范围', 新='（空）',
+                基线仍为旧值=True,
+                说明='specSub 常量与 vcRender() 视图列表分支各置空 1 处；不删 DOM 节点，'
+                     '配套 #vcHdSub:empty{display:none} 收掉占位；功能设置分支的说明文字保留'))
 
     open(path, 'w', encoding='utf-8', newline='').write(content)
     b['文件'] = 'src/层/' + fn
@@ -407,11 +432,7 @@ out = dict(
         'S038 的 Formula 公式引擎抽离为 src/业务/表单/公式引擎.js（按四块重组第一阶段）',
         "S038 配置表单 tocTitle 字段 label：'目录标题' → '左卡目录标题'（用户要求，纯界面文案，非逻辑改写）",
     ],
-    文案改写=[
-        dict(位置='src/层/S038-script-L3951.js（基线 L8095）', 字段='tocTitle',
-             旧='目录标题', 新='左卡目录标题', 基线仍为旧值=True,
-             说明='只改外置层模块的 fwF() 首个参数；基线原件.html 一字未动'),
-    ],
+    文案改写=文案改写记录,
     新index字节=len(骨架.encode()),
     新index行数=骨架.count('\n') + 1,
     层文件数=len([f for f in os.listdir(层目录)]),
