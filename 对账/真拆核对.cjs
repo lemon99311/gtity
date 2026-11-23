@@ -2,7 +2,7 @@
  * 用法：NODE_PATH="$(npm root -g)" node 对账/真拆核对.cjs
  *
  * 只读源文件、清单、层模块、dist 产物与已有结果 JSON；不启浏览器（行为等价引用其它脚本的结果）。
- * 回答三个问题：① 内联层是否真被外置 ② 外置是否原样（3 处改写，含 Formula 抽离）③ 顺序/登记/产物是否对得上。
+ * 回答三个问题：① 内联层是否真被外置 ② 外置是否原样（4 处改写 = 3 处逻辑 + 1 处界面文案）③ 顺序/登记/产物是否对得上。
  */
 const fs = require('fs');
 const path = require('path');
@@ -33,13 +33,13 @@ for (const x of 清单.块清单) {
    { 检查数: 逐块.filter(x => x.sha一致 !== undefined).length,
      不一致: 逐块.filter(x => x.sha一致 === false) });
 const 改写块 = 逐块.filter(x => x.改写 && x.改写.length);
-加('仅 2 个块被改写，且改写点恰好 3 处（含 Formula 抽离）',
-   改写块.length === 2 && 改写块.reduce((n, x) => n + x.改写.length, 0) === 3 && 清单.改写点数 === 3,
+加('仅 2 个块被改写，且改写点恰好 4 处（3 逻辑 + 1 界面文案）',
+   改写块.length === 2 && 改写块.reduce((n, x) => n + x.改写.length, 0) === 4 && 清单.改写点数 === 4,
    { 改写块, 清单改写点: 清单.改写说明 });
 加('其余 62 个模块与基线内联块逐字一致', 逐块.filter(x => x.原样 === true).length === 62,
    { 原样数: 逐块.filter(x => x.原样 === true).length, 非原样: 逐块.filter(x => x.原样 === false).map(x => x.文件) });
 
-// ---------- ② 三处改写的 before/after 实证 ----------
+// ---------- ② 四处改写的 before/after 实证 ----------
 const S046 = 读('src/层/S046-script-tpl-b5-handoff.js').toString('utf-8');
 const 旧 = [
   "document.querySelectorAll('style[id],script[id]').forEach(function(e,i){\n    var id=e.id, tag=e.tagName.toLowerCase();",
@@ -81,6 +81,27 @@ const 基线Formula定义 = 基线Formula起 >= 0 && 基线Formula止 >= 0
      try {
        const files = fs.readdirSync(path.join(ROOT, 'dist', 'assets')).filter(f => f.endsWith('.js'));
        return files.some(f => fs.readFileSync(path.join(ROOT, 'dist', 'assets', f), 'utf-8').includes('roundN'));
+     } catch (e) { return false; }
+   })(), {});
+
+// 改写 4：用户要求的界面文案（配置表单 tocTitle 字段 label）
+const 旧文案 = "fwF('目录标题','tocTitle'";
+const 新文案 = "fwF('左卡目录标题','tocTitle'";
+加('改写 4：S038 含新文案「左卡目录标题」且恰好 1 处',
+   S038.includes(新文案) && S038.split(新文案).length - 1 === 1, {});
+加('改写 4：S038 与基线之外不再出现旧文案「目录标题」label',
+   !S038.includes(旧文案) && !基线文本.includes(新文案), {});
+加('改写 4：基线原件仍为旧文案（源文件一字未动）',
+   基线文本.includes(旧文案) && 基线文本.split(旧文案).length - 1 === 1, {});
+加('改写 4：dist 业务 chunk 含新文案且不含旧文案 label',
+   (() => {
+     try {
+       const files = fs.readdirSync(path.join(ROOT, 'dist', 'assets')).filter(f => f.endsWith('.js'));
+       const all = files.map(f => fs.readFileSync(path.join(ROOT, 'dist', 'assets', f), 'utf-8')).join('\n');
+       // Vite build 会把模板里的单引号规范化成双引号并在逗号后加空格，
+       // 因此这里用「文案文本 + 正则匹配 fwF 的 label 参数」而不是精确源码片段。
+       return all.includes('左卡目录标题') &&
+              !/fwF\(["']目录标题["']\s*,\s*["']tocTitle["']/.test(all);
      } catch (e) { return false; }
    })(), {});
 
@@ -170,8 +191,14 @@ const 截图 = 读JSON('截图对账结果.json');
 const 自检 = 读JSON('浏览器自检结果.json');
 const 零Vue = 读JSON('无Vue约束校验结果.json');
 const 基线复现 = 读JSON('总纲基线复现结果.json');
-加('双页全页截图 0 像素差且状态一致', !!截图 && 截图.通过 === true && 截图.差异像素 === 0,
-   截图 ? { 差异像素: 截图.差异像素, 状态一致: 截图.状态一致 } : null);
+// 视觉收敛后「全页 0 像素差」不再成立，按 截图对账.cjs 的分区判据收口：
+// 严格模式 差异像素=0，或 视觉收敛模式 非顶部差异=0。STRICT=1 的结果不会写进这里。
+加('双页截图对账通过（严格等价 或 视觉收敛模式：非目标区域 0 差异）',
+   !!截图 && 截图.通过 === true && 截图.状态一致 === true &&
+   (截图.差异像素 === 0 || (截图.视觉收敛补丁 === true && 截图.非顶部差异 === 0)),
+   截图 ? { 差异像素: 截图.差异像素, 顶部差异: 截图.顶部差异,
+            非顶部差异: 截图.非顶部差异, 视觉收敛补丁: 截图.视觉收敛补丁,
+            状态一致: 截图.状态一致 } : null);
 const 模块自检全通过 = !!自检 && !!自检.构建页 && !!自检.构建页.各模块 &&
   Object.values(自检.构建页.各模块).length === 8 &&
   Object.values(自检.构建页.各模块).every(v => v && v.ok === true && v.自检 && v.自检.通过 === true);

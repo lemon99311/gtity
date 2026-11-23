@@ -1,5 +1,5 @@
 {
-  "生成时间": "2026-11-23T20:13:35.264780",
+  "生成时间": "2026-11-23T20:38:50.017693",
   "源文件": "/data/inputs/v4.html",
   "源字节": 1181356,
   "源sha256": "fc00102111901815be1d5c20113560b039eaa41e89c46395d30588832799c8a8",
@@ -19,7 +19,7 @@
     "tplDetailTableStyle",
     "tpl-v121-density"
   ],
-  "改写点数": 3,
+  "改写点数": 4,
   "防闪烁改写": [
     "index.html 骨架 2 个内联 SVG 补 width/height（18 / 16，与业务 CSS 最终尺寸一致）",
     "层注册表模块顶层注入 @layer fouc-guard 兜底：svg:not([width]):not([height]) → 16px",
@@ -37,7 +37,18 @@
   "改写说明": [
     "layerRows() 数据源：DOM querySelectorAll → window.__WL_LAYER_REGISTRY__",
     "runCheck('exports') 的 style/script id 列表：DOM querySelectorAll → 层注册表",
-    "S038 的 Formula 公式引擎抽离为 src/业务/表单/公式引擎.js（按四块重组第一阶段）"
+    "S038 的 Formula 公式引擎抽离为 src/业务/表单/公式引擎.js（按四块重组第一阶段）",
+    "S038 配置表单 tocTitle 字段 label：'目录标题' → '左卡目录标题'（用户要求，纯界面文案，非逻辑改写）"
+  ],
+  "文案改写": [
+    {
+      "位置": "src/层/S038-script-L3951.js（基线 L8095）",
+      "字段": "tocTitle",
+      "旧": "目录标题",
+      "新": "左卡目录标题",
+      "基线仍为旧值": true,
+      "说明": "只改外置层模块的 fwF() 首个参数；基线原件.html 一字未动"
+    }
   ],
   "新index字节": 5132,
   "新index行数": 125,
@@ -583,12 +594,13 @@
       "止行": 8750,
       "原字节": 266626,
       "sha256": "0206903f73f28a8869974bc1f24870544af8e48e93936504940094592e380341",
-      "生成sha256": "2e393eca71c81ab0f108f204e17e5a1062bcd67f6c098d538adb8cfb18e9c8e6",
-      "生成字节": 262913,
+      "生成sha256": "0aa18407d42ef36582c33f274df7d3b88ba43c234344d1fb77ae288300055ca8",
+      "生成字节": 262919,
       "目标": "src/层/S038-script-L3951.js",
       "文件": "src/层/S038-script-L3951.js",
       "改写": [
-        "Formula 公式引擎 → src/业务/表单/公式引擎.js（表单块业务实现，按四块重组第一阶段）"
+        "Formula 公式引擎 → src/业务/表单/公式引擎.js（表单块业务实现，按四块重组第一阶段）",
+        "界面文案：fwF('目录标题',tocTitle) → fwF('左卡目录标题',tocTitle)（用户要求，非逻辑改写）"
       ]
     },
     {

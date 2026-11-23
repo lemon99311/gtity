@@ -5212,7 +5212,7 @@ const Formula = /* @__PURE__ */ (function() {
     <div class="fw-card"><div class="fw-card-hd"><b>01 · 区块基础</b><em>${esc(sec.renderer)} / ${esc(sec.id)}</em></div>
       ${fwF("区块标题", "title", `<input class="fw-in" value="${escA(sec.title)}" onchange="TPL._formSec(${escJS(sec.id)},'title',this.value)">`, "显示在 section 的 h4 主标题")}
       ${fwF("副标题 / 计数", "note", `<input class="fw-in" value="${escA(sec.note)}" onchange="TPL._formSec(${escJS(sec.id)},'note',this.value)">`, "h4 右侧 em 文案；左卡目录的 note 同源")}
-      ${fwF("目录标题", "tocTitle", `<input class="fw-in" value="${escA(sec.tocTitle)}" onchange="TPL._formSec(${escJS(sec.id)},'tocTitle',this.value)">`, "左卡目录里显示的短标题")}
+      ${fwF("左卡目录标题", "tocTitle", `<input class="fw-in" value="${escA(sec.tocTitle)}" onchange="TPL._formSec(${escJS(sec.id)},'tocTitle',this.value)">`, "左卡目录里显示的短标题")}
       ${fwF(
       "渲染器",
       "renderer",

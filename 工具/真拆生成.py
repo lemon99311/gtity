@@ -20,6 +20,9 @@
   7) 启动入口末尾 import 新增的 src/视觉收敛.css（不带 id 的新增层，不进 42 槽位），
      收敛人员信息卡片字号层级、标签栏 tab 贴顶几何、顶栏主副标题与面包屑层级。
      原 64 个层文件一字不动，逐块 sha 全部保持。
+  8) S038 外置层里配置表单 tocTitle 字段的 label 文案「目录标题」→「左卡目录标题」
+     （用户 #5 截图要求）。这是第 4 处改写，纯界面文案、非逻辑改写；基线原件.html
+     仍是旧文案，替换只在生成器写外置层时发生，可重跑复现。
 
 用法：python3 工具/真拆生成.py
 """
@@ -140,6 +143,16 @@ for i, b in enumerate(blocks):
             content = "import { Formula } from '../业务/表单/公式引擎.js';\n" + content
             改写.append('Formula 公式引擎 → src/业务/表单/公式引擎.js（表单块业务实现，按四块重组第一阶段）')
 
+            # ④ 界面文案改写（用户明确要求，非逻辑改写）：
+            #    配置表单「区块基础」里 tocTitle 字段的中文 label「目录标题」→「左卡目录标题」。
+            #    基线原件 L8095 仍是旧文案，本替换只作用于外置后的层模块，可重跑复现。
+            old4 = "fwF('目录标题','tocTitle'"
+            new4 = "fwF('左卡目录标题','tocTitle'"
+            n4 = content.count(old4)
+            assert n4 == 1, 'tocTitle 文案替换应命中 1 次，实际 %d 次' % n4
+            content = content.replace(old4, new4)
+            改写.append("界面文案：fwF('目录标题',tocTitle) → fwF('左卡目录标题',tocTitle)（用户要求，非逻辑改写）")
+
     open(path, 'w', encoding='utf-8', newline='').write(content)
     b['文件'] = 'src/层/' + fn
     b['目标'] = b['文件']
@@ -149,7 +162,8 @@ for i, b in enumerate(blocks):
                      目标=b['目标'], 文件=b['文件'], 改写=改写))
 
 改写总数 = sum(len(x['改写']) for x in 清单)
-assert 改写总数 == 3, '改写点应为 3，实际 %d' % 改写总数
+# 4 处 = 3 处逻辑改写（layerRows / exports / Formula 抽离）+ 1 处纯界面文案改写
+assert 改写总数 == 4, '改写点应为 4，实际 %d' % 改写总数
 
 # ---------- 3. 层登记注册表 ----------
 # 基线 layerRows() 在 L10248 执行时扫到的是「到 b5 为止」的静态带 id 层。
@@ -391,6 +405,12 @@ out = dict(
         'layerRows() 数据源：DOM querySelectorAll → window.__WL_LAYER_REGISTRY__',
         "runCheck('exports') 的 style/script id 列表：DOM querySelectorAll → 层注册表",
         'S038 的 Formula 公式引擎抽离为 src/业务/表单/公式引擎.js（按四块重组第一阶段）',
+        "S038 配置表单 tocTitle 字段 label：'目录标题' → '左卡目录标题'（用户要求，纯界面文案，非逻辑改写）",
+    ],
+    文案改写=[
+        dict(位置='src/层/S038-script-L3951.js（基线 L8095）', 字段='tocTitle',
+             旧='目录标题', 新='左卡目录标题', 基线仍为旧值=True,
+             说明='只改外置层模块的 fwF() 首个参数；基线原件.html 一字未动'),
     ],
     新index字节=len(骨架.encode()),
     新index行数=骨架.count('\n') + 1,
