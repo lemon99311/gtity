@@ -6160,7 +6160,7 @@ const Formula = /* @__PURE__ */ (function() {
       const e = $(id);
       if (e) e.textContent = v;
     };
-    set("tplAppName", M.appName);
+    set("tplAppName", M.appName === "中药饮片代煎管理平台" ? "H₂O管理平台" : M.appName);
     set("tplAppSub", M.appSub);
     set("tplCrumb", M.crumb);
     set("tplTab", M.pageTitle);

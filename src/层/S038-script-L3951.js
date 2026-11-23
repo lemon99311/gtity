@@ -4651,7 +4651,7 @@ function fillShell(){
   const M=S.meta;
   document.title=`${M.pageTitle} · 列表 UI v1.33 · 键盘流录入`;
   const set=(id,v)=>{const e=$(id);if(e)e.textContent=v;};
-  set('tplAppName',M.appName); set('tplAppSub',M.appSub); set('tplCrumb',M.crumb); set('tplTab',M.pageTitle);
+  set('tplAppName',M.appName==='中药饮片代煎管理平台'?'H₂O管理平台':M.appName); set('tplAppSub',M.appSub); set('tplCrumb',M.crumb); set('tplTab',M.pageTitle);
   set('tplSideGroup',M.sideGroup); set('tplSideItem',M.pageTitle);
   set('tplSideNoteTitle',M.sideNoteTitle||'说明');
   const note=$('tplSideNote'); if(note)note.innerHTML=`<b>${esc(M.sideNoteBold||'')}</b><p>${esc(M.sideNote||'')}</p><small><span>目录条目 <b>${ROWS.length}</b></span><span>流转节点 <b>${(S.detail.timeline||[]).length}</b></span></small>`;

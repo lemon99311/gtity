@@ -178,6 +178,21 @@ for i, b in enumerate(blocks):
                 说明='specSub 常量与 vcRender() 视图列表分支各置空 1 处；不删 DOM 节点，'
                      '配套 #vcHdSub:empty{display:none} 收掉占位；功能设置分支的说明文字保留'))
 
+            # ⑥ 用户 #8：顶栏平台名「中药饮片代煎管理平台」→「H₂O管理平台」。
+            #    只改 fillShell() 的显示映射（落在已改写的 S038 块，零口径变化）：
+            #    配置数据 tplSchema.meta.appName 仍保留原值；其他业务集（供应链 / 零售销售）
+            #    的 appName 不是这个字符串，条件判断天然不受影响。
+            old6 = "set('tplAppName',M.appName);"
+            new6 = "set('tplAppName',M.appName==='中药饮片代煎管理平台'?'H₂O管理平台':M.appName);"
+            n6 = content.count(old6)
+            assert n6 == 1, '顶栏平台名替换应命中 1 次，实际 %d 次' % n6
+            content = content.replace(old6, new6)
+            文案改写记录.append(dict(
+                位置='src/层/S038-script-L3951.js（fillShell，基线 L4654）', 字段='tplAppName 显示值',
+                旧='中药饮片代煎管理平台', 新='H₂O管理平台', 基线仍为旧值=True,
+                说明='只改显示映射；S004 配置数据 appName 保留原值，其他业务集不受影响。'
+                     '落在已改写的 S038 块，故逐字一致层模块仍 62、改写点数仍 4'))
+
     open(path, 'w', encoding='utf-8', newline='').write(content)
     b['文件'] = 'src/层/' + fn
     b['目标'] = b['文件']
