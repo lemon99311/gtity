@@ -48,7 +48,7 @@
 .topbar .crumb { font-size: 12px; color: var(--ink4); }
 .topbar .crumb b { font-weight: 400; }
 
-/* 4) 视图配置弹窗：用户要求取消标题右侧那行说明文字。
- *    生成器已把 specSub 与视图列表分支的赋值都置空，这里收掉空 span 的占位。
- *    :empty 只在视图列表态匹配；切到「功能设置」时该元素被赋值为另一句说明，不受影响。 */
+/* 4) 列表配置弹窗：用户要求取消标题右侧那行说明文字。
+ *    生成器已把 specSub 与「标签」分支的赋值都置空，这里收掉空 span 的占位。
+ *    :empty 只在「标签」态匹配；切到「菜单」时该元素被赋值为另一句说明，不受影响。 */
 #vcHdSub:empty { display: none; }

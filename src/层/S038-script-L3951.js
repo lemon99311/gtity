@@ -741,17 +741,17 @@ function buildVCDom(){
   document.body.insertAdjacentHTML('beforeend',
    `<div class="vc-mask" id="vcMask" onclick="TPL._vcClose()"></div>
     <div class="vc-win" id="vcWin">
-      <div class="vc-hd"><div><h3>视图配置</h3><span class="sub" id="vcHdSub">${specSub}</span></div>
+      <div class="vc-hd"><div><h3>列表配置</h3><span class="sub" id="vcHdSub">${specSub}</span></div>
         <button class="vc-x" onclick="TPL._vcClose()" title="关闭">×</button></div>
       <div class="vc-bd">
         <div class="vc-left">
-          <!-- v1.21：与「视图列表」同级的「功能设置」入口 -->
+          <!-- v1.21：与「标签」同级的「菜单」入口 -->
           <div class="vc-modes">
-            <div class="vc-mode" data-m="views" onclick="TPL._vcMode('views')">视图列表</div>
-            <div class="vc-mode" data-m="features" onclick="TPL._vcMode('features')">功能设置</div>
+            <div class="vc-mode" data-m="views" onclick="TPL._vcMode('views')">标签</div>
+            <div class="vc-mode" data-m="features" onclick="TPL._vcMode('features')">菜单</div>
           </div>
           <div class="vc-left-pane" id="vcLeftViews">
-            <div class="vc-left-hd">视图列表 <span id="vcViewN"></span></div>
+            <div class="vc-left-hd">标签 <span id="vcViewN"></span></div>
             <div class="vc-list" id="vcList"></div>
             <div class="vc-left-ft"><button class="vc-add" onclick="TPL._vcAdd()">＋ 新建视图</button></div>
           </div>
@@ -765,7 +765,7 @@ function buildVCDom(){
         <div class="vc-right">
           <div class="vc-rhd" id="vcRhdViews"><label>视图名称</label><input id="vcName" oninput="TPL._vcRename(this.value)">
             <span class="vc-badge" id="vcCurBadge"></span></div>
-          <div class="vc-rhd" id="vcRhdFeat"><label>作用范围</label><b class="vf-scope">全部视图 · 与视图列表平级</b>
+          <div class="vc-rhd" id="vcRhdFeat"><label>作用范围</label><b class="vf-scope">全部视图 · 与标签平级</b>
             <span class="vc-badge" id="vcFeatBadge"></span><span class="vf-hint">保存并应用后统一生效</span></div>
           <div class="vc-tabs" id="vcTabs">
             <div class="vc-tab" data-t="filters" onclick="TPL._vcTab('filters')">筛选选项</div>
@@ -968,7 +968,7 @@ function vcClickStatusHTML(v,k,c){
         ${policy?`<span>回退策略 <b>${policy==='none'?'不执行':'打开抽屉'}</b></span>`:'<span>启用中</span>'}</div>
       <div class="vcd-cs-param"><i>参数模板</i><code>${esc(tpl)}</code></div>
       <div class="vcd-cs-param"><i>点击时（示例行）</i><code>${esc(demo)}</code></div>
-      ${rs.status!=='ok'?`<div class="vcd-cs-fix">到「页面配置」检查该场景，或在此重新选择其它场景。</div>`:''}
+      ${rs.status!=='ok'?`<div class="vcd-cs-fix">到「交互场景」检查该场景，或在此重新选择其它场景。</div>`:''}
     </div>`;
 }
 
@@ -1011,12 +1011,12 @@ function vcBtnCardHTML(v,k,c){
           <span>显示策略 <b>${esc(dispTxt)}</b></span></div>
         <div class="vcd-cs-param"><i>参数模板</i><code>${esc(tpl)}</code></div>
         <div class="vcd-cs-param"><i>点击时（示例行）</i><code>${esc(demo)}</code></div>
-        ${rs.status!=='ok'&&rs.status!=='unbound'?`<div class="vcd-cs-fix">到「页面配置」检查该场景，或在下方改绑其它场景 / 调整显示策略。</div>`:''}
+        ${rs.status!=='ok'&&rs.status!=='unbound'?`<div class="vcd-cs-fix">到「交互场景」检查该场景，或在下方改绑其它场景 / 调整显示策略。</div>`:''}
       </div>`;
     const F=(label,key,ctrl,hint)=>vcColFieldRow(label,key,ctrl,hint);
     const fields=
       F('按钮文案','label',`<input class="vcd-in" value="${escA(b.label||'')}" onchange="TPL._vcBtn(${escJS(k)},${idx},'label',this.value)">`,'由配置驱动按钮显示文字')+
-      F('交互场景','scene',vcBtnSelect('scene',g.scene,k,idx,vcBtnOpts('scene')),'对应「页面配置」里的场景 key')+
+      F('交互场景','scene',vcBtnSelect('scene',g.scene,k,idx,vcBtnOpts('scene')),'对应「交互场景」里的场景 key')+
       F('取值字段','field',vcBtnSelect('field',g.field,k,idx,vcBtnOpts('field')),'点击时携带该字段在当前行的真实值')+
       F('参数键名','param',`<input class="vcd-in" value="${escA(g.param)}" onchange="TPL._vcBtn(${escJS(k)},${idx},'param',this.value)">`,'模板里用 {param} 引用')+
       F('悬停提示','title',`<input class="vcd-in" value="${escA(g.title||'')}" onchange="TPL._vcBtn(${escJS(k)},${idx},'title',this.value)">`,'按钮 title，异常时自动附加原因')+
@@ -1033,12 +1033,12 @@ function vcBtnCardHTML(v,k,c){
           <button class="vc-mini act-del" title="删除该按钮" onclick="TPL._vcBtnDel(${escJS(k)},${idx})">×</button>
         </span></div>
       ${status}${fields}
-      <div class="vcb-card-ft"><button class="vcb-btn pri" onclick="TPL._vcClickGoPage(${escJS(g.scene)})">去「页面配置」编辑该场景 →</button>
+      <div class="vcb-card-ft"><button class="vcb-btn pri" onclick="TPL._vcClickGoPage(${escJS(g.scene)})">去「交互场景」编辑该场景 →</button>
         <span>按钮决定「点哪个按钮、带哪个值」，场景决定「执行什么方法」</span></div>
     </div>`;
   }).join('');
   return `<div class="vcb-sec">
-      <div class="vcb-sec-hd"><div><b>操作按钮清单</b><span>共 ${bs.length} 个 · 逐项绑定「页面配置」场景</span></div>
+      <div class="vcb-sec-hd"><div><b>操作按钮清单</b><span>共 ${bs.length} 个 · 逐项绑定「交互场景」场景</span></div>
         <button class="vcb-btn" onclick="TPL._vcBtnAdd(${escJS(k)})">＋ 添加操作按钮</button></div>
       <p class="vcb-sec-tip">字段规格读 <code>SCHEMA.buttonSpec</code>；显示策略按 <code>PAGE.resolve()</code> 状态查 <code>buttonSpec.display</code> / 按钮级 <code>onMissing</code>。删场景、停场景、改方法都会实时反映到这里的解析状态。</p>
       ${cards||'<div class="vcb-empty">暂无操作按钮，点「＋ 添加操作按钮」新增。</div>'}
@@ -1048,14 +1048,14 @@ function vcClickCardHTML(v,k,c){
   const isAct=c.renderer==='actions';
   if(isAct){
     return `<div class="vcd-click">
-      <div class="vcd-click-st ok"><b>操作按钮列</b><span>本列不绑定单一场景；每个按钮各自绑定一个「页面配置」场景，显示与执行由下方清单逐项驱动。</span></div>
+      <div class="vcd-click-st ok"><b>操作按钮列</b><span>本列不绑定单一场景；每个按钮各自绑定一个「交互场景」场景，显示与执行由下方清单逐项驱动。</span></div>
       ${vcBtnCardHTML(v,k,c)}
     </div>`;
   }
   const g=clickCfg(c);
   const rows=
     vcColFieldRow('点击场景','clickScene',vcClickSelect('clickScene',g.scene,k,vcClickSceneOptions()),
-      '对应「页面配置」里的交互场景 key；改名 / 删除 / 停用会在这里实时显示解析状态')+
+      '对应「交互场景」里的交互场景 key；改名 / 删除 / 停用会在这里实时显示解析状态')+
     vcColFieldRow('取值字段','clickField',vcClickSelect('clickField',g.field,k,vcClickFieldOptions()),
       '点击时携带该字段在当前行的真实值；默认取本列（药品编码列即携带药品编码）')+
     vcColFieldRow('参数键名','clickParam',
@@ -1068,8 +1068,8 @@ function vcClickCardHTML(v,k,c){
       `<input class="vcd-in" value="${escA(g.title)}" onchange="TPL._vcDef(${escJS(k)},'clickTitle',this.value)">`,
       '悬停提示文案，由列配置驱动显示');
   return `<div class="vcd-click">${vcClickStatusHTML(v,k,c)}${rows}
-    <div class="vcd-click-link"><button class="vcb-btn pri" onclick="TPL._vcClickGoPage(${escJS(g.scene)})">去「页面配置」编辑交互场景 →</button>
-      <span>列选项决定「点哪一列、带什么值」，页面配置决定「执行什么方法」；两者按场景 key 关联。</span></div>
+    <div class="vcd-click-link"><button class="vcb-btn pri" onclick="TPL._vcClickGoPage(${escJS(g.scene)})">去「交互场景」编辑该场景 →</button>
+      <span>列选项决定「点哪一列、带什么值」，交互场景决定「执行什么方法」；两者按场景 key 关联。</span></div>
   </div>`;
 }
 
@@ -1137,7 +1137,7 @@ function vcColDetailHTML(v,k){
       <button class="hit" onclick="TPL._vcColGo('vcdG4')">04 点击</button>
       <span>滚动查看全部属性</span></div>
     ${grp('01','基础信息','全局元数据',basics,'vcdG1')}
-    ${grp('02','显示与排序','按视图配置',shows,'vcdG2')}
+    ${grp('02','显示与排序','按列表配置',shows,'vcdG2')}
     ${grp('03','数据与渲染','注册表分派',data,'vcdG3')}
     ${grp('04','点击操作','配置驱动页面操作',vcClickCardHTML(v,k,c),'vcdG4')}
     <div class="vcd-ft"><button class="vcb-btn" onclick="TPL._vcDefReset(${escJS(k)})">↺ 恢复该列为默认</button>
@@ -1146,7 +1146,7 @@ function vcColDetailHTML(v,k){
 
 function vcColsHTML(v){
   if(!vSelCol||!VC.colMap()[vSelCol]) vSelCol=vcColDefaultPick(v);
-  return `<div class="vc-cols-tip">「列选项」整合显示、列定义与点击操作：右侧 04 卡片把「点哪一列、带哪个值」绑定到「页面配置」的交互场景，点击时按场景配置的执行方法打开链接 / 页面。枚举读 <code>SCHEMA.list.columnSpec</code>，场景候选项读 <code>cfg.pageActions</code>，保存后立即重绘。</div>
+  return `<div class="vc-cols-tip">「列选项」整合显示、列定义与点击操作：右侧 04 卡片把「点哪一列、带哪个值」绑定到「交互场景」的交互场景，点击时按场景配置的执行方法打开链接 / 页面。枚举读 <code>SCHEMA.list.columnSpec</code>，场景候选项读 <code>cfg.pageActions</code>，保存后立即重绘。</div>
     <div class="vcb-bar" id="vcColsBar">${vcColsBarHTML(v)}</div>
     <div class="vc-cols-main">
       <div class="vc-cols-side">
@@ -1635,7 +1635,7 @@ function vcPageEditorOpen(a,isNew){
 }
 
 function vcFeatJSONOpen(){
-  const data={说明:'功能设置 · 当前配置编辑态（与视图列表平级，作用于全部视图，含未保存修改）',
+  const data={说明:'菜单 · 当前配置编辑态（与标签平级，作用于全部视图，含未保存修改）',
     schemaId:S.id, scope:'global',
     spec:FEAT.spec,
     features:vDraft.features,
@@ -1653,7 +1653,7 @@ function vcFeatJSONOpen(){
   if(!host){
     document.body.insertAdjacentHTML('beforeend',
       `<div class="vc-json-mask" id="vcJsonMask" onclick="TPL._vcDefJSONClose()"></div>
-       <div class="vc-json-win" id="vcJsonWin"><div class="vc-json-hd"><b id="vcJsonHdTitle">功能设置 · 当前配置</b>
+       <div class="vc-json-win" id="vcJsonWin"><div class="vc-json-hd"><b id="vcJsonHdTitle">菜单 · 当前配置</b>
          <button onclick="TPL._vcDefJSONClose()" title="关闭">×</button></div>
          <div class="vc-json-bd"><pre id="vcJsonPre"></pre></div>
          <div class="vc-json-ft"><span>动作读 cfg.actions / actionSpec；交互场景读 cfg.pageActions / pageSpec；pageRoutes 为兼容视图，均按元数据分派</span>
@@ -1661,7 +1661,7 @@ function vcFeatJSONOpen(){
     host=$('vcJsonWin');
   }
   const t=$('vcJsonHdTitle')||document.querySelector('#vcJsonHd b');
-  if(t)t.textContent='功能设置 · 当前配置（含未保存修改）';
+  if(t)t.textContent='菜单 · 当前配置（含未保存修改）';
   $('vcJsonPre').textContent=JSON.stringify(data,null,2);
   host.classList.add('on'); $('vcJsonMask').classList.add('on');
   window.__VC_JSON__=$('vcJsonPre').textContent;
@@ -1750,7 +1750,7 @@ function vcFeatListHTML(){
       <span class="fs-nav-n">${esc(meta)}</span></div>`;
   }).join('');
   return `<div class="fs-summary">
-      <div class="fs-summary-t"><b>功能设置</b><span>全局 · 全部视图</span></div>
+      <div class="fs-summary-t"><b>菜单</b><span>全局 · 全部视图</span></div>
       <div class="fs-summary-n"><b>${sum.groups}</b><span>分组</span><b>${sum.actionsOn}<i>/</i>${sum.actions}</b><span>动作启用</span><b>${sum.scenesOn}<i>/</i>${sum.scenes}</b><span>场景启用</span></div>
       <p>动作读 <code>cfg.actions</code>，交互场景读 <code>cfg.pageActions</code> + <code>pageSpec</code>；共用方法注册表，均可增删自定义。</p>
     </div>
@@ -1782,7 +1782,7 @@ function renderVC(){
   $('vcRhdFeat').style.display  =isFeat?'flex':'none';
   $('vcTabs').style.display     =isFeat?'none':'flex';
   $('vcHdSub').textContent=isFeat
-    ? '功能设置 · 快捷工具栏 / 表单配置 / 菜单栏 / 页面配置 · 动作与交互场景均可增删自定义'
+    ? '菜单 · 快捷工具栏 / 表单配置 / 菜单栏 / 交互场景 · 动作与交互场景均可增删自定义'
     : '';
   const pane=$('vcPane');
   pane.classList.toggle('pane-cols', !isFeat&&(vTab==='cols'||vTab==='defs'));
@@ -1881,7 +1881,7 @@ const vcApi={
     vDraft.features=VC.featDefaults();
     vDraft.actions=VC.actionDefaults();      
     vDraft.pageActions=VC.pageActionDefaults(); 
-    vcFeatRender(); api._toast('已恢复全部功能设置、默认动作与默认交互场景');
+    vcFeatRender(); api._toast('已恢复全部菜单、默认动作与默认交互场景');
   },
   _vcFeatJSON(){ vcFeatJSONOpen(); },
   
@@ -2165,7 +2165,7 @@ const vcApi={
   
   _vcClickGoPage(scene){
     vMode='features'; vFeatGroup='page'; vFeatKw=String(scene||'');
-    renderVC(); api._toast('已定位到「页面配置」· 场景 '+(scene||'（未绑定）'));
+    renderVC(); api._toast('已定位到「交互场景」· 场景 '+(scene||'（未绑定）'));
   },
   
   _vcBtnWrite(k,arr){
@@ -2342,7 +2342,7 @@ const vcApi={
     vcShow(false);
     VC.activate(VC.cfg.active);
     applyFeaturePresentation(true);    
-    api._toast('视图配置已保存');
+    api._toast('列表配置已保存');
   }
 };
 
@@ -2754,7 +2754,7 @@ function listHTML(){
     <div class="drug-chips" id="tplChips"></div>
     ${groupbar}
     <div class="wl-grid">${tableHTML()}
-      <button type="button" class="wl-colgear" title="视图配置" onclick="TPL._vcOpen()">⚙</button>
+      <button type="button" class="wl-colgear" title="列表配置" onclick="TPL._vcOpen()">⚙</button>
       <button type="button" class="wl-rail-toggle" title="展开侧边面板" onclick="TPL._wlRail()">‹</button>
       <aside class="wl-rail">
         <div class="wl-rail-hd"><b>视图概览</b><button type="button" title="收起" onclick="TPL._wlRail()">›</button></div>
