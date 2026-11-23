@@ -62,9 +62,12 @@ npm run build     # 生产构建：5 个业务 chunk + 4 个 CSS + boot + 8 个�
 npm run preview   # 本地预览
 ```
 
-## dev 首屏不再出现巨大黑色 logo
+## dev 首屏两次 FOUC 都已修复
 
-`localhost:5173`（Vite dev）曾因 CSS 由 JS 异步注入、内联 SVG 无固有尺寸而在首次绘制帧撑满视口，出现黑色叶子一闪。已修复：骨架 2 个 SVG 补 `width/height`，层注册表顶部注入 `@layer` 兜底约束动态 SVG；正常渲染尺寸仍由业务 CSS 决定，双页 0 像素差不变。根因、复现证据与验收见工程外 `11_首屏闪烁修复.md`、`对账/首屏闪烁复现.cjs`。生产构建 / 静态预览 / 单文件 / Pages 本来就不闪。
+- **巨大黑色 logo 一闪**：CSS 由 JS 异步注入，内联 SVG 无固有尺寸、首次绘制撑满视口。骨架 2 个 SVG 补 `width/height` + 层注册表 `@layer` 兜底约束动态 SVG。
+- **按 F5 刷新出现散落文字 + 黑三角**：ESM 要等 64 个静态依赖下载完才执行模块体，这段空窗里整页无样式。`vite.config.js` 的 `fouc-guard-refresh` 插件**仅在 dev** 的 HTML 响应注入 `wl-fouc` 遮罩，启动入口末尾按 class 存在性解除。dev 刷新现在是「短暂纯白 → 完整页」。
+
+两轮都做到：`index.html` 磁盘文件 0 个内联 style、双页 0 像素差、生产 / 静态预览 / 单文件 / Pages 零改动。根因、A/B 复现证据与全套验收见工程外 `11_首屏闪烁修复.md`，脚本 `对账/首屏闪烁复现.cjs`、`对账/刷新FOUC验证.cjs`。
 
 ## 不想下载整包 zip
 

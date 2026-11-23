@@ -134,4 +134,13 @@ if (typeof window !== 'undefined') {
   记('接线就绪', { 说明: '业务层已按 import 顺序同步执行完毕，懒加载未触发' });
 }
 
+// dev 刷新防 FOUC 遮罩解除：只依据 class 是否存在，不依赖 import.meta / 环境变量，
+// 因此 dist / 单文件预览 / Pages 里 HTML 无 wl-fouc 类，这段自然不生效，产物零改动。
+// 执行到这里 = 64 个静态依赖（含 32 个 CSS）全部求值完 + boot() 同步首屏完成。
+if (typeof document !== 'undefined' && document.documentElement.classList.contains('wl-fouc')) {
+  const 解除遮罩 = () => document.documentElement.classList.remove('wl-fouc');
+  requestAnimationFrame(() => requestAnimationFrame(解除遮罩));
+  setTimeout(解除遮罩, 3000);  // 保险：JS 异常 / 极端慢速下也不永久白屏
+}
+
 export default API;

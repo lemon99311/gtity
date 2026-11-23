@@ -1,5 +1,5 @@
 {
-  "生成时间": "2026-11-23T18:42:35.710159",
+  "生成时间": "2026-11-23T19:11:40.281144",
   "源文件": "/data/inputs/v4.html",
   "源字节": 1181356,
   "源sha256": "fc00102111901815be1d5c20113560b039eaa41e89c46395d30588832799c8a8",
@@ -22,7 +22,9 @@
   "改写点数": 3,
   "防闪烁改写": [
     "index.html 骨架 2 个内联 SVG 补 width/height（18 / 16，与业务 CSS 最终尺寸一致）",
-    "层注册表模块顶层注入 @layer fouc-guard 兜底：svg:not([width]):not([height]) → 16px"
+    "层注册表模块顶层注入 @layer fouc-guard 兜底：svg:not([width]):not([height]) → 16px",
+    "vite.config.js 的 fouc-guard-refresh 插件：仅 dev 的 HTML 响应注入 wl-fouc 遮罩",
+    "启动入口末尾按 class 存在性解除遮罩（生产/单文件/Pages 中 class 不存在，零改动）"
   ],
   "改写说明": [
     "layerRows() 数据源：DOM querySelectorAll → window.__WL_LAYER_REGISTRY__",

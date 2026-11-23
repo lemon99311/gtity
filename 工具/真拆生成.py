@@ -14,6 +14,9 @@
 另外两处「首屏防闪烁」改写（不属于任何带 id 层，不改层序列）：
   4) HTML 骨架里 2 个内联 SVG 补 width/height，消除 dev 首次绘制的巨大黑色 logo
   5) 层注册表模块顶部同步注入一条 @layer 兜底 CSS，约束运行时无尺寸 SVG
+  6) 启动入口末尾按 class 存在性解除 dev 遮罩（遮罩本身由 vite.config.js 插件仅在
+     dev 的 HTML 响应里注入，磁盘骨架与 dist 保持 0 个内联 style），消除 F5 刷新
+     期间「未排版文字 + 裸奔三角」的持续画面
 
 用法：python3 工具/真拆生成.py
 """
@@ -304,6 +307,15 @@ lines += [
     "  记('接线就绪', { 说明: '业务层已按 import 顺序同步执行完毕，懒加载未触发' });",
     "}",
     "",
+    "// dev 刷新防 FOUC 遮罩解除：只依据 class 是否存在，不依赖 import.meta / 环境变量，",
+    "// 因此 dist / 单文件预览 / Pages 里 HTML 无 wl-fouc 类，这段自然不生效，产物零改动。",
+    "// 执行到这里 = 64 个静态依赖（含 32 个 CSS）全部求值完 + boot() 同步首屏完成。",
+    "if (typeof document !== 'undefined' && document.documentElement.classList.contains('wl-fouc')) {",
+    "  const 解除遮罩 = () => document.documentElement.classList.remove('wl-fouc');",
+    "  requestAnimationFrame(() => requestAnimationFrame(解除遮罩));",
+    "  setTimeout(解除遮罩, 3000);  // 保险：JS 异常 / 极端慢速下也不永久白屏",
+    "}",
+    "",
     "export default API;",
 ]
 open(启动入口, 'w', encoding='utf-8', newline='').write('\n'.join(lines) + '\n')
@@ -355,6 +367,8 @@ out = dict(
     防闪烁改写=[
         'index.html 骨架 2 个内联 SVG 补 width/height（18 / 16，与业务 CSS 最终尺寸一致）',
         '层注册表模块顶层注入 @layer fouc-guard 兜底：svg:not([width]):not([height]) → 16px',
+        'vite.config.js 的 fouc-guard-refresh 插件：仅 dev 的 HTML 响应注入 wl-fouc 遮罩',
+        '启动入口末尾按 class 存在性解除遮罩（生产/单文件/Pages 中 class 不存在，零改动）',
     ],
     改写说明=[
         'layerRows() 数据源：DOM querySelectorAll → window.__WL_LAYER_REGISTRY__',

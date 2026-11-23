@@ -206,3 +206,8 @@ if (typeof window !== "undefined") {
   window.__MOD__ = API;
   记("接线就绪", { 说明: "业务层已按 import 顺序同步执行完毕，懒加载未触发" });
 }
+if (typeof document !== "undefined" && document.documentElement.classList.contains("wl-fouc")) {
+  const 解除遮罩 = () => document.documentElement.classList.remove("wl-fouc");
+  requestAnimationFrame(() => requestAnimationFrame(解除遮罩));
+  setTimeout(解除遮罩, 3e3);
+}

@@ -1,5 +1,5 @@
 {
-  "生成时间": "2026-11-23T10:44:04.506Z",
+  "生成时间": "2026-11-23T11:15:55.639Z",
   "口径": "真拆后口径：零 Vue 判据落新增层；既有层读取点按数量与基线对账；硬指标是运行时未定义与标志恒 false",
   "约束": "Vite 可用于构建；现阶段不使用 Vue / element-ui，不注入 CDN，不点亮增强分支",
   "通过": true,
@@ -130,7 +130,7 @@
       "通过": true,
       "详情": {
         "module入口": [
-          "<script type=\"module\" crossorigin src=\"./assets/boot-D6zOLf_X.js\">"
+          "<script type=\"module\" crossorigin src=\"./assets/boot-oCLtMj-_.js\">"
         ]
       }
     },
@@ -139,7 +139,7 @@
       "通过": true,
       "详情": {
         "资源值": [
-          "./assets/boot-D6zOLf_X.js",
+          "./assets/boot-oCLtMj-_.js",
           "./assets/layer-a-early-Bc1CzZxH.js",
           "./assets/layer-b-core-D9bmgxGI.js",
           "./assets/layer-c-bridge-CvPs-jcH.js",
@@ -219,7 +219,7 @@
       "通过": true,
       "详情": {
         "scriptSrc": [
-          "./assets/boot-D6zOLf_X.js"
+          "./assets/boot-oCLtMj-_.js"
         ],
         "外部link节点": 0,
         "本地资源数": 10
@@ -276,7 +276,7 @@
     "ELEMENT类型": "undefined",
     "标志": false,
     "scriptSrc": [
-      "./assets/boot-D6zOLf_X.js"
+      "./assets/boot-oCLtMj-_.js"
     ],
     "外部script节点": 0,
     "linkHref": [
