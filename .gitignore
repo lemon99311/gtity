@@ -6,3 +6,6 @@ node_modules/
 对账/dev-server.log
 .DS_Store
 Thumbs.db
+
+# 仓库派生的 bundle 快照由工程外脚本生成，不进版本库
+Vite分模块工程.bundle
