@@ -66,13 +66,15 @@ npm run preview   # 本地预览
 
 - **日常只取增量文件**：本轮改动的 1–4 个文件直接单独给，不打包。
 - **双击即开的单文件预览**：工程外 `项目预览-单文件.html`（1.4 MB），`file://` 直接打开，不用 HTTP、不用解压、不用 Node。生成器 `对账/单文件预览/生成.py` + 验证 `对账/单文件预览验证.cjs`（file 协议下回归 8/8、层 42、0 像素差、0 外部请求）。它是预览副本，8 个按需模块被内联；工程本体 `dist/` 仍保留动态 import。
-- **一次 clone、之后 git pull**：见下一节与工程外 `推送到Gitee.md`；推上去后开 Gitee Pages 还能拿在线地址。
+- **一次 clone、之后 git pull**：见下一节与工程外 `推送到Gitee.md` / `推送到GitHub.md`；推上去后开 Pages 还能拿在线地址。
 
 完整 zip 只在需要全量快照时取，路径固定为工程外 `Vite分模块落地交付.zip`。
 
 ## 推送到 Gitee
 
-当前运行环境访问 `gitee.com` 不可用，代推不了；工程外已备好 `推送到Gitee.md`、`推送到Gitee.sh` 与 `Vite分模块工程.bundle`（本目录已 `git init` + 1 次提交）。在你自己电脑上执行 `./推送到Gitee.sh "https://gitee.com/用户名/仓库名.git"` 即可。
+**Gitee**：当前运行环境访问 `gitee.com` 不可用（403 出站策略拒绝），代推不了；工程外已备好 `推送到Gitee.md`、`推送到Gitee.sh` 与 `Vite分模块工程.bundle`（本目录已 `git init` + 多次提交）。在你自己电脑上执行 `./推送到Gitee.sh "https://gitee.com/用户名/仓库名.git"` 即可。
+
+**GitHub**：实测**可达**（`git ls-remote` 真实返回 commit、写端点 401 且 GitHub 认证层处理了凭据），可以代推。工程外备有 `推送到GitHub.sh` / `推送到GitHub.md`；我代推需要「空仓库地址 + 分支名 + 一次性 fine-grained token」，推完由你立刻 Revoke。不想给令牌就本地跑同一脚本。推完开 GitHub Pages 可拿在线预览地址，彻底不用下载 zip。
 
 ## 怎么预览（三种方式，任选一种）
 
