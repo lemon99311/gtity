@@ -3649,6 +3649,57 @@ select.vcd-in{cursor:pointer}
 
 
 
+/* ==== index-CcMilQId.css ==== */
+/* 视觉收敛补丁 —— 新增层，不带 id，不参与 42 槽位层登记。
+ *
+ * 依据：对账/布局诊断结果-1920x774.json（用户真实视口）的实测几何与 computed style，
+ *       以及用户两张截图：
+ *         #3「人员信息字体大小不协调」→ user-chip
+ *         #4「页面错位」→ 顶栏 logo / crumb 与标签栏 tab 的层级
+ *
+ * 三条实测事实（修复前）：
+ *   .user-chip small  "档案中心 · 维护岗"  14px / 400 / h=20
+ *   .user-chip strong "管理员"             14px / 400 / h=16
+ *   → 两行字号字重完全相同、无主次，28px 头像 + 两行文字挤在 46px 胶囊内
+ *   .tabs  h=42 (y=58)  /  .tpl-tab  h=32 (y=58)  → tab 贴顶，底部空 10px
+ *   .logo b 16px/600  /  .logo span 14px/400      → 主副标题仅差 2px，层级不清
+ *   .crumb x=275.9  /  .tpl-tab x=226             → 上下两行标题水平错开约 50px
+ *
+ * 放在启动入口所有原层之后 import，覆盖优先级最高；原 64 个层文件一字不动，
+ * 逐块 sha 与 42 槽位登记均不变。
+ */
+
+/* 1) 人员信息卡片：拉开主次、收紧行高，让头像与两行文字垂直居中 */
+.user-chip { line-height: 1.3; }
+.user-chip small {
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: .2px;
+  color: var(--ink3);
+}
+.user-chip strong {
+  display: block;
+  font-size: 13px;
+  /* S024-style-tpl-v19-type.css 有全局 *,*::before,*::after{font-weight:var(--t-fw)!important}，
+     不带 !important 会被压回 400，角色行就没有主次了。选择器范围仅限本卡片，安全。 */
+  font-weight: 600 !important;
+  line-height: 1.3;
+}
+
+/* 2) 标签栏：消除 tab 贴顶、底部留白的几何错位 */
+.tabs { align-items: center; }
+.tpl-tab { align-self: center; }
+
+/* 3) 顶栏层级：副标题退为真正的副标题，面包屑弱化为上级路径，
+ *    不再与下方 tab 争夺标题权重，收敛上下两行的视觉错位感 */
+.topbar .logo span {
+  font-size: 11px;
+  letter-spacing: .6px;
+  color: var(--ink4);
+}
+.topbar .crumb { font-size: 12px; color: var(--ink4); }
+.topbar .crumb b { font-weight: 400; }
+
 </style>
 </head>
 <body>
@@ -20143,7 +20194,7 @@ select.vcd-in{cursor:pointer}
     }
   })();
 
-  // dist/assets/boot-oCLtMj-_.js
+  // dist/assets/boot-Bt_wrS8y.js
   var import_meta = {};
   (function polyfill() {
     const relList = document.createElement("link").relList;

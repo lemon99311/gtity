@@ -1,0 +1,504 @@
+{
+  "时间": "2026-11-23T12:19:17.398Z",
+  "URL": "http://127.0.0.1:8080/index.html",
+  "视口": {
+    "w": 1920,
+    "h": 774
+  },
+  "总通过": true,
+  "通过数": "13/13",
+  "像素": {
+    "顶部差异": 14739,
+    "表格差异": 0,
+    "总像素": 1486080
+  },
+  "项": [
+    {
+      "名": "岗位行字号收到 12px",
+      "通过": true,
+      "详情": {
+        "x": 1794.3,
+        "y": 12.3,
+        "w": 96.7,
+        "h": 15.6,
+        "fontSize": 12,
+        "fontWeight": 400,
+        "alignItems": "normal",
+        "alignSelf": "auto",
+        "文本": "档案中心 · 维护岗"
+      }
+    },
+    {
+      "名": "角色行字号 13px 且字重 600（绕过全局 !important）",
+      "通过": true,
+      "详情": {
+        "x": 1794.3,
+        "y": 27.8,
+        "w": 96.7,
+        "h": 16.9,
+        "fontSize": 13,
+        "fontWeight": 600,
+        "alignItems": "normal",
+        "alignSelf": "auto",
+        "文本": "管理员"
+      }
+    },
+    {
+      "名": "人员卡片高度收紧且不再贴边",
+      "通过": true,
+      "详情": {
+        "前": 46,
+        "后": 38.5
+      }
+    },
+    {
+      "名": "系统名主标题保持 16px/600 不变",
+      "通过": true,
+      "详情": {
+        "x": 58,
+        "y": 13.7,
+        "w": 162,
+        "h": 17,
+        "fontSize": 16,
+        "fontWeight": 600,
+        "alignItems": "normal",
+        "alignSelf": "auto",
+        "文本": "中药饮片代煎管理平台"
+      }
+    },
+    {
+      "名": "副标题收到 11px，主副层级拉开",
+      "通过": true,
+      "详情": {
+        "x": 58,
+        "y": 33.3,
+        "w": 162,
+        "h": 12,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "alignItems": "normal",
+        "alignSelf": "auto",
+        "文本": "ZHEJIANG DAIJIAN · V3"
+      }
+    },
+    {
+      "名": "面包屑弱化为 12px",
+      "通过": true,
+      "详情": {
+        "x": 250,
+        "y": 20,
+        "w": 58,
+        "h": 17,
+        "fontSize": 12,
+        "fontWeight": 400,
+        "alignItems": "center",
+        "alignSelf": "auto",
+        "文本": "›\n药品目录"
+      }
+    },
+    {
+      "名": "标签栏垂直居中（tab 不再贴顶）",
+      "通过": true,
+      "详情": {
+        "前y": 58,
+        "后y": 62.5,
+        "alignItems": "center"
+      }
+    },
+    {
+      "名": ".main 几何与修复前逐项一致",
+      "通过": true,
+      "详情": {
+        "前": {
+          "文本": "药品与饮片档案\n全部药品\n贵细药材\n饮片\n毒性药材\n配方颗粒\n在库预警\n待审核\n已停用\n新建\n批次节点\n···\n档案中心",
+          "x": 216,
+          "y": 100,
+          "w": 1704,
+          "h": 674,
+          "fontSize": "14px",
+          "lineHeight": "normal",
+          "fontWeight": "400",
+          "color": "rgb(31, 35, 41)",
+          "display": "block",
+          "visibility": "visible"
+        },
+        "后": {
+          "x": 216,
+          "y": 100,
+          "w": 1704,
+          "h": 674,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "alignItems": "normal",
+          "alignSelf": "auto",
+          "文本": "药品与饮片档案\n全部药品\n贵细药材\n饮片\n毒性药材\n配方颗粒\n在库预警\n待审核\n"
+        }
+      }
+    },
+    {
+      "名": ".side 几何与修复前逐项一致",
+      "通过": true,
+      "详情": {
+        "前": {
+          "文本": "档案中心\n药品与饮片档案\n快捷视图\n全部药品\n饮片\n贵细药材\n毒性药材\n档案说明\n饮片目录 · 价格 · 库存\n\n点击列",
+          "x": 0,
+          "y": 58,
+          "w": 216,
+          "h": 716,
+          "fontSize": "14px",
+          "lineHeight": "normal",
+          "fontWeight": "400",
+          "color": "rgb(31, 35, 41)",
+          "display": "block",
+          "visibility": "visible"
+        },
+        "后": {
+          "x": 0,
+          "y": 58,
+          "w": 216,
+          "h": 716,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "alignItems": "normal",
+          "alignSelf": "auto",
+          "文本": "档案中心\n药品与饮片档案\n快捷视图\n全部药品\n饮片\n贵细药材\n毒性药材\n档案说明"
+        }
+      }
+    },
+    {
+      "名": "回归 8/8、层 42、TPL/MOD 均在",
+      "通过": true,
+      "详情": {
+        "元素": {
+          ".topbar .logo b": {
+            "x": 58,
+            "y": 13.7,
+            "w": 162,
+            "h": 17,
+            "fontSize": 16,
+            "fontWeight": 600,
+            "alignItems": "normal",
+            "alignSelf": "auto",
+            "文本": "中药饮片代煎管理平台"
+          },
+          ".topbar .logo span": {
+            "x": 58,
+            "y": 33.3,
+            "w": 162,
+            "h": 12,
+            "fontSize": 11,
+            "fontWeight": 400,
+            "alignItems": "normal",
+            "alignSelf": "auto",
+            "文本": "ZHEJIANG DAIJIAN · V3"
+          },
+          ".topbar .crumb": {
+            "x": 250,
+            "y": 20,
+            "w": 58,
+            "h": 17,
+            "fontSize": 12,
+            "fontWeight": 400,
+            "alignItems": "center",
+            "alignSelf": "auto",
+            "文本": "›\n药品目录"
+          },
+          ".topbar .crumb b": {
+            "x": 260,
+            "y": 20,
+            "w": 48,
+            "h": 17,
+            "fontSize": 12,
+            "fontWeight": 400,
+            "alignItems": "normal",
+            "alignSelf": "auto",
+            "文本": "药品目录"
+          },
+          ".user-chip": {
+            "x": 1755.3,
+            "y": 9.3,
+            "w": 148.7,
+            "h": 38.5,
+            "fontSize": 14,
+            "fontWeight": 400,
+            "alignItems": "center",
+            "alignSelf": "auto",
+            "文本": "档案\n档案中心 · 维护岗\n管理员"
+          },
+          ".user-chip .avatar": {
+            "x": 1758.3,
+            "y": 14.5,
+            "w": 28,
+            "h": 28,
+            "fontSize": 14,
+            "fontWeight": 400,
+            "alignItems": "center",
+            "alignSelf": "auto",
+            "文本": "档案"
+          },
+          ".user-chip small": {
+            "x": 1794.3,
+            "y": 12.3,
+            "w": 96.7,
+            "h": 15.6,
+            "fontSize": 12,
+            "fontWeight": 400,
+            "alignItems": "normal",
+            "alignSelf": "auto",
+            "文本": "档案中心 · 维护岗"
+          },
+          ".user-chip strong": {
+            "x": 1794.3,
+            "y": 27.8,
+            "w": 96.7,
+            "h": 16.9,
+            "fontSize": 13,
+            "fontWeight": 600,
+            "alignItems": "normal",
+            "alignSelf": "auto",
+            "文本": "管理员"
+          },
+          ".tabs": {
+            "x": 216,
+            "y": 58,
+            "w": 1704,
+            "h": 42,
+            "fontSize": 14,
+            "fontWeight": 400,
+            "alignItems": "center",
+            "alignSelf": "auto",
+            "文本": "药品与饮片档案"
+          },
+          ".tpl-tab": {
+            "x": 226,
+            "y": 62.5,
+            "w": 130,
+            "h": 32,
+            "fontSize": 14,
+            "fontWeight": 400,
+            "alignItems": "center",
+            "alignSelf": "center",
+            "文本": "药品与饮片档案"
+          },
+          ".main": {
+            "x": 216,
+            "y": 100,
+            "w": 1704,
+            "h": 674,
+            "fontSize": 14,
+            "fontWeight": 400,
+            "alignItems": "normal",
+            "alignSelf": "auto",
+            "文本": "药品与饮片档案\n全部药品\n贵细药材\n饮片\n毒性药材\n配方颗粒\n在库预警\n待审核\n"
+          },
+          ".side": {
+            "x": 0,
+            "y": 58,
+            "w": 216,
+            "h": 716,
+            "fontSize": 14,
+            "fontWeight": 400,
+            "alignItems": "normal",
+            "alignSelf": "auto",
+            "文本": "档案中心\n药品与饮片档案\n快捷视图\n全部药品\n饮片\n贵细药材\n毒性药材\n档案说明"
+          },
+          "#main table": {
+            "x": 216,
+            "y": 216,
+            "w": 2237.8,
+            "h": 436,
+            "fontSize": 13,
+            "fontWeight": 400,
+            "alignItems": "normal",
+            "alignSelf": "auto",
+            "文本": "药品编码\t药品名称\t状态\t标签\t重点等级\t建档日期\t协同养护员\t药品类别\t效期 "
+          }
+        },
+        "回归": {
+          "pass": true,
+          "total": 8
+        },
+        "层检查": true,
+        "层数": 42,
+        "有TPL": true,
+        "有MOD": true
+      }
+    },
+    {
+      "名": "页面错误 0",
+      "通过": true,
+      "详情": []
+    },
+    {
+      "名": "顶部（y<100）确有预期视觉变化",
+      "通过": true,
+      "详情": {
+        "顶部差异": 14739
+      }
+    },
+    {
+      "名": "表格与主内容区（y>=100）零像素差异",
+      "通过": true,
+      "详情": {
+        "表格差异": 0,
+        "总像素": 1486080
+      }
+    }
+  ],
+  "修复后": {
+    "元素": {
+      ".topbar .logo b": {
+        "x": 58,
+        "y": 13.7,
+        "w": 162,
+        "h": 17,
+        "fontSize": 16,
+        "fontWeight": 600,
+        "alignItems": "normal",
+        "alignSelf": "auto",
+        "文本": "中药饮片代煎管理平台"
+      },
+      ".topbar .logo span": {
+        "x": 58,
+        "y": 33.3,
+        "w": 162,
+        "h": 12,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "alignItems": "normal",
+        "alignSelf": "auto",
+        "文本": "ZHEJIANG DAIJIAN · V3"
+      },
+      ".topbar .crumb": {
+        "x": 250,
+        "y": 20,
+        "w": 58,
+        "h": 17,
+        "fontSize": 12,
+        "fontWeight": 400,
+        "alignItems": "center",
+        "alignSelf": "auto",
+        "文本": "›\n药品目录"
+      },
+      ".topbar .crumb b": {
+        "x": 260,
+        "y": 20,
+        "w": 48,
+        "h": 17,
+        "fontSize": 12,
+        "fontWeight": 400,
+        "alignItems": "normal",
+        "alignSelf": "auto",
+        "文本": "药品目录"
+      },
+      ".user-chip": {
+        "x": 1755.3,
+        "y": 9.3,
+        "w": 148.7,
+        "h": 38.5,
+        "fontSize": 14,
+        "fontWeight": 400,
+        "alignItems": "center",
+        "alignSelf": "auto",
+        "文本": "档案\n档案中心 · 维护岗\n管理员"
+      },
+      ".user-chip .avatar": {
+        "x": 1758.3,
+        "y": 14.5,
+        "w": 28,
+        "h": 28,
+        "fontSize": 14,
+        "fontWeight": 400,
+        "alignItems": "center",
+        "alignSelf": "auto",
+        "文本": "档案"
+      },
+      ".user-chip small": {
+        "x": 1794.3,
+        "y": 12.3,
+        "w": 96.7,
+        "h": 15.6,
+        "fontSize": 12,
+        "fontWeight": 400,
+        "alignItems": "normal",
+        "alignSelf": "auto",
+        "文本": "档案中心 · 维护岗"
+      },
+      ".user-chip strong": {
+        "x": 1794.3,
+        "y": 27.8,
+        "w": 96.7,
+        "h": 16.9,
+        "fontSize": 13,
+        "fontWeight": 600,
+        "alignItems": "normal",
+        "alignSelf": "auto",
+        "文本": "管理员"
+      },
+      ".tabs": {
+        "x": 216,
+        "y": 58,
+        "w": 1704,
+        "h": 42,
+        "fontSize": 14,
+        "fontWeight": 400,
+        "alignItems": "center",
+        "alignSelf": "auto",
+        "文本": "药品与饮片档案"
+      },
+      ".tpl-tab": {
+        "x": 226,
+        "y": 62.5,
+        "w": 130,
+        "h": 32,
+        "fontSize": 14,
+        "fontWeight": 400,
+        "alignItems": "center",
+        "alignSelf": "center",
+        "文本": "药品与饮片档案"
+      },
+      ".main": {
+        "x": 216,
+        "y": 100,
+        "w": 1704,
+        "h": 674,
+        "fontSize": 14,
+        "fontWeight": 400,
+        "alignItems": "normal",
+        "alignSelf": "auto",
+        "文本": "药品与饮片档案\n全部药品\n贵细药材\n饮片\n毒性药材\n配方颗粒\n在库预警\n待审核\n"
+      },
+      ".side": {
+        "x": 0,
+        "y": 58,
+        "w": 216,
+        "h": 716,
+        "fontSize": 14,
+        "fontWeight": 400,
+        "alignItems": "normal",
+        "alignSelf": "auto",
+        "文本": "档案中心\n药品与饮片档案\n快捷视图\n全部药品\n饮片\n贵细药材\n毒性药材\n档案说明"
+      },
+      "#main table": {
+        "x": 216,
+        "y": 216,
+        "w": 2237.8,
+        "h": 436,
+        "fontSize": 13,
+        "fontWeight": 400,
+        "alignItems": "normal",
+        "alignSelf": "auto",
+        "文本": "药品编码\t药品名称\t状态\t标签\t重点等级\t建档日期\t协同养护员\t药品类别\t效期 "
+      }
+    },
+    "回归": {
+      "pass": true,
+      "total": 8
+    },
+    "层检查": true,
+    "层数": 42,
+    "有TPL": true,
+    "有MOD": true
+  },
+  "页面错误": []
+}

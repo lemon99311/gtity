@@ -23,7 +23,10 @@ js = open(BUNDLE, encoding='utf-8').read()
 
 # 1) 按原 stylesheet link 顺序收集 CSS
 css_files = re.findall(r'<link\s+rel="stylesheet"[^>]*href="\./assets/([^"]+\.css)"[^>]*>', html)
-assert len(css_files) == 4, '预期 4 个 CSS，实际 %d' % len(css_files)
+# 视觉收敛补丁会多出 1 个 CSS（index-*.css，Vite 把它排在最后）；
+# 必须严格按 dist/index.html 的 link 顺序拼接，否则补丁会被后续层覆盖。
+assert len(css_files) >= 4, '预期至少 4 个 CSS，实际 %d' % len(css_files)
+assert css_files[-1].startswith('index-'), '最后一个 CSS 应为视觉收敛补丁，实际 %s' % css_files[-1]
 css_all = []
 for f in css_files:
     c = open(os.path.join(DIST, 'assets', f), encoding='utf-8').read()

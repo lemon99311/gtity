@@ -1,5 +1,5 @@
 {
-  "生成时间": "2026-11-23T11:16:16.143Z",
+  "生成时间": "2026-11-23T12:17:47.684Z",
   "对账": {
     "回归逐项一致": true,
     "回归基线": {
@@ -257,7 +257,7 @@
   },
   "按需": {
     "首屏js请求": [
-      "boot-oCLtMj-_.js",
+      "boot-Bt_wrS8y.js",
       "layer-a-early-Bc1CzZxH.js",
       "layer-b-core-D9bmgxGI.js",
       "layer-c-bridge-CvPs-jcH.js",
@@ -553,7 +553,7 @@
             }
           }
         ],
-        "at": 1795432573548,
+        "at": 1795436264844,
         "manual": [
           "B0-1",
           "B0-2",
@@ -755,7 +755,7 @@
             }
           }
         ],
-        "at": 1795432575883,
+        "at": 1795436267410,
         "manual": [
           "B0-1",
           "B0-2",
@@ -786,7 +786,7 @@
     },
     "错误": [],
     "首屏js请求": [
-      "boot-oCLtMj-_.js",
+      "boot-Bt_wrS8y.js",
       "layer-a-early-Bc1CzZxH.js",
       "layer-b-core-D9bmgxGI.js",
       "layer-c-bridge-CvPs-jcH.js",
@@ -950,7 +950,7 @@
       }
     },
     "单桥后js请求": [
-      "boot-oCLtMj-_.js",
+      "boot-Bt_wrS8y.js",
       "layer-a-early-Bc1CzZxH.js",
       "layer-b-core-D9bmgxGI.js",
       "layer-c-bridge-CvPs-jcH.js",
@@ -1271,7 +1271,7 @@
       }
     },
     "全量后js请求": [
-      "boot-oCLtMj-_.js",
+      "boot-Bt_wrS8y.js",
       "layer-a-early-Bc1CzZxH.js",
       "layer-b-core-D9bmgxGI.js",
       "layer-c-bridge-CvPs-jcH.js",

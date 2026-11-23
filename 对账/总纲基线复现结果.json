@@ -1,5 +1,5 @@
 {
-  "生成时间": "2026-11-23T11:17:07.238Z",
+  "生成时间": "2026-11-23T12:20:10.192Z",
   "口径": "工程内脚本化复现；每项独立 BrowserContext；不使用 Vue、不注入 CDN、不点亮增强分支",
   "对照": {
     "B0-1": "由 截图对账.cjs 等价复现（双页 0 像素差）",
@@ -340,11 +340,11 @@
               "op": "append",
               "from": "price",
               "to": "code",
-              "rowKey": "Rmwt67xa7651"
+              "rowKey": "Rmwt8gzlh745"
             },
             "FOCUS": {
               "col": "code",
-              "rowKey": "Rmwt67xa7651",
+              "rowKey": "Rmwt8gzlh745",
               "selected": true,
               "scrollY": 0,
               "scroll": {
@@ -386,11 +386,11 @@
               "op": "reuse-empty",
               "from": "price",
               "to": "code",
-              "rowKey": "Rmwt67xa7651"
+              "rowKey": "Rmwt8gzlh745"
             },
             "FOCUS": {
               "col": "code",
-              "rowKey": "Rmwt67xa7651",
+              "rowKey": "Rmwt8gzlh745",
               "selected": true,
               "scrollY": 0,
               "scroll": {
@@ -593,13 +593,13 @@
           },
           "B3": {
             "ok": false,
-            "session": "B3-1-1795432620404",
+            "session": "B3-1-1795436403078",
             "secId": "fw-sec-inbound",
             "api": "/api/credit/check",
             "amount": 46.6,
             "limit": -1,
             "message": "单据总额超出可用额度，请调整数量后再提交",
-            "at": 1795432620585
+            "at": 1795436403260
           },
           "errOn": 1,
           "errText": [
@@ -689,7 +689,7 @@
         "结果": {
           "__PWNED__": "undefined",
           "guard": {
-            "elements": 935,
+            "elements": 936,
             "badAttrs": 0,
             "scripts": 0
           },

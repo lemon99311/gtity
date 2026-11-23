@@ -17,6 +17,9 @@
   6) 启动入口末尾按 class 存在性解除 dev 遮罩（遮罩本身由 vite.config.js 插件仅在
      dev 的 HTML 响应里注入，磁盘骨架与 dist 保持 0 个内联 style），消除 F5 刷新
      期间「未排版文字 + 裸奔三角」的持续画面
+  7) 启动入口末尾 import 新增的 src/视觉收敛.css（不带 id 的新增层，不进 42 槽位），
+     收敛人员信息卡片字号层级、标签栏 tab 贴顶几何、顶栏主副标题与面包屑层级。
+     原 64 个层文件一字不动，逐块 sha 全部保持。
 
 用法：python3 工具/真拆生成.py
 """
@@ -243,6 +246,12 @@ for i, b in enumerate(blocks):
         lines.append("import '../层/%s';" % os.path.basename(b['文件']))
 lines += [
     "",
+    "// 视觉收敛补丁：新增层，不带 id，不参与 42 槽位登记；",
+    "// 置于所有原层之后 import，覆盖优先级最高，原 64 个层文件一字不动。",
+    "import '../视觉收敛.css';",
+]
+lines += [
+    "",
     "// 以下为原有的按需装载接线（8 个动态 import，不参与首屏登记）",
     "import { 配置集摘要, 校验配置链 } from '../config/配置集.js';",
     "",
@@ -369,6 +378,14 @@ out = dict(
         '层注册表模块顶层注入 @layer fouc-guard 兜底：svg:not([width]):not([height]) → 16px',
         'vite.config.js 的 fouc-guard-refresh 插件：仅 dev 的 HTML 响应注入 wl-fouc 遮罩',
         '启动入口末尾按 class 存在性解除遮罩（生产/单文件/Pages 中 class 不存在，零改动）',
+    ],
+    视觉收敛补丁=[
+        '文件：src/视觉收敛.css（新增层，不带 id，不参与 42 槽位登记）',
+        '接线：启动入口所有原层之后 import，覆盖优先级最高',
+        '人员信息：岗位 14px/400 → 12px、角色 14px/400 → 13px/600、行高 1.3（形成主次）',
+        '标签栏：.tabs align-items:center + .tpl-tab align-self:center（消除 32/42 贴顶留白）',
+        '顶栏：副标题 14px → 11px、面包屑 14px → 12px 且淡色（弱化与 tab 的层级竞争）',
+        '依据：对账/布局诊断结果-1920x774.json（用户真实视口实测）',
     ],
     改写说明=[
         'layerRows() 数据源：DOM querySelectorAll → window.__WL_LAYER_REGISTRY__',

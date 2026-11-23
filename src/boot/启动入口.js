@@ -70,6 +70,10 @@ import '../层/S063-style-R2-visual.css';
 import '../层/S064-script-R3.js';
 import '../层/S065-script-R4.js';
 
+// 视觉收敛补丁：新增层，不带 id，不参与 42 槽位登记；
+// 置于所有原层之后 import，覆盖优先级最高，原 64 个层文件一字不动。
+import '../视觉收敛.css';
+
 // 以下为原有的按需装载接线（8 个动态 import，不参与首屏登记）
 import { 配置集摘要, 校验配置链 } from '../config/配置集.js';
 
