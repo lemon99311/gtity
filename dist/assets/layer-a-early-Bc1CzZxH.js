@@ -1,3 +1,8 @@
+if (typeof window !== "undefined" && window.document && window.document.head) {
+  const 兜底 = window.document.createElement("style");
+  兜底.textContent = "@layer fouc-guard{svg:not([width]):not([height]){width:16px;height:16px}}";
+  window.document.head.appendChild(兜底);
+}
 const 层表 = [
   {
     "i": 0,

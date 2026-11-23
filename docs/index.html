@@ -3654,14 +3654,14 @@ select.vcd-in{cursor:pointer}
 <body>
 <div id="app">
   <header class="topbar">
-    <div class="logo"><div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c2 3 6 4 6 9a6 6 0 01-12 0c0-2 1-3 2-4M12 3c-2 3-6 4-6 9"/></svg></div>
+    <div class="logo"><div class="logo-mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c2 3 6 4 6 9a6 6 0 01-12 0c0-2 1-3 2-4M12 3c-2 3-6 4-6 9"/></svg></div>
       <div><b id="tplAppName"></b><span id="tplAppSub"></span></div></div>
     <div class="crumb"><i>›</i> <b id="tplCrumb"></b></div>
     <div class="top-actions"><div class="user-chip"><div class="avatar">档案</div><div><small>档案中心 · 维护岗</small><strong>管理员</strong></div></div></div>
   </header>
   <aside class="side">
     <div class="side-title" id="tplSideGroup"></div>
-    <nav class="nav" id="nav"><a href="#" class="on" onclick="return false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4zM8 9h8M8 13h8"/></svg><span id="tplSideItem"></span></a></nav>
+    <nav class="nav" id="nav"><a href="#" class="on" onclick="return false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4zM8 9h8M8 13h8"/></svg><span id="tplSideItem"></span></a></nav>
     <div class="side-hr"></div>
     <div class="side-title">快捷视图</div>
     <nav class="nav sa-quick" id="tplQuick"></nav>
@@ -4445,7 +4445,12 @@ select.vcd-in{cursor:pointer}
     }
   });
 
-  // dist/assets/layer-a-early-BsQJpRkb.js
+  // dist/assets/layer-a-early-Bc1CzZxH.js
+  if (typeof window !== "undefined" && window.document && window.document.head) {
+    const \u515C\u5E95 = window.document.createElement("style");
+    \u515C\u5E95.textContent = "@layer fouc-guard{svg:not([width]):not([height]){width:16px;height:16px}}";
+    window.document.head.appendChild(\u515C\u5E95);
+  }
   var \u5C42\u8868 = [
     {
       "i": 0,
@@ -20138,7 +20143,7 @@ select.vcd-in{cursor:pointer}
     }
   })();
 
-  // dist/assets/boot-D5GrHf92.js
+  // dist/assets/boot-D6zOLf_X.js
   var import_meta = {};
   (function polyfill() {
     const relList = document.createElement("link").relList;

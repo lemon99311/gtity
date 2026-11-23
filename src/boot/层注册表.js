@@ -1,3 +1,14 @@
+// 首屏防闪烁兜底（dev 模式专用，不改变正常渲染）：
+// Vite dev 的 CSS 由 JS 模块异步注入 <style>，HTML 会先绘制一次无样式画面；
+// 内联 SVG 没有尺寸时会撑满父容器（实测 1424×1424），出现巨大黑色 logo 一闪。
+// 本模块是启动入口第一个 import，顶层同步注入一条 @layer 规则；layer 内规则
+// 优先级低于所有业务 CSS（unlayered），所以正常渲染时尺寸仍完全由原 CSS 决定。
+if (typeof window !== 'undefined' && window.document && window.document.head) {
+  const 兜底 = window.document.createElement('style');
+  兜底.textContent = '@layer fouc-guard{svg:not([width]):not([height]){width:16px;height:16px}}';
+  window.document.head.appendChild(兜底);
+}
+
 // 层登记注册表（真拆后新增）：替代 layerRows() 的 DOM 扫描。
 // 42 个槽位逐项对齐基线页 TPL._layers() 的冻结快照顺序：
 //   39 项静态层 → 真实 src/层/ 模块（或保留在 index.html 的 JSON 空壳）

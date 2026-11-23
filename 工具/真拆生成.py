@@ -11,6 +11,9 @@
   3) S038 主 IIFE 里的 Formula 公式引擎抽离为独立业务 ESM（按四块重组第一阶段）
      零耦合纯计算 IIFE，抽走后本层顶层 import 引用，原 window 挂载点位置不变。
 其余 30 个可执行 script 块与 32 个 style 块内容一字不动。
+另外两处「首屏防闪烁」改写（不属于任何带 id 层，不改层序列）：
+  4) HTML 骨架里 2 个内联 SVG 补 width/height，消除 dev 首次绘制的巨大黑色 logo
+  5) 层注册表模块顶部同步注入一条 @layer 兜底 CSS，约束运行时无尺寸 SVG
 
 用法：python3 工具/真拆生成.py
 """
@@ -166,7 +169,18 @@ for j, row in enumerate(层序):
 assert len(注册项) == 42, '基线冻结层应为 42，实际 %d' % len(注册项)
 assert 静态数 == 39, '静态带 id 层应为 39，实际 %d' % 静态数
 
-注册表代码 = """// 层登记注册表（真拆后新增）：替代 layerRows() 的 DOM 扫描。
+注册表代码 = """// 首屏防闪烁兜底（dev 模式专用，不改变正常渲染）：
+// Vite dev 的 CSS 由 JS 模块异步注入 <style>，HTML 会先绘制一次无样式画面；
+// 内联 SVG 没有尺寸时会撑满父容器（实测 1424×1424），出现巨大黑色 logo 一闪。
+// 本模块是启动入口第一个 import，顶层同步注入一条 @layer 规则；layer 内规则
+// 优先级低于所有业务 CSS（unlayered），所以正常渲染时尺寸仍完全由原 CSS 决定。
+if (typeof window !== 'undefined' && window.document && window.document.head) {
+  const 兜底 = window.document.createElement('style');
+  兜底.textContent = '@layer fouc-guard{svg:not([width]):not([height]){width:16px;height:16px}}';
+  window.document.head.appendChild(兜底);
+}
+
+// 层登记注册表（真拆后新增）：替代 layerRows() 的 DOM 扫描。
 // 42 个槽位逐项对齐基线页 TPL._layers() 的冻结快照顺序：
 //   39 项静态层 → 真实 src/层/ 模块（或保留在 index.html 的 JSON 空壳）
 //    3 项运行时注入 style → 插在中间（index 31–33），仅在 DOM 中真实存在时纳入
@@ -306,6 +320,18 @@ for b in blocks:
 parts.append(原文[cursor:])
 骨架 = ''.join(parts)
 
+# 首屏防闪烁（HTML 解析后、CSS 注入前的首次绘制帧）：
+# 两个静态内联 SVG 原本没有 width/height，无样式时会按 viewBox 撑满父容器宽度。
+# 加上与业务 CSS 最终尺寸一致的属性（logo 18 / nav 16），CSS 仍在时由 CSS 覆盖，视觉不变。
+替换表 = [
+    ('<div class="logo-mark"><svg viewBox=', '<div class="logo-mark"><svg width="18" height="18" viewBox='),
+    ('onclick="return false"><svg viewBox=', 'onclick="return false"><svg width="16" height="16" viewBox='),
+]
+for 旧, 新 in 替换表:
+    n = 骨架.count(旧)
+    assert n == 1, 'SVG 防闪烁替换应命中 1 次，实际 %d 次：%s' % (n, 旧)
+    骨架 = 骨架.replace(旧, 新)
+
 入口标签 = '<script type="module" src="/src/boot/启动入口.js"></script>\n'
 if '</body>' in 骨架:
     骨架 = 骨架.replace('</body>', 入口标签 + '</body>', 1)
@@ -326,6 +352,10 @@ out = dict(
     注册表项数=len(注册项), 注册表静态层=静态数,
     注册表运行时槽位=[r['id'] for r in 注册项 if r['容器'] == '运行时DOM'],
     改写点数=改写总数,
+    防闪烁改写=[
+        'index.html 骨架 2 个内联 SVG 补 width/height（18 / 16，与业务 CSS 最终尺寸一致）',
+        '层注册表模块顶层注入 @layer fouc-guard 兜底：svg:not([width]):not([height]) → 16px',
+    ],
     改写说明=[
         'layerRows() 数据源：DOM querySelectorAll → window.__WL_LAYER_REGISTRY__',
         "runCheck('exports') 的 style/script id 列表：DOM querySelectorAll → 层注册表",

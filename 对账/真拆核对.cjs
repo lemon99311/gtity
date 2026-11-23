@@ -93,6 +93,19 @@ const 内联style标签 = (idx.toString('utf-8').match(/<style\b/gi) || []).leng
 加('index.html 体积降到基线 1% 以下', idx字节 < 基线字节 * 0.01,
    { 基线: 基线字节, 现在: idx字节, 占比: +(idx字节 / 基线字节 * 100).toFixed(3) + '%' });
 
+// 首屏防闪烁（11_首屏闪烁修复.md）：HTML 首次绘制帧的 SVG 必须有固有尺寸
+const idx文本 = idx.toString('utf-8');
+const svg标签 = idx文本.match(/<svg\b[^>]*>/gi) || [];
+加('index.html 的 2 个内联 SVG 都带 width/height（消除首次绘制撑满）',
+   svg标签.length === 2 && svg标签.every(s => /\bwidth="\d+"/.test(s) && /\bheight="\d+"/.test(s)),
+   { svg数: svg标签.length, 标签: svg标签 });
+const 注册表文本 = 读('src/boot/层注册表.js').toString('utf-8');
+加('层注册表含 @layer 兜底且在业务 CSS 之前同步注入',
+   注册表文本.includes('@layer fouc-guard') && 注册表文本.indexOf('@layer fouc-guard') < 注册表文本.indexOf('export const 层表'),
+   {});
+加('兜底 style 不带 id，不参与 42 槽位层登记',
+   !/兜底\.id|setAttribute\(['"]id['"]/.test(注册表文本), {});
+
 // ---------- ④ 体积守恒：内联内容搬进了文件 ----------
 const 层目录 = path.join(ROOT, 'src/层');
 const 层文件 = fs.readdirSync(层目录);

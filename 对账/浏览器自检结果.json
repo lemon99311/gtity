@@ -1,5 +1,5 @@
 {
-  "生成时间": "2026-11-22T21:45:09.629Z",
+  "生成时间": "2026-11-23T10:44:24.720Z",
   "对账": {
     "回归逐项一致": true,
     "回归基线": {
@@ -257,8 +257,8 @@
   },
   "按需": {
     "首屏js请求": [
-      "boot-D5GrHf92.js",
-      "layer-a-early-BsQJpRkb.js",
+      "boot-D6zOLf_X.js",
+      "layer-a-early-Bc1CzZxH.js",
       "layer-b-core-D9bmgxGI.js",
       "layer-c-bridge-CvPs-jcH.js",
       "layer-d-ui-BgeDuIP_.js",
@@ -553,7 +553,7 @@
             }
           }
         ],
-        "at": 1795383907254,
+        "at": 1795430662274,
         "manual": [
           "B0-1",
           "B0-2",
@@ -755,7 +755,7 @@
             }
           }
         ],
-        "at": 1795383909422,
+        "at": 1795430664558,
         "manual": [
           "B0-1",
           "B0-2",
@@ -786,8 +786,8 @@
     },
     "错误": [],
     "首屏js请求": [
-      "boot-D5GrHf92.js",
-      "layer-a-early-BsQJpRkb.js",
+      "boot-D6zOLf_X.js",
+      "layer-a-early-Bc1CzZxH.js",
       "layer-b-core-D9bmgxGI.js",
       "layer-c-bridge-CvPs-jcH.js",
       "layer-d-ui-BgeDuIP_.js",
@@ -950,8 +950,8 @@
       }
     },
     "单桥后js请求": [
-      "boot-D5GrHf92.js",
-      "layer-a-early-BsQJpRkb.js",
+      "boot-D6zOLf_X.js",
+      "layer-a-early-Bc1CzZxH.js",
       "layer-b-core-D9bmgxGI.js",
       "layer-c-bridge-CvPs-jcH.js",
       "layer-d-ui-BgeDuIP_.js",
@@ -1271,8 +1271,8 @@
       }
     },
     "全量后js请求": [
-      "boot-D5GrHf92.js",
-      "layer-a-early-BsQJpRkb.js",
+      "boot-D6zOLf_X.js",
+      "layer-a-early-Bc1CzZxH.js",
       "layer-b-core-D9bmgxGI.js",
       "layer-c-bridge-CvPs-jcH.js",
       "layer-d-ui-BgeDuIP_.js",

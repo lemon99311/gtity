@@ -1,5 +1,5 @@
 {
-  "生成时间": "2026-11-23T05:43:46.895371",
+  "生成时间": "2026-11-23T18:42:35.710159",
   "源文件": "/data/inputs/v4.html",
   "源字节": 1181356,
   "源sha256": "fc00102111901815be1d5c20113560b039eaa41e89c46395d30588832799c8a8",
@@ -20,12 +20,16 @@
     "tpl-v121-density"
   ],
   "改写点数": 3,
+  "防闪烁改写": [
+    "index.html 骨架 2 个内联 SVG 补 width/height（18 / 16，与业务 CSS 最终尺寸一致）",
+    "层注册表模块顶层注入 @layer fouc-guard 兜底：svg:not([width]):not([height]) → 16px"
+  ],
   "改写说明": [
     "layerRows() 数据源：DOM querySelectorAll → window.__WL_LAYER_REGISTRY__",
     "runCheck('exports') 的 style/script id 列表：DOM querySelectorAll → 层注册表",
     "S038 的 Formula 公式引擎抽离为 src/业务/表单/公式引擎.js（按四块重组第一阶段）"
   ],
-  "新index字节": 5086,
+  "新index字节": 5132,
   "新index行数": 125,
   "层文件数": 64,
   "块清单": [
